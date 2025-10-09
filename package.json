@@ -2,6 +2,7 @@
   "name": "botc-viewer",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://usij82.github.io/korean_botc_script_tool/",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
