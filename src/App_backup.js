@@ -12,27 +12,23 @@ function App() {
     const [quickJson, setQuickJson] = useState("");
 
     const [characters, setCharacters] = useState([]);
-    const [teams, setTeams] = useState({});
     const [jinxes, setJinxes] = useState({});
     const [nightOrder, setNightOrder] = useState({ firstNight: [], otherNight: [] });
 
     // ✅ 데이터 로드
     useEffect(() => {
         async function loadData() {
-            const [charsRes, teamsRes, jinxRes, orderRes] = await Promise.all([
+            const [charsRes, jinxRes, orderRes] = await Promise.all([
                 fetch("characters_ko.json"),
-                fetch("teams.json"),
                 fetch("jinx_ko.json"),
                 fetch("night_order.json")
             ]);
 
             const chars = await charsRes.json();
-            const teamsArr = await teamsRes.json();
             const jinxArr = await jinxRes.json();
             const order = await orderRes.json();
 
             setCharacters(chars);
-            setTeams(Object.fromEntries(teamsArr.map((t) => [t.id, t.name])));
 
             const jinxMap = {};
             for (const j of jinxArr) jinxMap[j.id] = j.jinx;
@@ -240,9 +236,10 @@ function App() {
 
     const teamCounts = useMemo(() => {
         const counts = { townsfolk: 0, outsider: 0, minion: 0, demon: 0, traveller: 0, fabled: 0 };
+        const idToTeam = new Map(characters.map((c) => [c.id, c.team]));
         for (const id of selectedIds) {
-            const c = charById(id);
-            if (c && counts.hasOwnProperty(c.team)) counts[c.team]++;
+            const t = idToTeam.get(id);
+            if (t && Object.prototype.hasOwnProperty.call(counts, t)) counts[t]++;
         }
         return counts;
     }, [selectedIds, characters]);
@@ -519,7 +516,7 @@ function App() {
             {/* 오른쪽: Night Order */}
             <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "20px" }}>
                 <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "20px", background: "#fff", fontSize: "17px", lineHeight: "1.8" }}>
-                    <h2 style={{ marginTop: 0, fontSize: "22px" }}>🌙 첫째 밤</h2>
+                    <h2 style={{ marginTop: 0, fontSize: "22px" }}>🌙 첫번째 밤</h2>
                     <ol style={{ paddingLeft: "24px" }}>
                         {nightOrder.firstNight
                             .filter((id) => ["DUSK", "DAWN", "MINION", "DEMON"].includes(id) || selectedIds.includes(id))
