@@ -1,0 +1,20 @@
+﻿# Visual Studio
+.vs/
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+Debug/
+Release/
+x64/
+bin/
+obj/
+
+# Node/React
+node_modules/
+build/
+dist/
+.env
+
+# macOS
+.DS_Store
