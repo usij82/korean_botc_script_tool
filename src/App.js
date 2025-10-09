@@ -86,7 +86,7 @@ function App() {
     const canvas = await html2canvas(input, { scale: 1.5, useCORS: true });
     const imgData = canvas.toDataURL("image/jpeg", 0.95);
 
-    const pdf = new jsPDF("p", "mm", [210, 350]);
+    const pdf = new jsPDF("p", "mm", "a4");
     const pageWidth = pdf.internal.pageSize.getWidth();
     const pageHeight = pdf.internal.pageSize.getHeight();
     const imgWidth = pageWidth;
