@@ -86,7 +86,7 @@ function App() {
     const canvas = await html2canvas(input, { scale: 1.5, useCORS: true });
     const imgData = canvas.toDataURL("image/jpeg", 0.95);
 
-    const pdf = new jsPDF("p", "mm", "a4");
+    const pdf = new jsPDF("p", "mm", "a3");
     const pageWidth = pdf.internal.pageSize.getWidth();
     const pageHeight = pdf.internal.pageSize.getHeight();
     const imgWidth = pageWidth;
@@ -307,7 +307,7 @@ function App() {
           value={quickJson}
           onChange={(e) => setQuickJson(e.target.value)}
           placeholder='빠른 구성(JSON 배열을 입력하세요.) Ex) [{"id":"_meta","author":"작가","name":"제목"},"acrobat","barber","assassin"]'
-          style={{ width: "100%", padding: 8, fontFamily: "monospace", marginBottom: "10px" }}
+          style={{ width: "100%", padding: "8px", fontFamily: "monospace", marginBottom: "8px" }}
         />
 
         {/* 캐릭터 분류 + 기본 스크립트 선택 (같은 줄) */}
@@ -514,7 +514,7 @@ function App() {
       {/* 오른쪽: Night Order (데스크탑 전용) */}
       <div className="desktop-only" style={{ flex: 1, display: "flex", flexDirection: "column", gap: "20px" }}>
         <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "20px", background: "#fff", fontSize: "17px", lineHeight: "1.8" }}>
-          <h2 style={{ marginTop: 0, fontSize: "22px" }}>🌙 첫째 밤</h2>
+          <h2 style={{ marginTop: 0, fontSize: "22px" }}>🌙 첫번째 밤</h2>
           <ol style={{ paddingLeft: "24px" }}>
             {nightOrder.firstNight
               .filter((id) => ["DUSK", "DAWN", "MINION", "DEMON"].includes(id) || selectedIds.includes(id))
@@ -544,7 +544,43 @@ function App() {
       <div className="mobile-only" style={{ width: "100%" }}>
         <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "16px", background: "#fff", marginTop: "8px" }}>
           <details>
-            <summary style={{ fontSize: "18px", cursor: "pointer" }}>🌙 첫째 밤</summary>
+            <summary style={{ fontSize: "18px", cursor: "pointer" }}>🌙 첫번       )}
+      </div>
+
+      {/* 오른쪽: Night Order (데스크탑 전용) */}
+      <div className="desktop-only" style={{ flex: 1, display: "flex", flexDirection: "column", gap: "20px" }}>
+        <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "20px", background: "#fff", fontSize: "17px", lineHeight: "1.8" }}>
+          <h2 style={{ marginTop: 0, fontSize: "22px" }}>🌙 첫번째 밤</h2>
+          <ol style={{ paddingLeft: "24px" }}>
+            {nightOrder.firstNight
+              .filter((id) => ["DUSK", "DAWN", "MINION", "DEMON"].includes(id) || selectedIds.includes(id))
+              .map((id) => (
+                <li key={id} style={{ marginBottom: "8px" }}>
+                  <NightRow id={id} />
+                </li>
+              ))}
+          </ol>
+        </div>
+
+        <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "20px", background: "#fff", fontSize: "17px", lineHeight: "1.8" }}>
+          <h2 style={{ fontSize: "22px" }}>🌃 나머지 밤</h2>
+          <ol style={{ paddingLeft: "24px" }}>
+            {nightOrder.otherNight
+              .filter((id) => ["DUSK", "DAWN", "MINION", "DEMON"].includes(id) || selectedIds.includes(id))
+              .map((id) => (
+                <li key={id} style={{ marginBottom: "8px" }}>
+                  <NightRow id={id} />
+                </li>
+              ))}
+          </ol>
+        </div>
+      </div>
+
+      {/* 모바일 전용 Night Order (아코디언 등으로 표시) */}
+      <div className="mobile-only" style={{ width: "100%" }}>
+        <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "16px", background: "#fff", marginTop: "8px" }}>
+          <details>
+            <summary style={{ fontSize: "18px", cursor: "pointer" }}>🌙 첫번째 밤</summary>
             <ol style={{ paddingLeft: "24px", marginTop: "10px" }}>
               {nightOrder.firstNight
                 .filter((id) => ["DUSK", "DAWN", "MINION", "DEMON"].includes(id) || selectedIds.includes(id))
