@@ -270,7 +270,7 @@ function App() {
             const jc = charById(j.id);
             return (
               <li key={j.id} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                {jc?.image && <img src={jc.image} alt={jc.name} width="40" height="40" style={{ borderRadius: "6px" }} />}
+                {jc?.image && <img src={jc.image} alt={jc.name} width="80" height="80" style={{ borderRadius: "6px" }} />}
                 <span style={{ fontSize: "16px" }}>{jc?.name || j.id} — {j.reason}</span>
               </li>
             );
