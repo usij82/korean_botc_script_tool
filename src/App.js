@@ -270,7 +270,7 @@ function App() {
             const jc = charById(j.id);
             return (
               <li key={j.id} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                {jc?.image && <img src={jc.image} alt={jc.name} width="40px" height="40px" style={{ borderRadius: "6px" }} />}
+                {jc?.image && <img src={jc.image} alt={jc.name} width="40" height="40" style={{ borderRadius: "6px" }} />}
                 <span style={{ fontSize: "16px" }}>{jc?.name || j.id} — {j.reason}</span>
               </li>
             );
@@ -315,7 +315,7 @@ function App() {
       }}
     >
       {/* 왼쪽 */}
-      <div style={{ flex: 3 }}>
+      <div style={{ flex: 2 }}>
         <div style={{ display: "flex", gap: "8px", marginBottom: "16px", flexWrap: "wrap" }}>
           <button onClick={() => setMode("select")}>🔙 선택으로</button>
           <button onClick={exportPDF}>📄 PDF</button>
