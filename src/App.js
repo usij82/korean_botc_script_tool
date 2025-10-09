@@ -315,7 +315,7 @@ function App() {
       }}
     >
       {/* 왼쪽 */}
-      <div style={{ flex: 2 }}>
+      <div style={{ flex: 3 }}>
         <div style={{ display: "flex", gap: "8px", marginBottom: "16px", flexWrap: "wrap" }}>
           <button onClick={() => setMode("select")}>🔙 선택으로</button>
           <button onClick={exportPDF}>📄 PDF</button>
