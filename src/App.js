@@ -505,7 +505,7 @@ function App() {
       <ResponsiveStyle />
 
       {/* 왼쪽 */}
-      <div style={{ flex: 2 }}>
+      <div style={{ flex: 3 }}>
         {/* 상단 액션 바 */}
         <div style={{ display: "flex", gap: "8px", marginBottom: "16px", flexWrap: "wrap" }}>
           <button onClick={() => setMode("select")}>🔙 선택으로</button>
