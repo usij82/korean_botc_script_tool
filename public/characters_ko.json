@@ -327,6 +327,7 @@
     {
         "id": "bootlegger",
         "name": "밀주업자",
+        "edition": "car",
         "firstNightReminder": "",
         "otherNightReminder": "",
         "reminders": [],
@@ -565,6 +566,7 @@
     {
         "id": "deusexfiasco",
         "name": "데우스 엑스 피아스코",
+        "edition": "car",
         "firstNightReminder": "",
         "otherNightReminder": "",
         "reminders": [
@@ -796,6 +798,7 @@
     {
         "id": "ferryman",
         "name": "뱃사공",
+        "edition": "car",
         "firstNightReminder": "",
         "otherNightReminder": "",
         "reminders": [],
@@ -926,6 +929,7 @@
     {
         "id": "gardener",
         "name": "정원사",
+        "edition": "car",
         "firstNightReminder": "",
         "otherNightReminder": "",
         "reminders": [],
@@ -2335,6 +2339,7 @@
     {
         "id": "stormcatcher",
         "name": "폭풍 사냥꾼",
+        "edition": "car",
         "firstNight": 1,
         "firstNightReminder": "선한 플레이어를 \"안전\"으로 표시하세요. 모든 악한 플레이어를 깨워 표시된 플레이어를 보여주세요.",
         "otherNightReminder": "",
