@@ -289,7 +289,7 @@ function App() {
             const jc = charById(j.id);
             return (
               <li key={j.id} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                {jc?.image && <img src={jc.image} alt={jc.name} width="20" height="20" />}
+                {jc?.image && <img src={jc.image} alt={jc.name} width="60" height="60" />}
                 <span>{jc?.name || j.id} — {j.reason}</span>
               </li>
             );
@@ -316,7 +316,7 @@ function App() {
     );
   };
 
-  // ===== 모바일/데스크톱용 간단 스타일 (미디어쿼리) =====
+  // ===== 반응형 스타일 =====
   const ResponsiveStyle = () => (
     <style>{`
       /* 화면 폭이 줄면 좌/우 레이아웃 → 상/하 스택 */
@@ -326,19 +326,11 @@ function App() {
           gap: 16px !important;
         }
       }
-      /* Night Order: 모바일에서는 아코디언만 보이게 */
-      .desktop-only { display: block; }
-      .mobile-only { display: none; }
-      @media (max-width: 768px) {
-        .desktop-only { display: none; }
-        .mobile-only { display: block; }
-      }
       /* 능력 텍스트 줄수 제한 (모바일 가독성) */
       .ability {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        display: block;
+        overflow: visible;
+        white-space: normal;
       }
     `}</style>
   );
@@ -571,39 +563,10 @@ function App() {
               </div>
             )
         )}
-
-        {/* Night Order: 모바일 아코디언 */}
-        <div className="mobile-only" style={{ marginTop: 24 }}>
-          <details style={{ border: "1px solid #ddd", borderRadius: 12, padding: 16, background: "#fff", marginBottom: 12 }}>
-            <summary style={{ fontSize: 18, cursor: "pointer" }}>🌙 첫째 밤</summary>
-            <ol style={{ paddingLeft: 24, marginTop: 12 }}>
-              {nightOrder.firstNight
-                .filter((id) => ["DUSK", "DAWN", "MINION", "DEMON"].includes(id) || selectedIds.includes(id))
-                .map((id) => (
-                  <li key={id} style={{ marginBottom: "8px" }}>
-                    <NightRow id={id} />
-                  </li>
-                ))}
-            </ol>
-          </details>
-
-          <details style={{ border: "1px solid #ddd", borderRadius: 12, padding: 16, background: "#fff" }}>
-            <summary style={{ fontSize: 18, cursor: "pointer" }}>🌃 나머지 밤</summary>
-            <ol style={{ paddingLeft: 24, marginTop: 12 }}>
-              {nightOrder.otherNight
-                .filter((id) => ["DUSK", "DAWN", "MINION", "DEMON"].includes(id) || selectedIds.includes(id))
-                .map((id) => (
-                  <li key={id} style={{ marginBottom: "8px" }}>
-                    <NightRow id={id} />
-                  </li>
-                ))}
-            </ol>
-          </details>
-        </div>
       </div>
 
-      {/* 오른쪽: Night Order(데스크톱 전용) */}
-      <div className="desktop-only" style={{ flex: 1, display: "flex", flexDirection: "column", gap: "20px" }}>
+      {/* 오른쪽: Night Order (항상 표시, 작은 화면에서는 아래로 스택됨) */}
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "20px" }}>
         <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "20px", background: "#fff", fontSize: "17px", lineHeight: "1.8" }}>
           <h2 style={{ marginTop: 0, fontSize: "22px" }}>🌙 첫째 밤</h2>
           <ol style={{ paddingLeft: "24px" }}>
