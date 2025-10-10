@@ -402,7 +402,7 @@ function App() {
           <select
             value={filterTeam}
             onChange={(e) => setFilterTeam(e.target.value)}
-            style={{ flex: "1 1 200px", padding: "8px", minWidth: 160 }}
+            style={{ padding: "8px", minWidth: 160 }}
           >
             <option value="all">캐릭터 분류</option>
             {teamOrder.map((t) => (
@@ -415,7 +415,7 @@ function App() {
           <select
             value={editionPick}
             onChange={(e) => setEditionPick(e.target.value)}
-            style={{ flex: "1 1 200px", padding: "8px", minWidth: 200 }}
+            style={{ flex: 1, padding: "8px", minWidth: 200 }}
           >
             <option value="">기본 스크립트 목록</option>
             <option value="tb">점철되는 혼란 (TB)</option>
@@ -537,9 +537,9 @@ function App() {
       <div style={{ flex: 2 }}>
         <div style={{ display: "flex", gap: "8px", marginBottom: "16px", flexWrap: "wrap" }}>
           <button onClick={() => setMode("select")}>🔙 선택으로</button>
-          <button onClick={exportPDF}>📄 PDF</button>
-          <button onClick={exportImage}>🖼 PNG</button>
-          <button onClick={copyScriptJson}>📋 구성 복사(JSON)</button>
+          <button onClick={exportPDF}>📄 PDF로 저장</button>
+          <button onClick={exportImage}>🖼 PNG로 저장(추천)</button>
+          <button onClick={copyScriptJson}>📋 클립보드에 복사(JSON)</button>
         </div>
 
         <h2>{meta.name}</h2>
@@ -577,7 +577,7 @@ function App() {
                         height="90"
                         style={{ borderRadius: "10px", objectFit: "cover" }}
                       />
-                      <div style={{ flex: 1 }}>
+                      <div style={{ flex: 3 }}>
                         <b style={{ fontSize: "20px" }}>{c.name}</b>
                         <div style={{ fontSize: "15px", color: "#555", marginBottom: "8px" }}>
                           {teamName(c.team)}
@@ -596,7 +596,7 @@ function App() {
       {/* 오른쪽: Night Order (항상 표시, 작은 화면에서는 아래로 스택됨) */}
       <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "20px" }}>
         <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "20px", background: "#fff", fontSize: "17px", lineHeight: "1.8" }}>
-          <h2 style={{ marginTop: 0, fontSize: "22px" }}>🌙 첫째 밤</h2>
+          <h2 style={{ marginTop: 0, fontSize: "22px" }}>🌙 첫번째 밤</h2>
           <ol style={{ paddingLeft: "24px" }}>
             {nightOrder.firstNight
               .filter((id) => ["DUSK", "DAWN", "MINION", "DEMON"].includes(id) || selectedIds.includes(id))
