@@ -10,7 +10,7 @@ function App() {
   const [filterTeam, setFilterTeam] = useState("all");
   const [editionPick, setEditionPick] = useState("");
   const [quickJson, setQuickJson] = useState("");
-
+  const isMobile = () => window.matchMedia("(max-width: 1024px)").matches;
   const [characters, setCharacters] = useState([]);
   const [jinxes, setJinxes] = useState({});
   const [nightOrder, setNightOrder] = useState({ firstNight: [], otherNight: [] });
@@ -91,6 +91,71 @@ function App() {
     return canvas;
   }
 
+  // ===== PDF 저장(PC=가변, 모바일=A4) =====
+  const exportPDF = async () => {
+    const input = document.getElementById("script-area");
+    if (!input) return alert("PDF로 내보낼 영역을 찾을 수 없습니다.");
+
+  // 모바일은 A4 고정 사용
+    if (isMobile()) return exportPDFA4();
+
+  // PC는 예전처럼 화면 크기 그대로 캡처 & 페이지 분할
+    window.scrollTo(0, 0);
+    const canvas = await html2canvas(input, { scale: 1.5, useCORS: true, backgroundColor: "#ffffff" });
+    const imgData = canvas.toDataURL("image/jpeg", 0.95);
+  
+    const pdf = new jsPDF("p", "mm", "a4");
+    const pageW = pdf.internal.pageSize.getWidth();   // 210mm
+    const pageH = pdf.internal.pageSize.getHeight();  // 297mm
+    const imgW = pageW;
+    const imgH = (canvas.height * imgW) / canvas.width;
+
+    let heightLeft = imgH;
+    let position = 0;
+
+    pdf.addImage(imgData, "JPEG", 0, position, imgW, imgH);
+    heightLeft -= pageH;
+
+    while (heightLeft > 0) {
+      position = heightLeft - imgH;
+      pdf.addPage();
+      pdf.addImage(imgData, "JPEG", 0, position, imgW, imgH);
+      heightLeft -= pageH;
+    }
+    pdf.save(meta?.name ? `${meta.name}.pdf` : "script.pdf");
+  };
+
+// ===== PNG 저장(PC=가변, 모바일=A4) =====
+  const exportImage = async () => {
+    const input = document.getElementById("script-area");
+    if (!input) return alert("이미지로 내보낼 영역을 찾을 수 없습니다.");
+
+    window.scrollTo(0, 0);
+
+  // 모바일은 A4 고정 사용
+    if (isMobile()) {
+      const a4Canvas = await renderToA4Canvas(input);
+      return a4Canvas.toBlob((blob) => {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = meta?.name ? `${meta.name}.png` : "script.png";
+        a.click();
+        URL.revokeObjectURL(a.href);
+      }, "image/png");
+    }
+
+  // PC는 화면 크기대로 캡처
+    const canvas = await html2canvas(input, { scale: 1.5, useCORS: true, backgroundColor: "#ffffff" });
+    canvas.toBlob((blob) => {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = meta?.name ? `${meta.name}.png` : "script.png";
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }, "image/png");
+  };
+
+  
   // ===== PDF 저장(A4 고정, 자동 페이지 분할) =====
   const exportPDFA4 = async () => {
     const input = document.getElementById("script-area");
@@ -509,9 +574,9 @@ function App() {
         {/* 상단 액션 바 */}
         <div style={{ display: "flex", gap: "8px", marginBottom: "16px", flexWrap: "wrap" }}>
           <button onClick={() => setMode("select")}>🔙 선택으로</button>
-          <button onClick={exportPDFA4}>📄 PDF(A4)</button>
-          <button onClick={exportImageA4}>🖼 PNG(A4)</button>
-          <button onClick={copyScriptJson}>📋 구성 복사(JSON)</button>
+          <button onClick={exportPDF}>📄 PDF로 저장</button>
+          <button onClick={exportImage}>🖼 PNG로 저장</button>
+          <button onClick={copyScriptJson}>📋 클립보드에 복사(JSON)</button>
         </div>
 
         <h2>{meta.name}</h2>
