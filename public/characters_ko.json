@@ -21,7 +21,7 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 3,
-        "firstNightReminder": "연금술사에게 플레이되지 않는 하수인 토큰을 보여줍니다",
+        "firstNightReminder": "연금술사에게 플레이되지 않는 하수인 토큰을 보여줍니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [],
@@ -46,7 +46,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 33,
-        "otherNightReminder": "알하디키아는 3명의 플레이어를 선택합니다. 순서대로, 각자는 스스로 생사를 선택합니다. 하지만 모두 살기를 고른경우, 3명다 죽습니다",
+        "otherNightReminder": "알하디키아는 3명의 플레이어를 선택합니다. 순서대로, 각자는 스스로 생사를 선택합니다. 하지만 모두 살기를 고른경우, 3명다 죽습니다.",
         "reminders": [
             "1",
             "2",
@@ -78,9 +78,9 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 12,
-        "firstNightReminder": "기억상실자의 능력이 무엇인지 결정합니다. 만약 첫날밤에 발동한다면, 기억상실자를 깨우고, 능력을 발동합니다",
+        "firstNightReminder": "기억상실자의 능력이 무엇인지 결정합니다. 만약 첫날밤에 발동한다면, 기억상실자를 깨우고, 능력을 발동합니다.",
         "otherNight": 5,
-        "otherNightReminder": "만약 매일밤 발동하는 능력이라면, 기억상실자를 깨우고, 능력을 발동합니다",
+        "otherNightReminder": "만약 매일밤 발동하는 능력이라면, 기억상실자를 깨우고, 능력을 발동합니다.",
         "reminders": [
             "?"
         ],
@@ -140,9 +140,9 @@
         "edition": "bmr",
         "team": "minion",
         "firstNight": 0,
-        "firstNightReminder": "매일밤, 암살자를 깨웁니다, 능력을 사용하기로 했다면, 플레이어를 가르킵니다",
+        "firstNightReminder": "매일밤, 암살자를 깨웁니다, 능력을 사용하기로 했다면, 플레이어를 가르킵니다.",
         "otherNight": 37,
-        "otherNightReminder": "매일밤, 암살자를 깨웁니다, 능력을 사용하기로 했다면, 플레이어를 가르킵니다",
+        "otherNightReminder": "매일밤, 암살자를 깨웁니다, 능력을 사용하기로 했다면, 플레이어를 가르킵니다.",
         "reminders": [
             "죽음",
             "능력없음"
@@ -171,9 +171,9 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 44,
-        "firstNightReminder": "캐릭터 타입을 고릅니다. 해당 타입의 플레이어를 가르킵니다. 확인한 알림토큰을 캐릭터 옆에 둡니다",
+        "firstNightReminder": "캐릭터 타입을 고릅니다. 해당 타입의 플레이어를 가르킵니다. 확인한 알림토큰을 캐릭터 옆에 둡니다.",
         "otherNight": 63,
-        "otherNightReminder": "이전 밤들과 다른 타입의 캐릭터를 선택합니다. 각 타입의 캐릭터를 가르키고, 확인한 알림토큰을 추가하고, 이전 알림토큰은 제거합니다",
+        "otherNightReminder": "이전 밤들과 다른 타입의 캐릭터를 선택합니다. 각 타입의 캐릭터를 가르키고, 확인한 알림토큰을 추가하고, 이전 알림토큰은 제거합니다.",
         "reminders": [
             "마을주민 봄",
             "외지인 봄",
@@ -193,7 +193,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 42,
-        "otherNightReminder": "밴시가 사망했음을 알립니다",
+        "otherNightReminder": "밴시가 사망했음을 알립니다.",
         "reminders": [
             "능력 발동"
         ],
@@ -209,7 +209,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 40,
-        "otherNightReminder": "만약 이발사가 오늘 죽었다면, 악마를 깨웁니다. \"이 캐릭터가 당신을 선택했습니다\" 카드와 이발사 토큰을 보여주세요. 악마는 고개를 좌우로 흔들거나 두명을 선택합니다. 해당 캐릭터들의 토큰을 교환합니다. 만약 진영이 다르다면, 뒤집어 놓습니다",
+        "otherNightReminder": "만약 이발사가 오늘 죽었다면, 악마를 깨웁니다. \"이 캐릭터가 당신을 선택했습니다\" 카드와 이발사 토큰을 보여주세요. 악마는 고개를 좌우로 흔들거나 두명을 선택합니다. 해당 캐릭터들의 토큰을 교환합니다. 만약 진영이 다르다면, 뒤집어 놓습니다.",
         "reminders": [
             "오늘밤 이발"
         ],
@@ -231,7 +231,7 @@
             "능력 두번"
         ],
         "setup": false,
-        "ability": "매일 밤, 다음 날 낮이 끝날 때까지 한 플레이어에게 1) 건강(만취/중독 해제)하게 만들고 진실된 정보만을 얻도록 하거나, 2) 능력을 두번 발동하게 합니다. 해당 플레이어는 그 사실을 알게 됩니다.",
+        "ability": "매일 밤, 다음 날 낮이 끝날 때까지 플레이어 1명이 1) 건강(만취/중독 해제)하게 만들고 진실된 정보 만을 얻도록 하거나, 2) 능력을 두 번 발동하게 합니다. 해당 플레이어는 이 사실을 알게 됩니다.",
         "image": "icons/Icon_barista.png"
     },
     {
@@ -259,7 +259,7 @@
         "otherNightReminder": "",
         "reminders": [],
         "setup": false,
-        "ability": "투표 토큰이 있어야만 투표를 할 수 있습니다. 죽은 플레이어가 투표 토큰을 주면, 당신은 그들의 진영을 알게 됩니다. 당신은 항상 건강합니다",
+        "ability": "투표 토큰이 있어야만 투표를 할 수 있습니다. 죽은 플레이어가 투표 토큰을 주면, 당신은 그들의 진영을 알게 됩니다. 당신은 항상 건강합니다.",
         "image": "icons/Icon_beggar.png"
     },
     {
@@ -276,7 +276,7 @@
             "악을 지명"
         ],
         "setup": false,
-        "ability": "오직 이야기꾼만 지명할 수 있습니다. 매일 주교와 다른 진영의 플레이어가 최소 1명 지명되어야 합니다",
+        "ability": "오직 이야기꾼만 지명할 수 있습니다. 매일 낮, 주교와 다른 진영의 플레이어가 최소 1명은 지명되어야 합니다.",
         "image": "icons/Icon_bishop.png"
     },
     {
@@ -301,7 +301,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 1,
-        "otherNightReminder": "뼈 수집가는 고개를 젓던가, 또는 죽은 플레이어를 선택합니다. 만약 죽은 플레이어를 지명한다면, 뼈 수집가의 '능력있음'  을 해당 플레이어 캐릭터 옆에 추가합니다. (그리고 다음 황혼에 그들은 능력을 잃습니다 알림토큰을 제거합니다",
+        "otherNightReminder": "뼈 수집가는 고개를 젓던가, 또는 죽은 플레이어를 선택합니다. 만약 죽은 플레이어를 지명한다면, 뼈 수집가의 '능력있음'  을 해당 플레이어 캐릭터 옆에 추가합니다. (그리고 다음 황혼에 그들은 능력을 잃습니다 알림토큰을 제거합니다.",
         "reminders": [
             "능력없음",
             "능력있음"
@@ -343,7 +343,7 @@
         "firstNight": 45,
         "firstNightReminder": "악한 플레이어를 1명 가르킵니다. 악한 마을주민 1명을 깨우고 \"당신은\" 카드을 보여주고, 엄지를 아래로 내려 악한 편임을 알려줍니다(캐릭터 토큰을 뒤집어서 표시하세요)",
         "otherNight": 65,
-        "otherNightReminder": "확인한 악한 플레이어가 죽는다면, 다른 악한 플레이어를 가르킵니다",
+        "otherNightReminder": "확인한 악한 플레이어가 죽는다면, 다른 악한 플레이어를 가르킵니다.",
         "reminders": [
             "알고있음"
         ],
@@ -368,9 +368,9 @@
         "edition": "tb",
         "team": "traveller",
         "firstNight": 1,
-        "firstNightReminder": "관료는 한 플레이어를 선택합니다. 관료의 '3표' 알람을 해당 플레이어 토큰 옆에 둡니다",
+        "firstNightReminder": "관료는 한 플레이어를 선택합니다. 관료의 '3표' 알람을 해당 플레이어 토큰 옆에 둡니다.",
         "otherNight": 1,
-        "otherNightReminder": "관료는 한 플레이어를 선택합니다. 관료의 '3표' 알람을 해당 플레이어 토큰 옆에 둡니다",
+        "otherNightReminder": "관료는 한 플레이어를 선택합니다. 관료의 '3표' 알람을 해당 플레이어 토큰 옆에 둡니다.",
         "reminders": [
             "3표"
         ],
@@ -389,7 +389,7 @@
         "otherNightReminder": "",
         "reminders": [],
         "setup": false,
-        "ability": "매일 첫 번째 처형 후 다시 지명할 수 있습니다.",
+        "ability": "매일 낮, 첫 번째 처형 후 다시 지명할 수 있습니다.",
         "image": "icons/Icon_butcher.png"
     },
     {
@@ -398,9 +398,9 @@
         "edition": "tb",
         "team": "outsider",
         "firstNight": 38,
-        "firstNightReminder": "집사는 플레이어를 선택합니다. '마스터' 마커를 표시합니다",
+        "firstNightReminder": "집사는 플레이어를 선택합니다. '마스터' 마커를 표시합니다.",
         "otherNight": 55,
-        "otherNightReminder": "집사는 플레이어를 선택합니다. '마스터' 마커를 표시합니다",
+        "otherNightReminder": "집사는 플레이어를 선택합니다. '마스터' 마커를 표시합니다.",
         "reminders": [
             "마스터"
         ],
@@ -463,9 +463,9 @@
         "edition": "bmr",
         "team": "townsfolk",
         "firstNight": 49,
-        "firstNightReminder": "하녀는 두명의 생존 플레이어를 지명합니다, 그리고 그날 밤에 깨어나는 능력을 가진 플레이어 숫자를 알려줍니다",
+        "firstNightReminder": "하녀는 두명의 생존 플레이어를 지명합니다, 그리고 그날 밤에 깨어나는 능력을 가진 플레이어 숫자를 알려줍니다.",
         "otherNight": 69,
-        "otherNightReminder": "하녀는 두명의 생존 플레이어를 지명합니다, 그리고 그날 밤에 깨어나는 능력을 가진 플레이어 숫자를 알려줍니다",
+        "otherNightReminder": "하녀는 두명의 생존 플레이어를 지명합니다, 그리고 그날 밤에 깨어나는 능력을 가진 플레이어 숫자를 알려줍니다.",
         "reminders": [],
         "setup": false,
         "ability": "매일 밤, 본인을 제외하고 살아있는 플레이어 2명을 선택합니다. 본인의 능력으로 오늘 밤 깨어난 플레이어가 몇 명인지 알게 됩니다.",
@@ -477,7 +477,7 @@
         "edition": "tb",
         "team": "townsfolk",
         "firstNight": 35,
-        "firstNightReminder": "이웃한 악한 플레이어 쌍 수를 알려줍니다",
+        "firstNightReminder": "이웃한 악한 플레이어 쌍 수를 알려줍니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [],
@@ -505,7 +505,7 @@
         "edition": "snv",
         "team": "townsfolk",
         "firstNight": 40,
-        "firstNightReminder": "가장 가까운 악마와 하수인이 몇자리 떨어졌는지 숫자로 알려줍니다",
+        "firstNightReminder": "가장 가까운 악마와 하수인이 몇자리 떨어졌는지 숫자로 알려줍니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [],
@@ -552,9 +552,9 @@
         "edition": "car",
         "team": "outsider",
         "firstNight": 31,
-        "firstNightReminder": "모든 하수인들을 깨우고, \"이 캐릭터가 당신을 선택했습니다\" 카드를 보여주고, 아가씨 토큰을 보여줍니다",
+        "firstNightReminder": "모든 하수인들을 깨우고, \"이 캐릭터가 당신을 선택했습니다\" 카드를 보여주고, 아가씨 토큰을 보여줍니다.",
         "otherNight": 52,
-        "otherNightReminder": "만약 헌츠맨에게 선택되었다면, 아가씨에게 \"당신은\" 카드를 보여주고, 플레이되지 않은 마을주민 토큰을 보여줍니다",
+        "otherNightReminder": "만약 헌츠맨에게 선택되었다면, 아가씨에게 \"당신은\" 카드를 보여주고, 플레이되지 않은 마을주민 토큰을 보여줍니다.",
         "reminders": [
             "추측 사용"
         ],
@@ -595,9 +595,9 @@
         "edition": "bmr",
         "team": "minion",
         "firstNight": 22,
-        "firstNightReminder": "악마의 대변인은 살이있는 플레이어를 가르킵니다. 해당 플레이어는 내일 처형되어도 죽지 않습니다",
+        "firstNightReminder": "악마의 대변인은 살이있는 플레이어를 가르킵니다. 해당 플레이어는 내일 처형되어도 죽지 않습니다.",
         "otherNight": 14,
-        "otherNightReminder": "악마의 대변인 어제와 다른 살이있는 플레이어를 가르킵니다. 해당 플레이어는 내일 처형되어도 죽지 않습니다",
+        "otherNightReminder": "악마의 대변인 어제와 다른 살이있는 플레이어를 가르킵니다. 해당 플레이어는 내일 처형되어도 죽지 않습니다.",
         "reminders": [
             "처형 생존"
         ],
@@ -634,9 +634,9 @@
         "edition": "snv",
         "team": "townsfolk",
         "firstNight": 41,
-        "firstNightReminder": "몽상가가 한 플레이어를 가르키면, 그 플레이어의 직업과 반대 진영의 토큰 하나를 보여줍니다",
+        "firstNightReminder": "몽상가가 한 플레이어를 가르키면, 그 플레이어의 직업과 반대 진영의 토큰 하나를 보여줍니다.",
         "otherNight": 57,
-        "otherNightReminder": "몽상가가 한 플레이어를 가르키면, 그 플레이어의 직업과 반대 진영의 토큰 하나를 보여줍니다",
+        "otherNightReminder": "몽상가가 한 플레이어를 가르키면, 그 플레이어의 직업과 반대 진영의 토큰 하나를 보여줍니다.",
         "reminders": [],
         "setup": false,
         "ability": "매일 밤, 본인을 제외하고 플레이어를 1명 선택합니다. 선/악 캐릭터를 각 1개씩 알게 됩니다. 그 중 1개가 해당 플레이어의 캐릭터입니다.",
@@ -666,7 +666,7 @@
             }
         ],
         "setup": true,
-        "ability": "당신은 자신이 주정뱅이인지 모릅니다, 당신은 자신이 주민 캐릭터인줄 압니다.",
+        "ability": "당신은 자신이 주정뱅이인 것을 모릅니다. 당신은 자신이 주민이라고 생각하지만 그렇지 않습니다.",
         "image": "icons/Icon_drunk.png"
     },
     {
@@ -690,9 +690,9 @@
         "edition": "tb",
         "team": "townsfolk",
         "firstNight": 36,
-        "firstNightReminder": "공감능력자 좌우에 있는 살아있는 악한진영의 숫자를 손으로 알려줍니다",
+        "firstNightReminder": "공감능력자 좌우에 있는 살아있는 악한진영의 숫자를 손으로 알려줍니다.",
         "otherNight": 53,
-        "otherNightReminder": "공감능력자 좌우에 있는 살아있는 악한진영의 숫자를 손으로 알려줍니다",
+        "otherNightReminder": "공감능력자 좌우에 있는 살아있는 악한진영의 숫자를 손으로 알려줍니다.",
         "reminders": [],
         "setup": false,
         "ability": "매일 밤, 살아있는 이웃 플레이어 중 몇 명이 악한 진영인지 알게 됩니다.",
@@ -727,7 +727,7 @@
             "쌍둥이"
         ],
         "setup": false,
-        "ability": "당신과 상대 플레이어는 서로를 알고 있습니다(캐릭터까지). 해당 선한 플레이어가 처형되면 악이 승리합니다. 당신이 살아있다면 악마가 죽어도 선은 승리할 수 없습니다.",
+        "ability": "당신과 상대 플레이어는 서로가 누구인지 알고 있습니다. 해당 선한 플레이어가 처형되면 악이 승리합니다. 당신이 살아있다면 악마가 죽어도 선은 승리할 수 없습니다.",
         "image": "icons/Icon_eviltwin.png"
     },
     {
@@ -754,13 +754,13 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 29,
-        "otherNightReminder": "팡구가 플레이어를 가르킵니다. 그 플레이어는 죽습니다. 만약 그 플레이어가 외지인이고, 다른 팡구가 게임에 없다면, 그 팡구는 대신 죽고 선택한 플레이어가 새로운 팡구가 됩니다. 새로운 팡구를 깨우고, \"당신은\" 카드를 보여주고 팡구 토큰을 보여주고, 엄지를  내려 악한 편임을 알립니다",
+        "otherNightReminder": "팡구가 플레이어를 가르킵니다. 그 플레이어는 죽습니다. 만약 그 플레이어가 외지인이고, 다른 팡구가 게임에 없다면, 그 팡구는 대신 죽고 선택한 플레이어가 새로운 팡구가 됩니다. 새로운 팡구를 깨우고, \"당신은\" 카드를 보여주고 팡구 토큰을 보여주고, 엄지를  내려 악한 편임을 알립니다.",
         "reminders": [
             "죽음",
             "한번"
         ],
         "setup": true,
-        "ability": "매일 밤*(첫번째 밤 제외), 플레이어를 1명 선택합니다. 플레이어는 죽습니다. 첫 번째로 팡구가 죽이는 외지인은 악한 팡구가 되고 대신 당신이 죽습니다. [+1 외지인]",
+        "ability": "매일 밤*(첫번째 밤 제외), 플레이어를 1명 선택합니다. 해당 플레이어는 죽습니다. 첫 번째로 팡구가 죽이는 외지인은 악한 팡구가 되고 대신 당신이 죽습니다. [+1 외지인]",
         "image": "icons/Icon_fanggu.png"
     },
     {
@@ -883,9 +883,9 @@
         "edition": "tb",
         "team": "townsfolk",
         "firstNight": 37,
-        "firstNightReminder": "점쟁이는 두명의 플레이어를 선택합니다. 그중 악마가 있는지 Yes/No로 알려줍니다",
+        "firstNightReminder": "점쟁이는 두명의 플레이어를 선택합니다. 그중 악마가 있는지 Yes/No로 알려줍니다.",
         "otherNight": 54,
-        "otherNightReminder": "점쟁이는 두명의 플레이어를 선택합니다. 그중 악마가 있는지 Yes/No로 알려줍니다",
+        "otherNightReminder": "점쟁이는 두명의 플레이어를 선택합니다. 그중 악마가 있는지 Yes/No로 알려줍니다.",
         "reminders": [
             "레드 헤링"
         ],
@@ -901,7 +901,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 11,
-        "otherNightReminder": "도박꾼은 플레이어를 가르키고, 캐릭터 시트도 가르킵니다. 만약 틀리다면, 도박꾼은 죽습니다",
+        "otherNightReminder": "도박꾼은 플레이어를 가르키고, 캐릭터 시트도 가르킵니다. 만약 틀리다면, 도박꾼은 죽습니다.",
         "reminders": [
             "죽음"
         ],
@@ -920,7 +920,7 @@
         "otherNightReminder": "",
         "reminders": [],
         "setup": false,
-        "ability": "매일 한 번, 다른 살아있는 이웃 플레이어가 동의할 경우 다른 살아있는 이웃 플레이어를 죽일 수 있습니다.",
+        "ability": "매일 낮 한 번, 다른 살아있는 이웃 플레이어가 동의할 경우 다른 살아있는 이웃 플레이어를 죽일 수 있습니다.",
         "image": "icons/Icon_gangster.png"
     },
     {
@@ -940,9 +940,9 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 48,
-        "firstNightReminder": "장군에게 엄지로 선/악 중 어디가 유리한지 알려줍니다",
+        "firstNightReminder": "장군에게 엄지로 선/악 중 어디가 유리한지 알려줍니다.",
         "otherNight": 68,
-        "otherNightReminder": "장군에게 엄지로 선/악 중 어디가 유리한지 알려줍니다",
+        "otherNightReminder": "장군에게 엄지로 선/악 중 어디가 유리한지 알려줍니다.",
         "reminders": [],
         "setup": false,
         "ability": "매일 밤, 당신은 현재 유리한 진영이 어디인지 알게 됩니다. (이야기꾼의 판단)",
@@ -986,9 +986,9 @@
         "edition": "bmr",
         "team": "minion",
         "firstNight": 21,
-        "firstNightReminder": "외지인들의 토큰을 보여줍니다",
+        "firstNightReminder": "외지인들의 토큰을 보여줍니다.",
         "otherNight": 38,
-        "otherNightReminder": "만약 외지인인이 오늘 죽었다면, 다른 플레이어 1명을 죽일 수 있습니다",
+        "otherNightReminder": "만약 외지인인이 오늘 죽었다면, 다른 플레이어 1명을 죽일 수 있습니다.",
         "reminders": [
             "오늘 사망",
             "죽음"
@@ -1010,7 +1010,7 @@
             "지명 불가"
         ],
         "setup": false,
-        "ability": "게임당 한 번만 지명 할 수 있습니다. 당신이 지명한 플레이어가 악마가 아니라면, 해당 플레이어는 죽습니다. (투표는 정상 진행).",
+        "ability": "게임당 한 번만 지명 할 수 있습니다. 당신이 지명한 플레이어가 악마가 아니라면, 해당 플레이어는 죽습니다. (투표는 정상 진행)",
         "image": "icons/Icon_golem.png"
     },
     {
@@ -1051,9 +1051,9 @@
         "edition": "bmr",
         "team": "townsfolk",
         "firstNight": 39,
-        "firstNightReminder": "손주의 캐릭터 토큰과 플레이어를 알려줍니다",
+        "firstNightReminder": "손주의 캐릭터 토큰과 플레이어를 알려줍니다.",
         "otherNight": 50,
-        "otherNightReminder": "손주가 악마에게 죽는다면, 할머니도 죽습니다",
+        "otherNightReminder": "손주가 악마에게 죽는다면, 할머니도 죽습니다.",
         "reminders": [
             "손주"
         ],
@@ -1083,7 +1083,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 1,
-        "otherNightReminder": "매춘부가 플레이어를 가르키고, 매춘부는 다시 잠듭니다. 선택된 플레이어를 깨워서 \"이 캐릭터가 당신을 선택했습니다\" 카드를 보여주고, 그리고 매춘부 토큰을 보여줍니다. 그 플레이어는 매춘부에게 캐릭터를 공개할지 선택할 수 있습니다. 만약 공개하기로 선택했다면, 이야기꾼은 둘다 함께 죽일지 말지 선택합니다",
+        "otherNightReminder": "매춘부가 플레이어를 가르키고, 매춘부는 다시 잠듭니다. 선택된 플레이어를 깨워서 \"이 캐릭터가 당신을 선택했습니다\" 카드를 보여주고, 그리고 매춘부 토큰을 보여줍니다. 그 플레이어는 매춘부에게 캐릭터를 공개할지 선택할 수 있습니다. 만약 공개하기로 선택했다면, 이야기꾼은 둘다 함께 죽일지 말지 선택합니다.",
         "reminders": [
             "죽음"
         ],
@@ -1189,9 +1189,9 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 30,
-        "firstNightReminder": "사냥꾼에게 능력 사용여부를 확인합니다. 사용하기로 했다면, 플레이어를 가르키게 합니다. 만약 아가씨를 선택했다면, 아가씨를 깨우고 \"당신은\" 카드를 보여주고 플레이중이 아닌 마을사람 하나를 보여줍니다, 이제 아가씨는 그 마을사람으로 바뀌고 토큰도 바꿉니다",
+        "firstNightReminder": "사냥꾼에게 능력 사용여부를 확인합니다. 사용하기로 했다면, 플레이어를 가르키게 합니다. 만약 아가씨를 선택했다면, 아가씨를 깨우고 \"당신은\" 카드를 보여주고 플레이중이 아닌 마을사람 하나를 보여줍니다, 이제 아가씨는 그 마을사람으로 바뀌고 토큰도 바꿉니다.",
         "otherNight": 51,
-        "otherNightReminder": "사냥꾼에게 능력 사용여부를 확인합니다. 사용하기로 했다면, 플레이어를 가르키게 합니다. 만약 아가씨를 선택했다면, 아가씨를 깨우고 \"당신은\" 카드를 보여주고 플레이중이 아닌 마을사람 하나를 보여줍니다, 이제 아가씨는 그 마을사람으로 바뀌고 토큰도 바꿉니다",
+        "otherNightReminder": "사냥꾼에게 능력 사용여부를 확인합니다. 사용하기로 했다면, 플레이어를 가르키게 합니다. 만약 아가씨를 선택했다면, 아가씨를 깨우고 \"당신은\" 카드를 보여주고 플레이중이 아닌 마을사람 하나를 보여줍니다, 이제 아가씨는 그 마을사람으로 바뀌고 토큰도 바꿉니다.",
         "reminders": [
             "능력없음"
         ],
@@ -1223,7 +1223,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 9,
-        "otherNightReminder": "이전에 보호 & 취한 플레이어는 그 마커가 제거됩니다. 여관주인은 두명을 가르킵니다. 그들은 보호되고, 그중 1명은 취합니다",
+        "otherNightReminder": "이전에 보호 & 취한 플레이어는 그 마커가 제거됩니다. 여관주인은 두명을 가르킵니다. 그들은 보호되고, 그중 1명은 취합니다.",
         "reminders": [
             "보호됨",
             "취함"
@@ -1238,7 +1238,7 @@
         "edition": "tb",
         "team": "townsfolk",
         "firstNight": 34,
-        "firstNightReminder": "게임에 사용중인 하수인 토큰 한개를 보여줍니다. 그리고 그 하수인을 포함해 두명을 가르킵니다",
+        "firstNightReminder": "게임에 사용중인 하수인 토큰 한개를 보여줍니다. 그리고 그 하수인을 포함해 두명을 가르킵니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [
@@ -1292,7 +1292,7 @@
         "firstNight": 2,
         "firstNightReminder": "카질리는 플레이어와 하수인 캐릭터를 시트에서 고릅니다. 그들을 이전토큰에서 하수인 토큰으로 변경합니다. 그들에게 \"당신은\" 카드와 하수인 토큰을 보여주세요 그리고 엄지를 내려, 악의 세력임을 알려줍니다. 모든 필요한 하수인 수만큼(전체 플레이어 수에 맞는) 반복합니다. ",
         "otherNight": 35,
-        "otherNightReminder": "카질리는 플레이어를 가르킵니다. 그 플레이어는 죽습니다",
+        "otherNightReminder": "카질리는 플레이어를 가르킵니다. 그 플레이어는 죽습니다.",
         "reminders": [
             "죽음"
         ]
@@ -1303,9 +1303,9 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 9,
-        "firstNightReminder": "악마를 깨우서 \"이 플레이어는\" 카드를 보여주고, 왕 토큰과 플레이어를 가르킵니다",
+        "firstNightReminder": "악마를 깨우서 \"이 플레이어는\" 카드를 보여주고, 왕 토큰과 플레이어를 가르킵니다.",
         "otherNight": 64,
-        "otherNightReminder": "만약 죽은사람이 산사람보다 같거나 많다면, 살아있는 캐릭터 토큰을 보여줍니다",
+        "otherNightReminder": "만약 죽은사람이 산사람보다 같거나 많다면, 살아있는 캐릭터 토큰을 보여줍니다.",
         "reminders": [],
         "setup": false,
         "ability": "매일 밤, 죽은 플레이어 수가 살아있는 플레이어 수 이상이라면, 당신은 살아있는 캐릭터 1개를 알게 됩니다. 악마는 당신이 누구인지 알고 있습니다.",
@@ -1331,7 +1331,7 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 42,
-        "firstNightReminder": "악마가 아닌 두명을 가르킵니다",
+        "firstNightReminder": "악마가 아닌 두명을 가르킵니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [
@@ -1350,7 +1350,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 34,
-        "otherNightReminder": "이야기꾼이 플레이어를 선택합니다. 그 플레이어는 죽습니다",
+        "otherNightReminder": "이야기꾼이 플레이어를 선택합니다. 그 플레이어는 죽습니다.",
         "reminders": [
             "죽음",
             "사망예정"
@@ -1365,9 +1365,9 @@
         "edition": "car",
         "team": "demon",
         "firstNight": 52,
-        "firstNightReminder": "레비아탄의 1일차 알람을 둡니다. 레비아탄이 있다고 알리고, 첫째날임을 알립니다",
+        "firstNightReminder": "레비아탄의 1일차 알람을 둡니다. 레비아탄이 있다고 알리고, 첫째날임을 알립니다.",
         "otherNight": 72,
-        "otherNightReminder": "레비아탄의 날짜 알림 토큰을 다음날로 바꿉니다",
+        "otherNightReminder": "레비아탄의 날짜 알림 토큰을 다음날로 바꿉니다.",
         "reminders": [
             "1일차",
             "2일차",
@@ -1403,7 +1403,7 @@
         "edition": "car",
         "team": "demon",
         "firstNight": 16,
-        "firstNightReminder": "하수인들을 같이 깨우고, 릴몬스탈르 돌볼 사람을 투표합니다",
+        "firstNightReminder": "하수인들을 같이 깨우고, 릴몬스탈르 돌볼 사람을 투표합니다.",
         "otherNight": 36,
         "otherNightReminder": "하수인들을 같이 깨우고, 릴몬스탈르 돌볼 사람을 투표합니다. 이야기꾼은 적당한때에 돌보고 있지 않는 하수인을 죽일 수 있습니다(마지막날에 두명이상의 하수인이 남지 않도록 주의하세요)",
         "reminders": [],
@@ -1433,7 +1433,7 @@
         "firstNight": 15,
         "firstNightReminder": "리치가 플레이어를 가르킵니다. 중독도미 토큰으로 표기하세요",
         "otherNight": 35,
-        "otherNightReminder": "리치가 플레이어를 가르킵니다 그 플레이어는 죽습니다",
+        "otherNightReminder": "리치가 플레이어를 가르킵니다 그 플레이어는 죽습니다.",
         "reminders": [
             "죽음",
             "중독됨"
@@ -1450,12 +1450,12 @@
         "firstNight": 1,
         "firstNightReminder": "악마 옆의 플레이어를 깨우세요. 그들에게 \"당신은\" 카드와, 하수인 토큰을 보여주며 엄지로 이제부터 악의 세력임을 알려줍니다.",
         "otherNight": 31,
-        "otherNightReminder": "타이폰의 군주가 플레이어를 가르킵니다. 그 플레이어는 죽습니다",
+        "otherNightReminder": "타이폰의 군주가 플레이어를 가르킵니다. 그 플레이어는 죽습니다.",
         "reminders": [
             "죽음"
         ],
         "setup": true,
-        "ability": "매일 밤*(첫번째 밤 제외), 플레이어를 1명 선택합니다. 플레이어는 죽습니다. 모든 악한 진영은 붙어있고 가능하면 중간에 악마가 있습니다. [+1 하수인, -? ~ +? 외지인]",
+        "ability": "매일 밤*(첫번째 밤 제외), 플레이어를 1명 선택합니다. 해당 플레이어는 죽습니다. 모든 악한 진영은 붙어있고 가능하면 중간에 악마가 있습니다. [+1 하수인, -? ~ +? 외지인]",
         "image": "icons/Icon_lordoftyphon.png"
     },
     {
@@ -1466,7 +1466,7 @@
         "firstNight": 7,
         "firstNightReminder": "미치광이에게 그들의 가짜 하수인들을 알려줍니다. 숫자는 실제 게임의 하수인의 수와 동일합니다. 세개의 가짜 직업을 알려줍니다(실제 게임에 있는 직업도 가능합니다). 진짜 악마는 그 뒤에 깨웁니다. 그리고 누가 미치광이인지 알려줍니다 ",
         "otherNight": 21,
-        "otherNightReminder": "미치광이에게 악마처럼 행동하게 합니다. 그들에게 \"공격\" 마커를 표시합니다. 그 후 악마를 깨워, 공격 마커를 보여주고, 공격받은 캐릭터를 가르킵니다.(미치광이가 죽이려한 플레이어를 알게합니다). 미치광이의 공격 토큰을 치웁니다",
+        "otherNightReminder": "미치광이에게 악마처럼 행동하게 합니다. 그들에게 \"공격\" 마커를 표시합니다. 그 후 악마를 깨워, 공격 마커를 보여주고, 공격받은 캐릭터를 가르킵니다.(미치광이가 죽이려한 플레이어를 알게합니다). 미치광이의 공격 토큰을 치웁니다.",
         "reminders": [
             "공격1",
             "공격2",
@@ -1484,7 +1484,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 23,
-        "otherNightReminder": "늑대인간은 살아있는 플레이어를 가르킵니다. 만약 선 진영이라면, 그들은 죽고 오늘밤 아무도 죽지 않습니다",
+        "otherNightReminder": "늑대인간은 살아있는 플레이어를 가르킵니다. 만약 선 진영이라면, 그들은 죽고 오늘밤 아무도 죽지 않습니다.",
         "reminders": [
             "죽음",
             "Faux Paw"
@@ -1499,7 +1499,7 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 0,
-        "firstNightReminder": "하수인들에게 악마를 알려줄때, 같이 알려줍니다 악마에게 하수인들을 알려줄때, 마술사도 포함됩니다",
+        "firstNightReminder": "하수인들에게 악마를 알려줄때, 같이 알려줍니다 악마에게 하수인들을 알려줄때, 마술사도 포함됩니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [],
@@ -1513,7 +1513,7 @@
         "edition": "car",
         "team": "minion",
         "firstNight": 11,
-        "firstNightReminder": "악마옆의 플레이어를 선택해, 꼭두각시 알림을 표기합니다. 악마를 깨워 그가 꼭두각시임을 알려줍니다",
+        "firstNightReminder": "악마옆의 플레이어를 선택해, 꼭두각시 알림을 표기합니다. 악마를 깨워 그가 꼭두각시임을 알려줍니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [],
@@ -1531,7 +1531,7 @@
             }
         ],
         "setup": true,
-        "ability": "당신은 자신이 주민이라고 생각하지만 그렇지 않습니다. 악마는 당신이 누구인지 알고 있습니다. (당신은 악마의 이웃입니다.)",
+        "ability": "당신은 자신이 꼭두각시인 것을 모릅니다. 당신은 자신이 선한 캐릭터라고 생각하지만 그렇지 않습니다. 악마는 당신이 누구인지 알고 있습니다. (당신은 악마의 이웃입니다.)",
         "image": "icons/Icon_marionette.png"
     },
     {
@@ -1545,7 +1545,7 @@
         "otherNightReminder": "",
         "reminders": [],
         "setup": false,
-        "ability": "악마가 처형으로 죽어서 게임이 끝나게 된다면 하루 더 진행됩니다. 그날 플레이어가 처형되면 해당 진영이 패배합니다.",
+        "ability": "악마가 처형으로 죽어서 게임이 끝나게 된다면 하루 더 진행됩니다. 그날 플레이어가 처형되면 해당 플레이어의 진영이 패배합니다.",
         "image": "icons/Icon_mastermind.png"
     },
     {
@@ -1554,9 +1554,9 @@
         "edition": "snv",
         "team": "townsfolk",
         "firstNight": 50,
-        "firstNightReminder": "효과가 오작동한 플레이어의 수를 알려줍니다",
+        "firstNightReminder": "효과가 오작동한 플레이어의 수를 알려줍니다.",
         "otherNight": 70,
-        "otherNightReminder": "효과가 오작동한 플레이어의 수를 알려줍니다",
+        "otherNightReminder": "효과가 오작동한 플레이어의 수를 알려줍니다.",
         "reminders": [
             "비정상"
         ],
@@ -1575,7 +1575,7 @@
         "otherNightReminder": "",
         "reminders": [],
         "setup": false,
-        "ability": "매일, 최대 3쌍의 플레이어(총 6명)를 선택하여 자리를 서로 바꿀 수 있습니다. 모든 플레이어는 자리를 떠나서 개인적으로 이야기할 수 없습니다.",
+        "ability": "매일 낮, 최대 3쌍의 플레이어(총 6명)를 선택하여 자리를 서로 바꿀 수 있습니다. 모든 플레이어는 자리를 떠나서 개인적으로 이야기할 수 없습니다.",
         "image": "icons/Icon_matron.png"
     },
     {
@@ -1649,7 +1649,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 49,
-        "otherNightReminder": "달의아이가 능력을 사용했고, 선하다면, 그들은 죽습니다",
+        "otherNightReminder": "달의아이가 능력을 사용했고, 선하다면, 그들은 죽습니다.",
         "reminders": [
             "죽음"
         ],
@@ -1677,9 +1677,9 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 46,
-        "firstNightReminder": "능력을 사용하기로 했다면, 플레이어를 선택합니다. 그 플레이어를 깨워 \"이 캐릭터가 당신을 선택했습니다\" 카드와 야경단원 토큰을 보여줍니다",
+        "firstNightReminder": "능력을 사용하기로 했다면, 플레이어를 선택합니다. 그 플레이어를 깨워 \"이 캐릭터가 당신을 선택했습니다\" 카드와 야경단원 토큰을 보여줍니다.",
         "otherNight": 66,
-        "otherNightReminder": "능력을 사용하기로 했다면, 플레이어를 선택합니다. 그 플레이어를 깨워 \"이 캐릭터가 당신을 선택했습니다\" 카드와 야경단원 토큰을 보여줍니다",
+        "otherNightReminder": "능력을 사용하기로 했다면, 플레이어를 선택합니다. 그 플레이어를 깨워 \"이 캐릭터가 당신을 선택했습니다\" 카드와 야경단원 토큰을 보여줍니다.",
         "reminders": [
             "능력없음"
         ],
@@ -1711,7 +1711,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 30,
-        "otherNightReminder": "노다시이는 플레이어를 선택합니다. 그들은 죽습니다",
+        "otherNightReminder": "노다시이는 플레이어를 선택합니다. 그들은 죽습니다.",
         "reminders": [
             "죽음",
             "중독됨"
@@ -1726,14 +1726,14 @@
         "edition": "car",
         "team": "outsider",
         "firstNight": 49,
-        "firstNightReminder": "오우거가 한 플레이어를 가르키고, 그 플레이어 진영이 됩니다",
+        "firstNightReminder": "오우거가 한 플레이어를 가르키고, 그 플레이어 진영이 됩니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [
             "친구"
         ],
         "setup": false,
-        "ability": "첫번째 밤에 본인을 제외하고 플레이어를 1명 선택합니다. 당신은 해당 플레이어의 진영이 됩니다(어디인지는 알 수 없음). 당신이 만취/중독 상태여도 이 능력은 유지됩니다.",
+        "ability": "첫번째 밤에 본인을 제외하고 플레이어를 1명 선택합니다. 당신은 해당 플레이어의 진영이 됩니다. (어디인지는 알 수 없음) 당신이 만취/중독 상태여도 이 능력은 유지됩니다.",
         "image": "icons/Icon_ogre.png"
     },
     {
@@ -1744,7 +1744,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 32,
-        "otherNightReminder": "오조가 캐릭터를 시트에서 고르게 합니다. 있다면, 그 플레이어는 죽습니다. 없다면, 이야기꾼이 대신죽을 플레이어를 고릅니다",
+        "otherNightReminder": "오조가 캐릭터를 시트에서 고르게 합니다. 있다면, 그 플레이어는 죽습니다. 없다면, 이야기꾼이 대신죽을 플레이어를 고릅니다.",
         "reminders": [
             "죽음"
         ],
@@ -1760,7 +1760,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 60,
-        "otherNightReminder": "죽은 악한 진영 사람 수를 알려줍니다",
+        "otherNightReminder": "죽은 악한 진영 사람 수를 알려줍니다.",
         "reminders": [],
         "setup": false,
         "ability": "매일 밤*(첫번째 밤 제외), 당신은 죽은 플레이어 중 악한 진영이 얼마나 있는지 알게 됩니다.",
@@ -1829,7 +1829,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 17,
-        "otherNightReminder": "마귀할멈이 플레이어와 시트위의 캐릭터를 선택합니다.만약 해당 캐릭터가 플레이중이 아니라면, 그 플레이어를 깨우고 \"당신은\" 카드와 새로운 캐릭터 토큰을 보여줍니다. 만약 플레이중이라면, 아무일도 없습니다",
+        "otherNightReminder": "마귀할멈이 플레이어와 시트위의 캐릭터를 선택합니다.만약 해당 캐릭터가 플레이중이 아니라면, 그 플레이어를 깨우고 \"당신은\" 카드와 새로운 캐릭터 토큰을 보여줍니다. 만약 플레이중이라면, 아무일도 없습니다.",
         "reminders": [],
         "setup": false,
         "ability": "매일 밤*(첫번째 밤 제외), 플레이어 1명과 해당 플레이어가 될 캐릭터를 선택합니다. (진영은 유지되며, 이미 참가 중인 캐릭터라면 아무 일도 일어나지 않습니다.) 악마가 만들어지면 오늘 밤의 죽음은 임의적입니다.",
@@ -1841,7 +1841,7 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 29,
-        "firstNightReminder": "플레이중인 마을주민 토큰 하나를 보여줍니다",
+        "firstNightReminder": "플레이중인 마을주민 토큰 하나를 보여줍니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [
@@ -1876,7 +1876,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 28,
-        "otherNightReminder": "만약 포가 전날밤 아무도 죽이지 않았다면, 포는 세명을 선택하고 죽입니다. 그렇지 않다면, 포는 1명을 선택해 죽이거나 아무도 죽이지 않습니다",
+        "otherNightReminder": "만약 포가 전날밤 아무도 죽이지 않았다면, 포는 세명을 선택하고 죽입니다. 그렇지 않다면, 포는 1명을 선택해 죽이거나 아무도 죽이지 않습니다.",
         "reminders": [
             "죽음",
             "3공격"
@@ -1891,9 +1891,9 @@
         "edition": "tb",
         "team": "minion",
         "firstNight": 17,
-        "firstNightReminder": "독살범이 플레이어를 선택합니다. 그 플레이어는 중독됩니다",
+        "firstNightReminder": "독살범이 플레이어를 선택합니다. 그 플레이어는 중독됩니다.",
         "otherNight": 8,
-        "otherNightReminder": "이전 중독 토큰을 제거합니다. 독살범이 플레이어를 선택합니다. 그 플레이어는 중독됩니다",
+        "otherNightReminder": "이전 중독 토큰을 제거합니다. 독살범이 플레이어를 선택합니다. 그 플레이어는 중독됩니다.",
         "reminders": [
             "중독됨"
         ],
@@ -1921,11 +1921,11 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 4,
-        "firstNightReminder": "악마와 하수인들에게 서로를 알려주지 않습니다",
+        "firstNightReminder": "악마와 하수인들에게 서로를 알려주지 않습니다.",
         "otherNight": 3,
-        "otherNightReminder": "양귀비 재배자가 죽었다면,  하수인과 악마에게 서로 알려줍니다",
+        "otherNightReminder": "양귀비 재배자가 죽었다면,  하수인과 악마에게 서로 알려줍니다.",
         "reminders": [
-            "악이 깨어납니다"
+            "악이 깨어납니다."
         ],
         "setup": false,
         "ability": "하수인과 악마는 서로를 모릅니다. 당신이 죽으면, 그들은 그날 밤에 서로가 누구인지 알게 됩니다.",
@@ -1937,9 +1937,9 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 14,
-        "firstNightReminder": "목사는 플레이어를 선택합니다. 만약 하수인이라면, 그 하수인을 깨우고, \"이 캐릭터가 너를 선택하였다\"카드를 보여주고, 목사 토큰을 보여줍니다",
+        "firstNightReminder": "목사는 플레이어를 선택합니다. 만약 하수인이라면, 그 하수인을 깨우고, \"이 캐릭터가 너를 선택하였다\"카드를 보여주고, 목사 토큰을 보여줍니다.",
         "otherNight": 7,
-        "otherNightReminder": "목사는 플레이어를 선택합니다. 만약 하수인이라면, 그 하수인을 깨우고, \"이 캐릭터가 너를 선택하였다\"카드를 보여주고, 목사 토큰을 보여줍니다",
+        "otherNightReminder": "목사는 플레이어를 선택합니다. 만약 하수인이라면, 그 하수인을 깨우고, \"이 캐릭터가 너를 선택하였다\"카드를 보여주고, 목사 토큰을 보여줍니다.",
         "reminders": [
             "능력 없음"
         ],
@@ -1957,7 +1957,7 @@
         "otherNight": 34,
         "otherNightReminder": "오늘 공주의 첫날이었고, 플레이어를 지명하고 처형했다면, 악마는 죽이지 않습니다.",
         "reminders": [
-            "죽이지 않습니다"
+            "죽이지 않습니다."
         ],
         "setup": false,
         "ability": "당신이 첫 날에 플레이어를 지명하고 처형했다면, 악마는 오늘 밤 죽이지 않습니다.",
@@ -1971,7 +1971,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 45,
-        "otherNightReminder": "능력을 사용할지 확인합니다. 사용한다면, 플레이어를 가르키게하고, 그게 마을주민이라면, 그는 살아납니다",
+        "otherNightReminder": "능력을 사용할지 확인합니다. 사용한다면, 플레이어를 가르키게하고, 그게 마을주민이라면, 그는 살아납니다.",
         "reminders": [
             "부활",
             "능력 없음"
@@ -1991,7 +1991,7 @@
         "otherNightReminder": "",
         "reminders": [],
         "setup": false,
-        "ability": "매일 지명 전에, 당신은 공개적으로 플레이어를 선택할 수 있습니다: 그들은 죽습니다. 처형되면, 당신은 지명자와 가위바위보를 해서 졌을 때만 죽습니다.",
+        "ability": "매일 낮, 지명 전에 당신은 공개적으로 플레이어를 1명 선택할 수 있습니다. 해당 플레이어는 죽습니다. 처형되면, 당신은 지명자와 가위바위보를 해서 졌을 때만 죽습니다.",
         "image": "icons/Icon_psychopath.png"
     },
     {
@@ -2000,9 +2000,9 @@
         "edition": "bmr",
         "team": "demon",
         "firstNight": 28,
-        "firstNightReminder": "푸카는 플레이어를 선택합니다. 그 플레이어는 중독됩니다",
+        "firstNightReminder": "푸카는 플레이어를 선택합니다. 그 플레이어는 중독됩니다.",
         "otherNight": 26,
-        "otherNightReminder": "푸카는 플레이어를 선택합니다. 그 플레이어는 중독됩니다. 이전에 중독되었던 플레이어는 죽습니다",
+        "otherNightReminder": "푸카는 플레이어를 선택합니다. 그 플레이어는 중독됩니다. 이전에 중독되었던 플레이어는 죽습니다.",
         "reminders": [
             "중독됨",
             "죽음"
@@ -2036,10 +2036,10 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 42,
-        "otherNightReminder": "레이븐키퍼가 오늘밤에 죽었다면, 깨워서 플레이어를 알려줍니다. 그 플레이어의 캐릭터 토큰을 보여줍니다",
+        "otherNightReminder": "레이븐키퍼가 오늘밤에 죽었다면, 깨워서 플레이어를 알려줍니다. 그 플레이어의 캐릭터 토큰을 보여줍니다.",
         "reminders": [],
         "setup": false,
-        "ability": "밤에 죽으면 깨어나 플레이어를 1명 선택합니다. 해당 플레이어의 캐릭터를 알게 됩니다",
+        "ability": "밤에 죽으면 깨어나 플레이어를 1명 선택합니다. 해당 플레이어의 캐릭터를 알게 됩니다.",
         "image": "icons/Icon_ravenkeeper.png"
     },
     {
@@ -2094,7 +2094,7 @@
         "otherNightReminder": "만약 현자가 악마에게 죽는다면, 악마를 포함해 두명을 알려줍니다 ",
         "reminders": [],
         "setup": false,
-        "ability": "악마가 당신을 죽이면, 당신은 악마가 두 플레이어 중 1명이라는 것을 알게 됩니다",
+        "ability": "악마가 당신을 죽이면, 당신은 악마가 두 플레이어 중 1명이라는 것을 알게 됩니다.",
         "image": "icons/Icon_sage.png"
     },
     {
@@ -2103,7 +2103,7 @@
         "edition": "bmr",
         "team": "townsfolk",
         "firstNight": 10,
-        "firstNightReminder": "선원이 살아있는 플레이어를 가르킵니다. 선원 또는 그 플레이어는 취합니다",
+        "firstNightReminder": "선원이 살아있는 플레이어를 가르킵니다. 선원 또는 그 플레이어는 취합니다.",
         "otherNight": 4,
         "otherNightReminder": "이전에 취한 플레이어는 술에서 깹니다. 살아있는 플레이어를 선택하세요: 당신이나 그들이 황혼까지 취해 있을 것입니다. 당신은 죽을 수 없습니다.",
         "reminders": [
@@ -2163,7 +2163,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 20,
-        "otherNightReminder": "만약 부정한 여인이 악마가 되었다면, \"당신은\" 카드와 악마 토큰을 보여줍니다",
+        "otherNightReminder": "만약 부정한 여인이 악마가 되었다면, \"당신은\" 카드와 악마 토큰을 보여줍니다.",
         "reminders": [
             "악마"
         ],
@@ -2177,9 +2177,9 @@
         "edition": "snv",
         "team": "townsfolk",
         "firstNight": 42,
-        "firstNightReminder": "재봉사가 능력을 쓰기로 했다면, 두명을 가르킵니다. 두명이 같은 진영인지 아닌지 알려줍니다",
+        "firstNightReminder": "재봉사가 능력을 쓰기로 했다면, 두명을 가르킵니다. 두명이 같은 진영인지 아닌지 알려줍니다.",
         "otherNight": 61,
-        "otherNightReminder": "재봉사가 능력을 쓰기로 했다면, 두명을 가르킵니다. 두명이 같은 진영인지 아닌지 알려줍니다",
+        "otherNightReminder": "재봉사가 능력을 쓰기로 했다면, 두명을 가르킵니다. 두명이 같은 진영인지 아닌지 알려줍니다.",
         "reminders": [
             "능력 없음"
         ],
@@ -2206,7 +2206,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 27,
-        "otherNightReminder": "샤발롯이 이전에 선택한 플레이어가 살아날수도 있습니다. 샤발롯이 두명을 지정하고, 그 플레이어들은 죽습니다",
+        "otherNightReminder": "샤발롯이 이전에 선택한 플레이어가 살아날수도 있습니다. 샤발롯이 두명을 지정하고, 그 플레이어들은 죽습니다.",
         "reminders": [
             "죽음",
             "부활"
@@ -2221,7 +2221,7 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 33,
-        "firstNightReminder": "가장 가까운 악한 플레이어 방향을 알려줍니다 (시계/반시계), 같다면, 임의로 알려줍니다",
+        "firstNightReminder": "가장 가까운 악한 플레이어 방향을 알려줍니다 (시계/반시계), 같다면, 임의로 알려줍니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [],
@@ -2308,9 +2308,9 @@
         "edition": "tb",
         "team": "minion",
         "firstNight": 47,
-        "firstNightReminder": "그리모어를 필요한만큼 스파이에게 보여줍니다",
+        "firstNightReminder": "그리모어를 필요한만큼 스파이에게 보여줍니다.",
         "otherNight": 67,
-        "otherNightReminder": "그리모어를 필요한만큼 스파이에게 보여줍니다",
+        "otherNightReminder": "그리모어를 필요한만큼 스파이에게 보여줍니다.",
         "reminders": [],
         "setup": false,
         "ability": "매일 밤, 당신은 그리모어를 봅니다. 당신은 죽어도 주민이나 외지인으로 보일 수 있습니다.",
@@ -2322,7 +2322,7 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 41,
-        "firstNightReminder": "선한 플레이어 1명을 알려줍니다",
+        "firstNightReminder": "선한 플레이어 1명을 알려줍니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [
@@ -2352,9 +2352,9 @@
         "edition": "car",
         "team": "minion",
         "firstNight": 8,
-        "firstNightReminder": "\"이 캐릭터들은 플레이되고 있지 않습니다\" 카드를 보여주고, 플레이되고 있지 않는 캐릭터 세개를 보여줍니다",
+        "firstNightReminder": "\"이 캐릭터들은 플레이되고 있지 않습니다\" 카드를 보여주고, 플레이되고 있지 않는 캐릭터 세개를 보여줍니다.",
         "otherNight": 19,
-        "otherNightReminder": "세번째 밤이라면, 소환사를 깨워 캐릭터시트의 특정 악마가 될 플레이어를 고르게합니다. 그 플레이어는 악마가 됩니다.(악진영) 그 플레이어에게 알려줍니다",
+        "otherNightReminder": "세번째 밤이라면, 소환사를 깨워 캐릭터시트의 특정 악마가 될 플레이어를 고르게합니다. 그 플레이어는 악마가 됩니다.(악진영) 그 플레이어에게 알려줍니다.",
         "reminders": [
             "첫째밤",
             "둘째밤",
@@ -2390,7 +2390,7 @@
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [
-            "죽지 않습니다"
+            "죽지 않습니다."
         ],
         "setup": false,
         "ability": "살아있는 이웃 플레이어가 모두 선한 진영이라면, 해당 플레이어들은 죽을 수 없습니다.",
@@ -2402,9 +2402,9 @@
         "edition": "tb",
         "team": "traveller",
         "firstNight": 1,
-        "firstNightReminder": "플레이어를 선택합니다. 도둑의 부정투표 알림을 표기합니다",
+        "firstNightReminder": "플레이어를 선택합니다. 도둑의 부정투표 알림을 표기합니다.",
         "otherNight": 1,
-        "otherNightReminder": "플레이어를 선택합니다. 도둑의 부정투표 알림을 표기합니다",
+        "otherNightReminder": "플레이어를 선택합니다. 도둑의 부정투표 알림을 표기합니다.",
         "reminders": [
             "부정투표"
         ],
@@ -2420,7 +2420,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 48,
-        "otherNightReminder": "때장이가 죽을 수도 있습니다",
+        "otherNightReminder": "때장이가 죽을 수도 있습니다.",
         "reminders": [
             "죽음"
         ],
@@ -2438,8 +2438,8 @@
         "otherNight": 59,
         "otherNightReminder": "하수인이 오늘 지명했는지 예/아니오로 알려줍니다. ",
         "reminders": [
-            "하수인이 지명하지 않았다",
-            "하수인이 지명했다"
+            "하수인이 지명하지 않았다.",
+            "하수인이 지명했다."
         ],
         "setup": false,
         "ability": "매일 밤*(첫번째 밤 제외), 오늘 하수인이 지명했는지 알게 됩니다.",
@@ -2467,7 +2467,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 56,
-        "otherNightReminder": "오늘 플레이어가 처형됐다면, 그 플레이어 토큰을 보여줍니다",
+        "otherNightReminder": "오늘 플레이어가 처형됐다면, 그 플레이어 토큰을 보여줍니다.",
         "reminders": [
             "처형됨"
         ],
@@ -2483,7 +2483,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 32,
-        "otherNightReminder": "비고모르티스가 플레이어를 가르킵니다. 그 플레이어는 죽습니다. 만약 하수인이라면, 능력을 유지하고, 주변의 마을사람중 하나를 중독시킵니다",
+        "otherNightReminder": "비고모르티스가 플레이어를 가르킵니다. 그 플레이어는 죽습니다. 만약 하수인이라면, 능력을 유지하고, 주변의 마을사람중 하나를 중독시킵니다.",
         "reminders": [
             "죽음",
             "능력있음",
@@ -2499,14 +2499,14 @@
         "edition": "car",
         "team": "townsfolk",
         "firstNight": 45,
-        "firstNightReminder": "동네바보는 1명을 가르킵니다. 선한지 악한지 알려줍니다",
+        "firstNightReminder": "동네바보는 1명을 가르킵니다. 선한지 악한지 알려줍니다.",
         "otherNight": 62,
-        "otherNightReminder": "동네바보는 1명을 가르킵니다. 선한지 악한지 알려줍니다",
+        "otherNightReminder": "동네바보는 1명을 가르킵니다. 선한지 악한지 알려줍니다.",
         "reminders": [
             "취함"
         ],
         "setup": true,
-        "ability": "매일 밤, 플레이어를 1명 선택합니다. 해당 플레이어의 진영을 알게 됩니다. [+0 ~ +2 바보. 바보가 2명 이상이라면 1명이 취해있습니다.]",
+        "ability": "매일 밤, 플레이어를 1명 선택합니다. 해당 플레이어의 진영을 알게 됩니다. [+0 ~ +2 바보. 바보가 2명 이상이라면 그중 1명이 취해 있습니다.]",
         "image": "icons/Icon_villageidiot.png"
     },
     {
@@ -2531,7 +2531,7 @@
         "edition": "car",
         "team": "minion",
         "firstNight": 54,
-        "firstNightReminder": "수상이 게임에 있음을 알리고 누구인지 알려줍니다",
+        "firstNightReminder": "수상이 게임에 있음을 알리고 누구인지 알려줍니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [],
@@ -2547,7 +2547,7 @@
         "firstNight": 0,
         "firstNightReminder": "",
         "otherNight": 31,
-        "otherNightReminder": "볼텍스는 플레이어를 가르킵니다 그 플레이어는 죽습니다",
+        "otherNightReminder": "볼텍스는 플레이어를 가르킵니다 그 플레이어는 죽습니다.",
         "reminders": [
             "죽음"
         ],
@@ -2575,7 +2575,7 @@
         "edition": "tb",
         "team": "townsfolk",
         "firstNight": 32,
-        "firstNightReminder": "현재 플레이중인 마을주민 하나를 보여줍니다. 그 캐릭터를 포함해 두명을 가르킵니다",
+        "firstNightReminder": "현재 플레이중인 마을주민 하나를 보여줍니다. 그 캐릭터를 포함해 두명을 가르킵니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [
@@ -2592,7 +2592,7 @@
         "edition": "car",
         "team": "minion",
         "firstNight": 18,
-        "firstNightReminder": "과부에서 그리모어를 필요한 만큼 보게 합니다. 과부는 1명을 선택하고, 그 플레이어는 중독됩니다. 선한 플레이어 1명을 깨우고, \"이 캐릭터는 플레이 중 입니다\" 카드를 보여주고, 과부 토큰을 보여줍니다",
+        "firstNightReminder": "과부에서 그리모어를 필요한 만큼 보게 합니다. 과부는 1명을 선택하고, 그 플레이어는 중독됩니다. 선한 플레이어 1명을 깨우고, \"이 캐릭터는 플레이 중 입니다\" 카드를 보여주고, 과부 토큰을 보여줍니다.",
         "otherNight": 0,
         "otherNightReminder": "",
         "reminders": [
@@ -2611,9 +2611,9 @@
         "edition": "snv",
         "team": "minion",
         "firstNight": 24,
-        "firstNightReminder": "마녀는 플레이어를 선택합니다. 만약 그 플레이어가 내일 누군가를 지명한다면, 즉시 죽습니다",
+        "firstNightReminder": "마녀는 플레이어를 선택합니다. 만약 그 플레이어가 내일 누군가를 지명한다면, 즉시 죽습니다.",
         "otherNight": 15,
-        "otherNightReminder": "만약 4명 이상이 살아있다면, 마녀는 플레이어를 지명합니다. 만약 그 플레이어가 내일 누군가를 지명한다면, 즉시 죽습니다",
+        "otherNightReminder": "만약 4명 이상이 살아있다면, 마녀는 플레이어를 지명합니다. 만약 그 플레이어가 내일 누군가를 지명한다면, 즉시 죽습니다.",
         "reminders": [
             "저주받음"
         ],
@@ -2678,7 +2678,7 @@
         "firstNight": 2,
         "firstNightReminder": "야가보블에게 비밀 문구를 보여주세요",
         "otherNight": 35,
-        "otherNightReminder": "야가보블이 비밀 문구를 공개적으로 말한 횟수보다 적게 플레이어를 선택합니다. 그들은 죽습니다",
+        "otherNightReminder": "야가보블이 비밀 문구를 공개적으로 말한 횟수보다 적게 플레이어를 선택합니다. 그들은 죽습니다.",
         "reminders": [
             "죽음"
         ],
@@ -2714,7 +2714,7 @@
             "죽음"
         ],
         "setup": false,
-        "ability": "매일 밤*(첫번째 밤 제외), 만약 오늘 낮에 아무도 죽지 않았다면, 좀부울은 플레이어 1명을 선택합니다. 해당 플레이어는 죽습니다. 좀부울이 처음으로 죽을 때, 실제로는 살아있지만 죽은 것처럼 취급됩니다.",
+        "ability": "매일 밤*(첫번째 밤 제외), 만약 오늘 낮에 아무도 죽지 않았다면, 플레이어 1명을 선택합니다. 해당 플레이어는 죽습니다. 당신이 처음 죽을 때, 실제로는 살아있지만 죽은 것처럼 취급됩니다.",
         "image": "icons/Icon_zombuul.png"
     },
     {
@@ -2826,7 +2826,7 @@
             "죽음"
         ],
         "setup": false,
-        "ability": "매일 밤*(첫번째 밤 제외), 오늘 밤 첫 사망자와 당신과의 거리를 추측합니다(바로 옆은 1칸). 맞다면, 오늘 밤엔 다른 플레이어들은 죽지 않지만, 당신은 죽을 수도 있습니다.",
+        "ability": "매일 밤*(첫번째 밤 제외), 오늘 밤 첫 사망자와 당신과의 거리를 추측합니다. (바로 옆은 1칸) 맞다면, 오늘 밤엔 다른 플레이어들은 죽지 않지만, 당신은 죽을 수도 있습니다.",
         "image": "icons/Icon_dagengren.png"
     },
     {
@@ -2877,7 +2877,7 @@
             "만취"
         ],
         "setup": false,
-        "ability": "선한 플레이어 2명을 알고 시작합니다. 그들 중 1명은 취한 상태입니다. 이 능력은 당신이 죽어도 유지됩니다.",
+        "ability": "선한 플레이어 2명을 알고 시작합니다. 그들 중 1명은 취해 있습니다. 이 능력은 당신이 죽어도 유지됩니다.",
         "image": "icons/Icon_dianxiaoer.png"
     },
     {
@@ -2957,7 +2957,7 @@
             "살아있는 척"
         ],
         "setup": true,
-        "ability": "당신의 살아있는 이웃 플레이어가 주민이라면, 처음으로 죽을 때 실제로는 죽어있지만 살아있는 것처럼 취급됩니다. [-1 외지인]",
+        "ability": "당신의 살아있는 이웃 플레이어가 주민이라면, 해당 플레이어가 처음 죽을 때 실제로는 죽어있지만 살아있는 것처럼 취급됩니다. [-1 외지인]",
         "image": "icons/Icon_ganshiren.png"
     },
     {
@@ -3059,7 +3059,7 @@
         ],
         "remindersGlobal": [],
         "setup": false,
-        "ability": "첫번째 밤에, 살아있는 플레이어 1명을 선택합니다. 그는 죽지만 살아있는 것으로 간주됩니다. 해당 플레이어가 다음에 죽을 때 부활하고, 당신은 능력을 되찾습니다.",
+        "ability": "첫번째 밤에, 살아있는 플레이어 1명을 선택합니다. 해당 플레이어는 실제로는 죽어있지만 살아있는 것처럼 취급됩니다. 해당 플레이어는 다음에 죽을 때 부활하고, 당신은 능력을 되찾습니다.",
         "image": "icons/Icon_huapi.png"
     },
     {
@@ -3354,7 +3354,7 @@
             "죽음"
         ],
         "setup": false,
-        "ability": "매일 밤*(첫번째 밤 제외), 플레이어 1명을 선택합니다. 해당 플레이어는 죽습니다. 낮에 외지인이 죽으면, 그날 밤에 플레이어 1명을 선택합니다. 그 플레이어는 실제로는 죽어지만 살아있는 것처럼 취급되고, 다른 플레이어가 죽습니다. [+1 외지인]",
+        "ability": "매일 밤*(첫번째 밤 제외), 플레이어 1명을 선택합니다. 해당 플레이어는 죽습니다. 낮에 외지인이 죽으면, 그날 밤에 플레이어 1명을 선택합니다. 해당 플레이어는 실제로는 죽어있지만 살아있는 것처럼 취급되고, 다른 플레이어가 죽습니다. [+1 외지인]",
         "image": "icons/Icon_qiongqi.png"
     },
     {
@@ -3485,7 +3485,7 @@
             "죽음"
         ],
         "setup": false,
-        "ability": "악마는 당신의 존재를 압니다. 게임당 한 번, 악마는 이야기꾼에게 누가 서생인지 추측할 수 있습니다. 맞다면, 당신이 죽었더라도 그날 밤에 악마가 1명을 선택하여 죽입니다.",
+        "ability": "악마는 당신이 참가 중임을 알고 있습니다. 게임당 한 번, 악마는 이야기꾼에게 누가 서생인지 추측할 수 있습니다. 맞다면, 당신이 죽었더라도 그날 밤에 악마가 1명을 선택하여 죽입니다.",
         "image": "icons/Icon_shusheng.png"
     },
     {
