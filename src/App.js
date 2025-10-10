@@ -534,7 +534,7 @@ function App() {
         background: "#fff",
       }}
     >
-      <div style={{ flex: 2 }}>
+      <div style={{ flex: 3 }}>
         <div style={{ display: "flex", gap: "8px", marginBottom: "16px", flexWrap: "wrap" }}>
           <button onClick={() => setMode("select")}>🔙 선택으로</button>
           <button onClick={exportPDF}>📄 PDF로 저장</button>
@@ -577,7 +577,7 @@ function App() {
                         height="90"
                         style={{ borderRadius: "10px", objectFit: "cover" }}
                       />
-                      <div style={{ flex: 3 }}>
+                      <div style={{ flex: 1 }}>
                         <b style={{ fontSize: "20px" }}>{c.name}</b>
                         <div style={{ fontSize: "15px", color: "#555", marginBottom: "8px" }}>
                           {teamName(c.team)}
