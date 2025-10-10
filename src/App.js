@@ -538,7 +538,7 @@ function App() {
         <div style={{ display: "flex", gap: "8px", marginBottom: "16px", flexWrap: "wrap" }}>
           <button onClick={() => setMode("select")}>🔙 선택으로</button>
           <button onClick={exportPDF}>📄 PDF로 저장</button>
-          <button onClick={exportImage}>🖼 PNG로 저장(추천)</button>
+          <button onClick={exportImage}>🖼 PNG로 저장</button>
           <button onClick={copyScriptJson}>📋 클립보드에 복사(JSON)</button>
         </div>
 
