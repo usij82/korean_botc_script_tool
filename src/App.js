@@ -1,10 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-import iconBootlegger from "./icons/Icon_bootlegger.png";
-import iconDjinn from "./icons/Icon_djinn.png";
-import iconStormcatcher from "./icons/Icon_stormcatcher.png";
-
 
 function App() {
   const [mode, setMode] = useState("select");
@@ -607,8 +603,12 @@ function App() {
 
         {/* ✅ 특수 규칙 표시: 입력이 있을 때만 */}
         {specialRules?.trim() && (() => {
+          const base = process.env.PUBLIC_URL || "";
+          const iconBootlegger = `${base}/icons/Icon_bootlegger.png`;
+          const iconDjinn = `${base}/icons/Icon_djinn.png`;
+          const iconStormcatcher = `${base}/icons/Icon_stormcatcher.png`;
             // 보여줄 아이콘 목록
-            const icons = [];
+          const icons = [];
             if (selectedIds.includes("bootlegger")) icons.push(iconBootlegger);
             if (selectedIds.includes("djinn")) icons.push(iconDjinn);
             if (selectedIds.includes("stormcatcher")) icons.push(iconStormcatcher);
