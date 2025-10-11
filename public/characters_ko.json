@@ -207,15 +207,6 @@
     "image": "icons/Icon_noble.png"
   },
   {
-    "id": "balloonist",
-    "name": "열기구조종사",
-    "edition": "car",
-    "team": "townsfolk",
-    "setup": true,
-    "ability": "매일 밤, (살아있거나 죽은) 주민/외지인/하수인/악마 중 1명씩을 알게 됩니다. (최대 4명) [+0 ~ +1 외지인]",
-    "image": "icons/Icon_balloonist.png"
-  },
-  {
     "id": "engineer",
     "name": "기계공",
     "edition": "car",
@@ -988,6 +979,15 @@
     "setup": false,
     "ability": "당신이 죽으면, 플레이어 1명이 취합니다.",
     "image": "icons/Icon_sweetheart.png"
+  },
+  {
+    "id": "balloonist",
+    "name": "열기구조종사",
+    "edition": "car",
+    "team": "townsfolk",
+    "setup": true,
+    "ability": "매일 밤, (살아있거나 죽은) 주민/외지인/하수인/악마 중 1명씩을 알게 됩니다. (최대 4명) [+0 ~ +1 외지인]",
+    "image": "icons/Icon_balloonist.png"
   },
   {
     "id": "artist",
