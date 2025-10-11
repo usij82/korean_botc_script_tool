@@ -636,7 +636,7 @@ function App() {
               >
                 {/* 왼쪽 아이콘 그룹 */}
                 <div style={{ display: "flex", gap: "4px", alignItems: "center" }}>
-                  {icons.length > 0 ? (
+                  {icons.length > 0 &&
                     icons.map((src, i) => (
                       <img
                         key={i}
@@ -646,8 +646,7 @@ function App() {
                         height="25"
                         style={{ objectFit: "contain", borderRadius: "4px" }}
                       />
-                    ))
-                  )}
+                    ))}
                 </div>
                 {/* 오른쪽 텍스트 영역 */}
                 <div style={{ flex: 1, whiteSpace: "pre-wrap" }}>
