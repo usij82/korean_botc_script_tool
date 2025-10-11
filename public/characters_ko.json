@@ -2,7 +2,7 @@
   {
     "id": "matron",
     "name": "가정교사",
-    "edition": "bmr",
+    "edition": ["tnf","bmr"],
     "team": "traveller",
     "setup": false,
     "ability": "매일 낮, 최대 3쌍의 플레이어(총 6명)를 선택하여 자리를 서로 바꿀 수 있습니다. 모든 플레이어는 자리를 떠나서 개인적으로 이야기할 수 없습니다.",
@@ -20,7 +20,7 @@
   {
     "id": "beggar",
     "name": "거지",
-    "edition": "tb",
+    "edition": ["tnf","tb"],
     "team": "traveller",
     "setup": false,
     "ability": "투표 토큰이 있어야만 투표를 할 수 있습니다. 죽은 플레이어가 투표 토큰을 주면, 당신은 그들의 진영을 알게 됩니다. 당신은 항상 건강합니다.",
@@ -29,7 +29,7 @@
   {
     "id": "apprentice",
     "name": "견습생",
-    "edition": "bmr",
+    "edition": ["tnf","bmr"],
     "team": "traveller",
     "setup": false,
     "ability": "당신은 주민 능력(선한 경우) 또는 하수인 능력(악한 경우)을 가지고 있습니다.",
@@ -119,7 +119,7 @@
   {
     "id": "bureaucrat",
     "name": "관료",
-    "edition": "tb",
+    "edition": ["tnf","tb"],
     "team": "traveller",
     "setup": false,
     "ability": "매일 밤, 본인을 제외하고 플레이어를 1명 선택합니다. 해당 플레이어의 투표는 내일 3표로 집계됩니다.",
@@ -362,7 +362,7 @@
   {
     "id": "thief",
     "name": "도둑",
-    "edition": "tb",
+    "edition": ["tnf","tb"],
     "team": "traveller",
     "setup": false,
     "ability": "매일 밤, 본인을 제외하고 플레이어를 1명 선택합니다. 해당 플레이어의 투표는 다음 날 마이너스로 집계됩니다.",
@@ -380,7 +380,7 @@
   {
     "id": "butcher",
     "name": "도살자",
-    "edition": "snv",
+    "edition": ["tnf","snv"],
     "team": "traveller",
     "setup": false,
     "ability": "매일 낮, 첫 번째 처형 후 다시 지명할 수 있습니다.",
@@ -497,7 +497,7 @@
   {
     "id": "harlot",
     "name": "매춘부",
-    "edition": "snv",
+    "edition": ["tnf","snv"],
     "team": "traveller",
     "setup": false,
     "ability": "매일 밤*(첫번째 밤 제외), 살아있는 플레이어를 1명 선택합니다. 해당 플레이어가 동의하면, 당신은 그 캐릭터를 알게 되지만, 둘 다 죽을 수도 있습니다.",
@@ -578,7 +578,7 @@
   {
     "id": "barista",
     "name": "바리스타",
-    "edition": "snv",
+    "edition": ["tnf","snv"],
     "team": "traveller",
     "setup": false,
     "ability": "매일 밤, 다음 날 낮이 끝날 때까지 플레이어 1명이 1) 건강(만취/중독 해제)하게 만들고 진실된 정보 만을 얻도록 하거나, 2) 능력을 두 번 발동하게 합니다. 해당 플레이어는 이 사실을 알게 됩니다.",
@@ -650,7 +650,7 @@
   {
     "id": "voudon",
     "name": "부두술사",
-    "edition": "bmr",
+    "edition": ["tnf","bmr"],
     "team": "traveller",
     "setup": false,
     "ability": "당신과 죽은 자만 투표할 수 있습니다. 투표 토큰이 필요하지 않습니다. 50%의 과반수는 필요하지 않습니다.",
@@ -686,7 +686,7 @@
   {
     "id": "bonecollector",
     "name": "뼈 수집가",
-    "edition": "snv",
+    "edition": ["tnf","snv"],
     "team": "traveller",
     "setup": false,
     "ability": "게임당 한 번, 밤에 죽은 플레이어를 1명 선택합니다. 해당 플레이어는 다음 날 낮이 끝날 때까지 능력을 회복합니다.",
@@ -1082,7 +1082,7 @@
   {
     "id": "deviant",
     "name": "일탈주의자",
-    "edition": "snv",
+    "edition": ["tnf","snv"],
     "team": "traveller",
     "setup": false,
     "ability": "오늘 당신이 재밌었다면, 당신은 추방당해 죽을 수 없습니다.",
@@ -1199,7 +1199,7 @@
   {
     "id": "bishop",
     "name": "주교",
-    "edition": "bmr",
+    "edition": ["tnf","bmr"],
     "team": "traveller",
     "setup": false,
     "ability": "오직 이야기꾼만 지명할 수 있습니다. 매일 낮, 주교와 다른 진영의 플레이어가 최소 1명은 지명되어야 합니다.",
@@ -1307,7 +1307,7 @@
   {
     "id": "gunslinger",
     "name": "총잡이",
-    "edition": "tb",
+    "edition": ["tnf","tb"],
     "team": "traveller",
     "setup": false,
     "ability": "매일 1차 투표가 집계된 후, 투표한 플레이어 중 1명을 선택할 수 있습니다. 해당 플레이어는 죽습니다.",
@@ -1361,7 +1361,7 @@
   {
     "id": "judge",
     "name": "판사",
-    "edition": "bmr",
+    "edition": ["tnf","bmr"],
     "team": "traveller",
     "setup": false,
     "ability": "게임당 한 번, 다른 플레이어가 지명된 경우 현재 투표를 통과 또는 실패로 강제할 수 있습니다.",
@@ -1559,7 +1559,7 @@
   {
     "id": "scapegoat",
     "name": "희생양",
-    "edition": "tb",
+    "edition": ["tnf","tb"],
     "team": "traveller",
     "setup": false,
     "ability": "당신과 같은 진영의 플레이어가 처형되면, 당신이 대신 처형될 수 있습니다.",
