@@ -397,7 +397,7 @@ function App() {
   );
 // 선택 모드에서 특수 룰 노출 조건 계산
   const showSpecialRulesInput =
-    selectedIds.includes("djinn") || selectedIds.includes("bootlegger");
+    selectedIds.includes("bootlegger") || selectedIds.includes("djinn") || selectedIds.includes("stormcatcher");
 
   // ===== 선택 단계 =====
   if (mode === "select") {
@@ -425,7 +425,6 @@ function App() {
             padding: 8,
             fontFamily: "monospace",
             marginBottom: "10px",
-            minHeight: 72,
           }}
         />
 
@@ -434,7 +433,7 @@ function App() {
           <select
             value={filterTeam}
             onChange={(e) => setFilterTeam(e.target.value)}
-            style={{ padding: "8px", minWidth: 160 }}
+            style={{ flex: 1, padding: "8px", minWidth: 160 }}
           >
             <option value="all">캐릭터 분류</option>
             {teamOrder.map((t) => (
@@ -447,9 +446,9 @@ function App() {
           <select
             value={editionPick}
             onChange={(e) => setEditionPick(e.target.value)}
-            style={{ flex: 1, padding: "8px", minWidth: 200 }}
+            style={{ flex: 3, padding: "8px", minWidth: 200 }}
           >
-            <option value="">기본 스크립트 목록</option>
+            <option value="">스크립트/캐릭터 모음 목록</option>
 
             <optgroup label="기본 스크립트">
               <option value="tb">점철되는 혼란</option>
@@ -486,12 +485,12 @@ function App() {
           />
         </div>
 
-        {/* ✅ djinn 또는 bootlegger 선택 시에만 나타나는 특수 규칙 입력창 */}
+        {/* ✅ bootlegger / djinn / stormcatcher 선택 시에 나타나는 특수 규칙 입력창 */}
         {showSpecialRulesInput && (
           <textarea
             value={specialRules}
             onChange={(e) => setSpecialRules(e.target.value)}
-            placeholder="이 스크립트의 추가/특수 규칙을 적어주세요 (예: 징크스, 홈브류 룰, 진행 유의사항 등)"
+            placeholder="이 스크립트의 추가/특수 규칙을 적어주세요. (예: 징크스, 홈브류 룰, 진행 유의사항 등)"
             style={{
               width: "100%",
               padding: 8,
@@ -604,22 +603,60 @@ function App() {
 
         {/* ✅ 특수 규칙 표시: 입력이 있을 때만 */}
         {specialRules.trim() && (
-          <div
-            style={{
-              color: "#444",           // 작가 표시 텍스트와 유사한 톤
-              fontSize: "15px",        // 작가 글씨 정도의 크기
-              background: "#fafafa",
-              border: "1px solid #eee",
-              borderRadius: "8px",
-              padding: "10px 12px",
-              marginBottom: "12px",
-              whiteSpace: "pre-wrap",
-              lineHeight: 1.6,
-            }}
-          >
-            <b style={{ marginRight: 6 }}>📜 특수 규칙</b>
-            {specialRules}
-          </div>
+          (() => {
+            const hasBootlegger = selectedIds.includes("bootlegger");
+            const hasDjinn = selectedIds.includes("djinn");
+            const hasStormcatcher = selectedIds.includes("stormcatcher");
+            // 아이콘 이미지 경로 (public 폴더 기준)
+            const iconBootlegger = process.env.PUBLIC_URL + "/Icon_bootlegger.png";
+            const iconDjinn = process.env.PUBLIC_URL + "/Icon_djinn.png";
+            const iconStormcatcher = process.env.PUBLIC_URL + "/Icon_stormcatcher.png";
+            // 보여줄 아이콘 목록
+            const icons = [];
+            if (hasDjinn) icons.push(iconDjinn);
+            if (hasBootlegger) icons.push(iconBootlegger);
+            if (hasStormcatcher) icons.push(iconStormcatcher);
+        
+            return (
+              <div
+                style={{
+                  color: "#444",
+                  fontSize: "15px",
+                  background: "#fafafa",
+                  border: "1px solid #eee",
+                  borderRadius: "8px",
+                  padding: "10px 12px",
+                  marginBottom: "12px",
+                  whiteSpace: "pre-wrap",
+                  lineHeight: 1.6,
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "8px",
+                }}
+              >
+                {/* 왼쪽 아이콘 그룹 */}
+                <div style={{ display: "flex", gap: "4px", alignItems: "center" }}>
+                  {icons.length > 0 ? (
+                    icons.map((src, i) => (
+                      <img
+                        key={i}
+                        src={src}
+                        alt="rule icon"
+                        width="25"
+                        height="25"
+                        style={{ objectFit: "contain", borderRadius: "4px" }}
+                      />
+                    ))
+                  )}
+                </div>
+                {/* 오른쪽 텍스트 영역 */}
+                <div style={{ flex: 1, whiteSpace: "pre-wrap" }}>
+                  <b style={{ display: "block", marginBottom: "4px" }}>특수 규칙</b>
+                  {specialRules}
+                </div>
+              </div>
+            );
+          })()
         )}
 
         {teamOrder.map(
