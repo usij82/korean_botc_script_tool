@@ -1,6 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import iconBootlegger from "./icons/Icon_bootlegger.png";
+import iconDjinn from "./icons/Icon_djinn.png";
+import iconStormcatcher from "./icons/Icon_stormcatcher.png";
+
 
 function App() {
   const [mode, setMode] = useState("select");
@@ -232,19 +236,19 @@ function App() {
   };
 
   const editionAuthor = {
-    tb: "The Pandemonium Institute",
-    bmr: "The Pandemonium Institute",
-    snv: "The Pandemonium Institute",
-    car: "Community Scripts",
-    hdcs: "화등초상 제작진",
-    syyl: "산우욕래 제작진",
-    mgcz: "모고신종 제작진",
-    tnf: "TNF 제작진"
+    tb: "기본 스크립트 1번",
+    bmr: "기본 스크립트 2번",
+    snv: "기본 스크립트 3번",
+    tnf: "기본판에 포함된 여행자와 전설 캐릭터 모음집",
+    car: "실험적 캐릭터 모음집",
+    hdcs: "중국판 추가 스크립트 1번",
+    syyl: "미발매(추후 능력이 수정될 수 있음)",
+    mgcz: "미발매(추후 능력이 수정될 수 있음)"
   };
 
   //특수룰, 줄바꿈은 \n- 입력하면 됨.
   const editionSpecialRules = {
-    tb: ""
+    car: ""
   };
 
 
@@ -602,20 +606,12 @@ function App() {
         <p style={{ color: "gray" }}>by {meta.author}</p>
 
         {/* ✅ 특수 규칙 표시: 입력이 있을 때만 */}
-        {specialRules.trim() && (
-          (() => {
-            const hasBootlegger = selectedIds.includes("bootlegger");
-            const hasDjinn = selectedIds.includes("djinn");
-            const hasStormcatcher = selectedIds.includes("stormcatcher");
-            // 아이콘 이미지 경로 (public 폴더 기준)
-            const iconBootlegger = process.env.PUBLIC_URL + "/Icon_bootlegger.png";
-            const iconDjinn = process.env.PUBLIC_URL + "/Icon_djinn.png";
-            const iconStormcatcher = process.env.PUBLIC_URL + "/Icon_stormcatcher.png";
+        {specialRules?.trim() && (() => {
             // 보여줄 아이콘 목록
             const icons = [];
-            if (hasDjinn) icons.push(iconDjinn);
-            if (hasBootlegger) icons.push(iconBootlegger);
-            if (hasStormcatcher) icons.push(iconStormcatcher);
+            if (selectedIds.includes("bootlegger")) icons.push(iconBootlegger);
+            if (selectedIds.includes("djinn")) icons.push(iconDjinn);
+            if (selectedIds.includes("stormcatcher")) icons.push(iconStormcatcher);
         
             return (
               <div
@@ -636,8 +632,7 @@ function App() {
               >
                 {/* 왼쪽 아이콘 그룹 */}
                 <div style={{ display: "flex", gap: "4px", alignItems: "center" }}>
-                  {icons.length > 0 &&
-                    icons.map((src, i) => (
+                  {icons.length > 0 && icons.map((src, i) => (
                       <img
                         key={i}
                         src={src}
@@ -645,6 +640,7 @@ function App() {
                         width="25"
                         height="25"
                         style={{ objectFit: "contain", borderRadius: "4px" }}
+                        onError={(e) => { e.currentTarget.style.display = "none"; }}
                       />
                     ))}
                 </div>
@@ -655,8 +651,7 @@ function App() {
                 </div>
               </div>
             );
-          })()
-        )}
+          })()}
 
         {teamOrder.map(
           (team) =>
