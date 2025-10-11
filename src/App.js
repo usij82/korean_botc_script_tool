@@ -220,8 +220,9 @@ function App() {
       tb: "점철되는 혼란",
       bmr: "피로 물든 달",
       snv: "화단에 꽃피운 이단",
-      car: "캐러셀",
       hdcs: "등불이 밝을 때(화등초상)",
+      tnf: "여행자와 전설",
+      car: "캐러셀",
       syyl: "폭풍우의 조짐(산우욕래)",
       mgcz: "저녁의 북과 새벽의 종(모고신종)"
     };
@@ -426,13 +427,20 @@ function App() {
             style={{ flex: 1, padding: "8px", minWidth: 200 }}
           >
             <option value="">기본 스크립트 목록</option>
-            <option value="tb">점철되는 혼란 (TB)</option>
-            <option value="bmr">피로 물든 달 (BMR)</option>
-            <option value="snv">화단에 꽃피운 이단 (SNV)</option>
-            <option value="car">캐러셀 (CAR)</option>
-            <option value="hdcs">등불이 밝을 때(화등초상) (HDCS)</option>
-            <option value="syyl">폭풍우의 조짐(산우욕래) (SYYL)</option>
-            <option value="mgcz">저녁의 북과 새벽의 종(모고신종) (MGCZ)</option>
+
+            <optgroup label="기본 스크립트">
+              <option value="tb">점철되는 혼란</option>
+              <option value="bmr">피로 물든 달</option>
+              <option value="snv">화단에 꽃피운 이단</option>
+              <option value="hdcs">등불이 밝을 때(화등초상)</option>
+            </optgroup>
+            
+            <optgroup label="캐릭터 모음집">
+              <option value="tnf">여행자와 전설</option>
+              <option value="car">캐러셀</option>
+              <option value="syyl">폭풍우의 조짐(산우욕래)</option>
+              <option value="mgcz">저녁의 북과 새벽의 종(모고신종)</option>
+            </optgroup>
           </select>
 
           <button onClick={() => applyEdition("replace")}>해당 스크립트 덮어쓰기</button>
