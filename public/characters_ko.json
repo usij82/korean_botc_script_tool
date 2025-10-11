@@ -1613,7 +1613,7 @@
   {
     "id": "gudiao",
     "name": "고조(蛊雕)",
-    "edition": "syyl",
+    "edition": "mgcz",
     "team": "minion",
     "setup": false,
     "ability": "매일 밤, 왼쪽/오른쪽 중 하나를 선택합니다. 그 방향에 있는 다음 자리의 살아있는 선한 플레이어의 캐릭터를 알게 됩니다. 해당 플레이어는 중독되고, 고조로 보입니다.",
@@ -1649,7 +1649,7 @@
   {
     "id": "lankeren",
     "name": "귀향자(烂柯人)",
-    "edition": "syyl",
+    "edition": "mgcz",
     "team": "townsfolk",
     "setup": false,
     "ability": "당신은 자신의 진영을 모릅니다. (악한 진영일 수 있습니다.) 첫번째 밤에, 플레이어 3명을 알고 시작합니다. 그중 2명이 당신과 같은 진영입니다.",
@@ -1838,7 +1838,7 @@
   {
     "id": "wushiren",
     "name": "사자춤꾼(舞狮人)",
-    "edition": "syyl",
+    "edition": "mgcz",
     "team": "townsfolk",
     "setup": false,
     "ability": "매일 밤, 현재 참가 중인 캐릭터를 1개 알게 됩니다. 게임당 한 번, 악마의 속임수 중 하나를 알게 됩니다.",
@@ -2072,7 +2072,7 @@
   {
     "id": "panguan",
     "name": "판관(判官)",
-    "edition": "syyl",
+    "edition": "mgcz",
     "team": "minion",
     "setup": false,
     "ability": "첫번째 밤에 비밀 단어를 1개 알게 됩니다. 마지막 날을 제외하고 낮에 악한 플레이어가 비밀 단어를 처음 말하면, 즉시 낮이 종료됩니다.",
