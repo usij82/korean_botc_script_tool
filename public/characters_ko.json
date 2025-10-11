@@ -38,7 +38,7 @@
   {
     "id": "sentinel",
     "name": "경비원",
-    "edition": "",
+    "edition": "tnf",
     "team": "fabled",
     "setup": true,
     "ability": "플레이에 외지인이 1명 더 있거나 1명 더 적을 수 있습니다.",
@@ -74,7 +74,7 @@
   {
     "id": "duchess",
     "name": "공작부인",
-    "edition": "",
+    "edition": "tnf",
     "team": "fabled",
     "setup": false,
     "ability": "매일 밤*(첫번째 밤 제외), 3명의 플레이어가 당신을 방문하기로 선택할 수 있습니다. 밤에 각 방문자는 얼마나 많은 방문자가 악한지 알게 되지만, 1명은 거짓 정보를 얻습니다.",
@@ -596,7 +596,7 @@
   {
     "id": "fiddler",
     "name": "바이올리니스트",
-    "edition": "",
+    "edition": "tnf",
     "team": "fabled",
     "setup": false,
     "ability": "게임당 한 번, 악마는 비밀리에 상대 플레이어를 선택합니다. 모든 플레이어는 이 두 플레이어 중 누가 승리할지 선택합니다.",
@@ -668,7 +668,7 @@
   {
     "id": "buddhist",
     "name": "불자",
-    "edition": "",
+    "edition": "tnf",
     "team": "fabled",
     "setup": false,
     "ability": "매일 처음 2분 동안은 베테랑 선수들은 말을 할 수 없습니다.",
@@ -722,7 +722,7 @@
   {
     "id": "spiritofivory",
     "name": "상아의 정령",
-    "edition": "",
+    "edition": "tnf",
     "team": "fabled",
     "setup": false,
     "ability": "악한 플레이어는 1명까지만 추가될 수 있습니다.",
@@ -1109,7 +1109,7 @@
   {
     "id": "toymaker",
     "name": "장난감 제작자",
-    "edition": "",
+    "edition": "tnf",
     "team": "fabled",
     "setup": false,
     "ability": "악마는 공격하지 않기로 선택할 수 있으며 게임당 최소 한 번은 이를 해야 합니다. 악한 플레이어는 정상적인 시작 정보를 얻습니다.",
@@ -1190,7 +1190,7 @@
   {
     "id": "doomsayer",
     "name": "종말론자",
-    "edition": "",
+    "edition": "tnf",
     "team": "fabled",
     "setup": false,
     "ability": "4명 이상의 플레이어가 살아있는 경우, 살아있는 모든 플레이어는 게임당 한 번, 자신의 진영에 속한 플레이어를 선택하여 죽일 수 있습니다.",
@@ -1226,7 +1226,7 @@
   {
     "id": "hellslibrarian",
     "name": "지옥의 사서",
-    "edition": "",
+    "edition": "tnf",
     "team": "fabled",
     "setup": false,
     "ability": "이야기꾼이 침묵을 요청했을 때 말하는 사람에게는 나쁜 일이 일어날 수도 있습니다.",
@@ -1235,7 +1235,7 @@
   {
     "id": "djinn",
     "name": "진",
-    "edition": "",
+    "edition": "tnf",
     "team": "fabled",
     "setup": false,
     "ability": "이 스크립트에는 특별한 규칙/징크스가 적용됩니다. 모든 플레이어가 그것이 무엇인지 알고 있습니다.",
@@ -1280,7 +1280,7 @@
   {
     "id": "angel",
     "name": "천사",
-    "edition": "",
+    "edition": "tnf",
     "team": "fabled",
     "setup": false,
     "ability": "새로운 플레이어의 죽음에 가장 큰 책임이 있는 사람에게는 나쁜 일이 일어날 수도 있습니다. 해당 플레이어는 모두가 알고 있습니다.",
@@ -1319,7 +1319,7 @@
     "edition": "",
     "team": "townsfolk",
     "setup": false,
-    "ability": "게임당 한번, 밤에 아이콘에 입이 그려진 캐릭터를 선택하여 그 능력을 얻을 수 있습니다. 입이 그려진 기준은 이야기꾼이 정합니다. ※ 만우절 캐릭터이므로 밸런스가 맞지 않을 수 있습니다. ※",
+    "ability": "게임당 한 번, 밤에 아이콘에 입이 그려진 캐릭터를 선택하여 그 능력을 얻을 수 있습니다. (입이 그려진 기준은 이야기꾼이 정합니다. ※ 만우절 캐릭터이므로 밸런스가 맞지 않을 수 있습니다. ※)",
     "image": "icons/Icon_orthodontist.png"
   },
   {
@@ -1460,7 +1460,7 @@
   {
     "id": "fibbin",
     "name": "피빈",
-    "edition": "",
+    "edition": "tnf",
     "team": "fabled",
     "setup": false,
     "ability": "한 게임당 1명의 뛰어난 플레이어가 잘못된 정보를 얻을 수도 있습니다.",
@@ -1532,7 +1532,7 @@
   {
     "id": "revolutionary",
     "name": "혁명가",
-    "edition": "",
+    "edition": "tnf",
     "team": "fabled",
     "setup": false,
     "ability": "이웃 플레이어 2명이 같은 진영으로 알려져 있습니다. 게임당 한 번, 그중 1명이 다른 진영으로 보입니다.",
