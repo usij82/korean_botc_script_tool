@@ -15,9 +15,9 @@ function App() {
   const [jinxes, setJinxes] = useState({});
   const [nightOrder, setNightOrder] = useState({ firstNight: [], otherNight: [] });
 
-  // 고정 A4 내보내기용 상수 (96dpi 기준)
+  // A4 크기 및 해상도 상수
   const A4 = { w: 794, h: 1123 };
-  const SCALE = 2; // 선명도 향상
+  const SCALE = 2;
 
   // ===== 데이터 로드 =====
   useEffect(() => {
@@ -37,7 +37,6 @@ function App() {
       const jinxMap = {};
       for (const j of jinxArr) jinxMap[j.id] = j.jinx;
       setJinxes(jinxMap);
-
       setNightOrder(order);
     }
     loadData();
@@ -55,7 +54,14 @@ function App() {
       fabled: "전설",
     }[id] || id);
 
-  // id → character 맵 (성능 + 안전한 의존성)
+  // edition을 문자열/배열 모두 지원
+  function getEditions(c) {
+    if (!c || c.edition == null || c.edition === "") return [];
+    return Array.isArray(c.edition) ? c.edition : [c.edition];
+  }
+
+
+  // 캐릭터 맵 캐싱
   const charMap = useMemo(() => {
     const m = new Map();
     for (const c of characters) m.set(c.id, c);
@@ -64,7 +70,10 @@ function App() {
 
   const charById = (id) => charMap.get(id);
 
-  // ===== 고정 A4 캔버스 렌더 (오프스크린) =====
+  // ===== 모바일 판별 =====
+  const isMobile = () => window.matchMedia("(max-width: 1024px)").matches;
+
+  // ===== 고정 A4 렌더 (모바일용) =====
   async function renderToA4Canvas(node) {
     const wrapper = document.createElement("div");
     wrapper.style.position = "fixed";
@@ -91,41 +100,90 @@ function App() {
     return canvas;
   }
 
-  // ===== PDF 저장(A4 고정, 자동 페이지 분할) =====
-  const exportPDFA4 = async () => {
+  // ===== PDF 저장 (PC: 가변, 모바일: A4 고정) =====
+  const exportPDF = async () => {
     const input = document.getElementById("script-area");
     if (!input) return alert("PDF로 내보낼 영역을 찾을 수 없습니다.");
 
+    if (isMobile()) return exportPDFA4();
+
+    window.scrollTo(0, 0);
+    const canvas = await html2canvas(input, { scale: 1.5, useCORS: true, backgroundColor: "#ffffff" });
+    const imgData = canvas.toDataURL("image/jpeg", 0.95);
+
+    const pdf = new jsPDF("p", "mm", "a4");
+    const pageW = pdf.internal.pageSize.getWidth();
+    const pageH = pdf.internal.pageSize.getHeight();
+    const imgW = pageW;
+    const imgH = (canvas.height * imgW) / canvas.width;
+
+    let heightLeft = imgH;
+    let position = 0;
+
+    pdf.addImage(imgData, "JPEG", 0, position, imgW, imgH);
+    heightLeft -= pageH;
+
+    while (heightLeft > 0) {
+      position = heightLeft - imgH;
+      pdf.addPage();
+      pdf.addImage(imgData, "JPEG", 0, position, imgW, imgH);
+      heightLeft -= pageH;
+    }
+
+    pdf.save(meta?.name ? `${meta.name}.pdf` : "script.pdf");
+  };
+
+  // ===== PNG 저장 (PC: 가변, 모바일: A4 고정) =====
+  const exportImage = async () => {
+    const input = document.getElementById("script-area");
+    if (!input) return alert("이미지로 내보낼 영역을 찾을 수 없습니다.");
+    window.scrollTo(0, 0);
+
+    if (isMobile()) {
+      const a4Canvas = await renderToA4Canvas(input);
+      return a4Canvas.toBlob((blob) => {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = meta?.name ? `${meta.name}.png` : "script.png";
+        a.click();
+        URL.revokeObjectURL(a.href);
+      }, "image/png");
+    }
+
+    const canvas = await html2canvas(input, { scale: 1.5, useCORS: true, backgroundColor: "#ffffff" });
+    canvas.toBlob((blob) => {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = meta?.name ? `${meta.name}.png` : "script.png";
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }, "image/png");
+  };
+
+  // ===== PDF(A4) (모바일 전용 내부 호출) =====
+  const exportPDFA4 = async () => {
+    const input = document.getElementById("script-area");
     window.scrollTo(0, 0);
     const canvas = await renderToA4Canvas(input);
-
     const imgData = canvas.toDataURL("image/jpeg", 0.95);
-    const pdf = new jsPDF("p", "mm", "a4");
-    const pageW = pdf.internal.pageSize.getWidth(); // 210
-    const pageH = pdf.internal.pageSize.getHeight(); // 297
 
-    const pxPerMm = canvas.width / pageW; // 폭 기준 변환
+    const pdf = new jsPDF("p", "mm", "a4");
+    const pageW = pdf.internal.pageSize.getWidth();
+    const pageH = pdf.internal.pageSize.getHeight();
+
+    const pxPerMm = canvas.width / pageW;
     const pageHeightPx = pageH * pxPerMm;
 
     let remaining = canvas.height;
     let y = 0;
 
-    // 첫 페이지
     pdf.addImage(imgData, "JPEG", 0, 0, pageW, canvas.height / pxPerMm);
     remaining -= pageHeightPx;
     y += pageHeightPx;
 
-    // 추가 페이지
     while (remaining > 5) {
       pdf.addPage();
-      pdf.addImage(
-        imgData,
-        "JPEG",
-        0,
-        -(y / pxPerMm),
-        pageW,
-        canvas.height / pxPerMm
-      );
+      pdf.addImage(imgData, "JPEG", 0, -(y / pxPerMm), pageW, canvas.height / pxPerMm);
       remaining -= pageHeightPx;
       y += pageHeightPx;
     }
@@ -133,26 +191,7 @@ function App() {
     pdf.save(meta?.name ? `${meta.name}.pdf` : "script.pdf");
   };
 
-  // ===== PNG 저장(A4 고정) =====
-  const exportImageA4 = async () => {
-    const input = document.getElementById("script-area");
-    if (!input) return alert("이미지로 내보낼 영역을 찾을 수 없습니다.");
-
-    window.scrollTo(0, 0);
-    const canvas = await renderToA4Canvas(input);
-    canvas.toBlob(
-      (blob) => {
-        const a = document.createElement("a");
-        a.href = URL.createObjectURL(blob);
-        a.download = meta?.name ? `${meta.name}.png` : "script.png";
-        a.click();
-        URL.revokeObjectURL(a.href);
-      },
-      "image/png"
-    );
-  };
-
-  // ===== 스크립트 JSON 클립보드 복사 =====
+  // ===== JSON 복사 =====
   const copyScriptJson = async () => {
     const arr = [
       { id: "_meta", author: meta.author?.trim() || "작가", name: meta.name?.trim() || "제목" },
@@ -181,16 +220,18 @@ function App() {
       tb: "점철되는 혼란",
       bmr: "피로 물든 달",
       snv: "화단에 꽃피운 이단",
-      car: "캐러셀",
       hdcs: "등불이 밝을 때(화등초상)",
+      tnf: "여행자와 전설",
+      car: "캐러셀",
       syyl: "폭풍우의 조짐(산우욕래)",
+      mgcz: "저녁의 북과 새벽의 종(모고신종)"
     };
     return m[code] || "";
   };
 
   const applyEdition = (mode) => {
     if (!editionPick) return alert("기본 스크립트를 선택하세요.");
-    const ids = characters.filter((c) => c.edition === editionPick).map((c) => c.id);
+    const ids = characters.filter((c) => getEditions(c).includes(editionPick)).map((c) => c.id);
     if (mode === "replace") setSelectedIds(ids);
     else setSelectedIds((prev) => Array.from(new Set([...prev, ...ids])));
     setMeta((prev) => ({
@@ -249,7 +290,7 @@ function App() {
         c.name.toLowerCase().includes(q) ||
         c.ability.toLowerCase().includes(q);
       const matchTeam = filterTeam === "all" || c.team === filterTeam;
-      const matchEdition = !editionPick || c.edition === editionPick;
+      const matchEdition = !editionPick || getEditions(c).includes(editionPick);
       return matchQuery && matchTeam && matchEdition;
     });
   }, [characters, search, filterTeam, editionPick]);
@@ -370,7 +411,7 @@ function App() {
           <select
             value={filterTeam}
             onChange={(e) => setFilterTeam(e.target.value)}
-            style={{ flex: "1 1 200px", padding: "8px", minWidth: 160 }}
+            style={{ padding: "8px", minWidth: 160 }}
           >
             <option value="all">캐릭터 분류</option>
             {teamOrder.map((t) => (
@@ -383,15 +424,23 @@ function App() {
           <select
             value={editionPick}
             onChange={(e) => setEditionPick(e.target.value)}
-            style={{ flex: "1 1 200px", padding: "8px", minWidth: 200 }}
+            style={{ flex: 1, padding: "8px", minWidth: 200 }}
           >
             <option value="">기본 스크립트 목록</option>
-            <option value="tb">점철되는 혼란 (TB)</option>
-            <option value="bmr">피로 물든 달 (BMR)</option>
-            <option value="snv">화단에 꽃피운 이단 (SNV)</option>
-            <option value="car">캐러셀 (CAR)</option>
-            <option value="hdcs">등불이 밝을 때(화등초상) (HDCS)</option>
-            <option value="syyl">폭풍우의 조짐(산우욕래) (SYYL)</option>
+
+            <optgroup label="기본 스크립트">
+              <option value="tb">점철되는 혼란</option>
+              <option value="bmr">피로 물든 달</option>
+              <option value="snv">화단에 꽃피운 이단</option>
+              <option value="hdcs">등불이 밝을 때(화등초상)</option>
+            </optgroup>
+            
+            <optgroup label="캐릭터 모음집">
+              <option value="tnf">여행자와 전설</option>
+              <option value="car">캐러셀</option>
+              <option value="syyl">폭풍우의 조짐(산우욕래)</option>
+              <option value="mgcz">저녁의 북과 새벽의 종(모고신종)</option>
+            </optgroup>
           </select>
 
           <button onClick={() => applyEdition("replace")}>해당 스크립트 덮어쓰기</button>
@@ -502,16 +551,12 @@ function App() {
         background: "#fff",
       }}
     >
-      <ResponsiveStyle />
-
-      {/* 왼쪽 */}
       <div style={{ flex: 3 }}>
-        {/* 상단 액션 바 */}
         <div style={{ display: "flex", gap: "8px", marginBottom: "16px", flexWrap: "wrap" }}>
           <button onClick={() => setMode("select")}>🔙 선택으로</button>
-          <button onClick={exportPDFA4}>📄 PDF(A4)</button>
-          <button onClick={exportImageA4}>🖼 PNG(A4)</button>
-          <button onClick={copyScriptJson}>📋 구성 복사(JSON)</button>
+          <button onClick={exportPDF}>📄 PDF로 저장</button>
+          <button onClick={exportImage}>🖼 PNG로 저장</button>
+          <button onClick={copyScriptJson}>📋 클립보드에 복사(JSON)</button>
         </div>
 
         <h2>{meta.name}</h2>
@@ -568,7 +613,7 @@ function App() {
       {/* 오른쪽: Night Order (항상 표시, 작은 화면에서는 아래로 스택됨) */}
       <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "20px" }}>
         <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "20px", background: "#fff", fontSize: "17px", lineHeight: "1.8" }}>
-          <h2 style={{ marginTop: 0, fontSize: "22px" }}>🌙 첫째 밤</h2>
+          <h2 style={{ marginTop: 0, fontSize: "22px" }}>🌙 첫번째 밤</h2>
           <ol style={{ paddingLeft: "24px" }}>
             {nightOrder.firstNight
               .filter((id) => ["DUSK", "DAWN", "MINION", "DEMON"].includes(id) || selectedIds.includes(id))
