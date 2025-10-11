@@ -54,6 +54,13 @@ function App() {
       fabled: "전설",
     }[id] || id);
 
+  // edition을 문자열/배열 모두 지원
+  function getEditions(c) {
+    if (!c || c.edition == null || c.edition === "") return [];
+    return Array.isArray(c.edition) ? c.edition : [c.edition];
+  }
+
+
   // 캐릭터 맵 캐싱
   const charMap = useMemo(() => {
     const m = new Map();
@@ -223,7 +230,7 @@ function App() {
 
   const applyEdition = (mode) => {
     if (!editionPick) return alert("기본 스크립트를 선택하세요.");
-    const ids = characters.filter((c) => c.edition === editionPick).map((c) => c.id);
+    const ids = characters.filter((c) => getEditions(c).includes(editionPick)).map((c) => c.id);
     if (mode === "replace") setSelectedIds(ids);
     else setSelectedIds((prev) => Array.from(new Set([...prev, ...ids])));
     setMeta((prev) => ({
@@ -282,7 +289,7 @@ function App() {
         c.name.toLowerCase().includes(q) ||
         c.ability.toLowerCase().includes(q);
       const matchTeam = filterTeam === "all" || c.team === filterTeam;
-      const matchEdition = !editionPick || c.edition === editionPick;
+      const matchEdition = !editionPick || getEditions(c).includes(editionPick);
       return matchQuery && matchTeam && matchEdition;
     });
   }, [characters, search, filterTeam, editionPick]);
