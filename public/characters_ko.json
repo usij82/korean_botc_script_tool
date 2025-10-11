@@ -208,7 +208,7 @@
   },
   {
     "id": "balloonist",
-    "name": "기구비행사",
+    "name": "열기구조종사",
     "edition": "car",
     "team": "townsfolk",
     "setup": true,
