@@ -10,10 +10,11 @@ function App() {
   const [filterTeam, setFilterTeam] = useState("all");
   const [editionPick, setEditionPick] = useState("");
   const [quickJson, setQuickJson] = useState("");
-
   const [characters, setCharacters] = useState([]);
   const [jinxes, setJinxes] = useState({});
   const [nightOrder, setNightOrder] = useState({ firstNight: [], otherNight: [] });
+  const [specialRules, setSpecialRules] = useState("");
+
 
   // A4 크기 및 해상도 상수
   const A4 = { w: 794, h: 1123 };
@@ -211,10 +212,11 @@ function App() {
       setSelectedIds([]);
       setMeta({ name: "", author: "" });
       setQuickJson("");
+      setSpecialRules("");
     }
   };
 
-  // ===== 기본 스크립트 이름 매핑 & 적용 =====
+  // ===== 기본 스크립트 이름, 작가, 특수룰 매핑 & 적용 =====
   const editionName = (code) => {
     const m = {
       tb: "점철되는 혼란",
@@ -229,6 +231,29 @@ function App() {
     return m[code] || "";
   };
 
+  const editionAuthor = {
+    tb: "The Pandemonium Institute",
+    bmr: "The Pandemonium Institute",
+    snv: "The Pandemonium Institute",
+    car: "Community Scripts",
+    hdcs: "화등초상 제작진",
+    syyl: "산우욕래 제작진",
+    mgcz: "모고신종 제작진",
+    tnf: "TNF 제작진"
+  };
+
+  const editionSpecialRules = {
+    tb: "",
+    bmr: "",
+    snv: "",
+    car: "⚙️ 캐러셀 전용 규칙:\n- 실험적 캐릭터 조합.\n- 일부 능력은 정식 스크립트와 다를 수 있습니다.",
+    hdcs: "🌕 화등초상 규칙:\n- ‘등불’ 토큰은 GM이 직접 관리합니다.\n- 특정 악마는 등불을 소모하거나 회복할 수 있습니다.",
+    syyl: "🌩 산우욕래 규칙:\n- ‘폭풍 게이지’는 밤마다 상승하며, 5단계 도달 시 즉시 악마 승리.\n- 폭풍 게이지는 일부 캐릭터에 의해 줄어들 수 있습니다.",
+    mgcz: "🔔 모고신종 규칙:\n- ‘북’과 ‘종’은 독립된 오브젝트로, 특정 캐릭터만 사용할 수 있습니다.",
+    tnf: "🧳 여행자와 전설 규칙:\n- 모든 플레이어는 게임 시작 시 여행자 1명을 추가 선택할 수 있습니다.\n- 전설 캐릭터는 GM 재량으로만 등장합니다."
+  };
+
+
   const applyEdition = (mode) => {
     if (!editionPick) return alert("기본 스크립트를 선택하세요.");
     const ids = characters.filter((c) => getEditions(c).includes(editionPick)).map((c) => c.id);
@@ -236,8 +261,9 @@ function App() {
     else setSelectedIds((prev) => Array.from(new Set([...prev, ...ids])));
     setMeta((prev) => ({
       name: prev.name || editionName(editionPick) || "제목",
-      author: prev.author || "작가",
+      author: prev.author || editionAuthor[editionPick] || "작가",
     }));
+    setSpecialRules(editionSpecialRules[editionPick] || "");
   };
 
   // ===== 생성(빠른 JSON/일반 선택 통합) =====
@@ -375,6 +401,9 @@ function App() {
       }
     `}</style>
   );
+// 선택 모드에서 특수 룰 노출 조건 계산
+  const showSpecialRulesInput =
+    selectedIds.includes("djinn") || selectedIds.includes("bootlegger");
 
   // ===== 선택 단계 =====
   if (mode === "select") {
@@ -463,6 +492,23 @@ function App() {
           />
         </div>
 
+        {/* ✅ djinn 또는 bootlegger 선택 시에만 나타나는 특수 규칙 입력창 */}
+        {showSpecialRulesInput && (
+          <textarea
+            value={specialRules}
+            onChange={(e) => setSpecialRules(e.target.value)}
+            placeholder="이 스크립트의 추가/특수 규칙을 적어주세요 (예: 징크스, 홈브류 룰, 진행 유의사항 등)"
+            style={{
+              width: "100%",
+              padding: 8,
+              fontFamily: "monospace",
+              marginBottom: "10px",
+              minHeight: 72,           // 검색창(한 줄 input)보다 넉넉하게 읽기 편한 높이
+              boxSizing: "border-box",
+            }}
+          />
+        )}
+         
         {/* 버튼 + 카운터 */}
         <div
           style={{
@@ -561,6 +607,26 @@ function App() {
 
         <h2>{meta.name}</h2>
         <p style={{ color: "gray" }}>by {meta.author}</p>
+
+        {/* ✅ 특수 규칙 표시: 입력이 있을 때만 */}
+        {specialRules.trim() && (
+          <div
+            style={{
+              color: "#444",           // 작가 표시 텍스트와 유사한 톤
+              fontSize: "15px",        // 작가 글씨 정도의 크기
+              background: "#fafafa",
+              border: "1px solid #eee",
+              borderRadius: "8px",
+              padding: "10px 12px",
+              marginBottom: "12px",
+              whiteSpace: "pre-wrap",
+              lineHeight: 1.6,
+            }}
+          >
+            <b style={{ marginRight: 6 }}>📜 특수 규칙</b>
+            {specialRules}
+          </div>
+        )}
 
         {teamOrder.map(
           (team) =>
