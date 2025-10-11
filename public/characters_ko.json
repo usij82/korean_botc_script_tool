@@ -1846,7 +1846,7 @@
   },
   {
     "id": "shijie",
-    "name": "사절(使节)",
+    "name": "사절단(使节)",
     "edition": "hdcs",
     "team": "outsider",
     "setup": false,
@@ -1927,7 +1927,7 @@
   },
   {
     "id": "ranfangfangzhu",
-    "name": "염색장이(染坊坊主)",
+    "name": "염색공(染坊坊主)",
     "edition": "syyl",
     "team": "townsfolk",
     "setup": false,
