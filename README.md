@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# 시계탑에 흐른 피 한국어 스크립트 제작 툴
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+혼자서 열심히 만들어 본 한국어 시계탑 스크립트 제작 툴입니다. 번역은 최대한 공식 한국어 버전을 반영했습니다.
+기존에 알려진 모든 캐릭터(유출 캐릭터는 미포함)를 모두 넣기 위해 노력했습니다.
+캐릭터 및 징크스, 밤 순서의 데이터는 [포켓 그리모어](https://www.pocketgrimoire.co.uk/)의 [Git Hub](https://github.com/Skateside/pocket-grimoire)에서 참조 했습니다.
+아이콘은 [공식 위키 사이트](https://wiki.bloodontheclocktower.com/) 및 [온라인 시계탑](https://botc.app/)에서 가져왔습니다.
 
-## Available Scripts
+## 사용법
 
-In the project directory, you can run:
+스크립트 툴 사용법입니다.
 
-### `npm start`
+### 선택 모드
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. 원하는 캐릭터를 클릭(웹) 또는 누르면(모바일) 선택됩니다.
+2. 캐릭터를 전부 선택했다면, 스크립트의 제목과 작가를 입력하고(필수 아님)
+3. 스크립트 생성을 누르면 됩니다.
+4. 스크립트를 생성하고 돌아와도 선택은 유지됩니다. 초기화 버튼을 눌러 지워주세요.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### 검색 기능
 
-### `npm test`
+캐릭터의 이름이나 능력에 들어간 텍스트를 입력하면 캐릭터를 찾을 수 있습니다.
+공식 번역이 아직 나오지 않아 능력과 이름 모두 검색 가능하게 했습니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 캐릭터 분류 / 스크립트 선택 기능
 
-### `npm run build`
+캐릭터의 유형(주민/외지인/하수인/악마/여행자/전설)이나 등장 스크립트(혹은 캐릭터 모음)를 선택하면 해당하는 캐릭터들을 보여줍니다.
+'해당 스크립트 덮어쓰기' 버튼을 누르면 지금까지 선택된 모든 캐릭터를 지우고 해당 스크립트의 캐릭터들을 선택합니다.
+'해당 스크립트 캐릭터 모두 추가' 버튼을 누르면 지금까지 선택된 캐릭터에 해당 스크립트의 캐릭터들을 추가합니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 특수 규칙 입력
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+전설 캐릭터인 밀주업자, 진, 폭풍 사냥꾼을 선택하면 특수 규칙을 입력할 수 있는 칸이 제목/작가 칸 밑에 생성됩니다.
+추가적인 규칙이나 진행 유의 사항을 입력하시면 됩니다. (폭풍 사냥꾼의 경우 보호 해야하는 캐릭터 등)
+입력 해놓았다면 전설 캐릭터 선택을 해제해도 규칙은 입력된 상태로 있습니다. 물론 초기화하면 지워집니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 뷰어 모드
 
-### `npm run eject`
+완성된 스크립트를 보실 수 있습니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### PDF로 다운로드 (비추)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+완성된 스크립트를 PDF 파일로 다운로드 할 수 있습니다. a4 사이즈로 생성되나,
+다른 템플릿으로 있는 게 아니고 현재 화면을 캡쳐하는 식으로 만들어집니다.
+추후 수정 예정입니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### PNG로 다운로드 (추천)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+완성된 스크립트를 PDF 파일로 다운로드 할 수 있습니다.
+현재 페이지를 캡쳐하는 식으로 만들어집니다. 추후 수정 예정입니다.
 
-## Learn More
+#### JSON 복사하기
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+완성된 스크립트를 JSON 형태로 클립보드에 복사할 수 있습니다.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 여담
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+만드는데 꽤 걸렸습니다. 코딩은 쉬운데 자료 찾기와 번역이 오래 걸렸습니다...
+몇몇 아이콘은 찾는데 수시간 씩 걸린 것도 있으니 여러분은 편하게 사용하시면 됩니다.
+유출 캐릭터들은 넣을지 고민 중입니다. 모든 피드백은 환영이니 마음껏해주세요!
+피드백 주소: [오픈카톡](https://open.kakao.com/me/greatgrandfather)(닉네임 할아버지)
