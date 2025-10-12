@@ -342,7 +342,7 @@ function App() {
       const matchEdition = !editionPick || getEditions(c).includes(editionPick);
       return matchQuery && matchTeam && matchEdition;
     });
-  }, [characters, search, filterTeam, editionPick, showOrthodontist]);
+  }, [characters, search, filterTeam, editionPick, showOrthodontist, isAprilFools, isEasterEggUnlocked]);
 
   // ===== 선택된 캐릭터 그룹/카운트 =====
   const grouped = useMemo(() => {
@@ -433,7 +433,7 @@ function App() {
     return (
       <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
         <ResponsiveStyle />
-        <h1 onClick={handleTitletrack}>🕰️ 시계탑에 흐른 피 한국어 스크립트 툴 by 미피미피</h1>
+        <h1 onClick={handleTitleClick}>🕰️ 시계탑에 흐른 피 한국어 스크립트 툴 by 미피미피</h1>
         <h2>⚙️ 캐릭터 선택 ⚙️</h2>
 
         {/* 검색 */}
