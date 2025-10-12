@@ -438,7 +438,7 @@ function App() {
 
         {/* 검색 */}
         <input
-          style={{ flex: 1, padding: "8px", marginBottom: "8px" }}
+          style={{ width: "100%", padding: "8px", marginBottom: "8px" }}
           placeholder="캐릭터 이름 또는 능력 검색"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -450,7 +450,7 @@ function App() {
           onChange={(e) => setQuickJson(e.target.value)}
           placeholder='빠른 구성(JSON 배열을 입력하세요.) Ex) [{"id":"_meta","author":"작가","name":"제목"},"acrobat","barber","assassin"]'
           style={{
-            flex: 1,
+            width: "100%",
             padding: 8,
             fontFamily: "monospace",
             marginBottom: "10px",
