@@ -2135,7 +2135,7 @@
   {
     "id": "xingjiaoshang",
     "name": "행상인(行脚商)",
-    "edition": "",
+    "edition": "custom",
     "team": "townsfolk",
     "setup": false,
     "ability": "게임당 한 번, 밤에 플레이어 1명을 선택합니다. 해당 플레이어의 캐릭터 토큰 옆에 놓인 모든 리마인더 토큰을 확인합니다.",
