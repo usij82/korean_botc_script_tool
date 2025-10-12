@@ -15,6 +15,11 @@ function App() {
   const [nightOrder, setNightOrder] = useState({ firstNight: [], otherNight: [] });
   const [specialRules, setSpecialRules] = useState("");
   const [showThanks, setShowThanks] = useState(false);
+  const today = new Date();
+  const isAprilFools = today.getMonth() === 3 && today.getDate() === 1;
+  const isEasterEggUnlocked = search.trim() === "이빨요정";
+  const [showOrthodontist, setShowOrthodontist] = useState(false);
+  const [clickCount, setClickCount] = useState(0);
 
 
 
@@ -271,6 +276,13 @@ function App() {
     car: ""
   };
 
+  function handleTitleClick() {
+    setClickCount((prev) => {
+      const next = prev + 1;
+      if (next >= 5) setShowOrthodontist(true);
+      return next;
+    });
+  }
 
   const applyEdition = (mode) => {
     if (!editionPick) return alert("기본 스크립트를 선택하세요.");
@@ -329,15 +341,13 @@ function App() {
   const visibleChars = useMemo(() => {
     const q = search.trim().toLowerCase();
     return characters.filter((c) => {
-      const matchQuery =
-        !q ||
-        c.name.toLowerCase().includes(q) ||
-        c.ability.toLowerCase().includes(q);
+      if (c.id === "orthodontist" && !(isAprilFools || isEasterEggUnlocked || showOrthodontist)) return false;
+      const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
       const matchTeam = filterTeam === "all" || c.team === filterTeam;
       const matchEdition = !editionPick || getEditions(c).includes(editionPick);
       return matchQuery && matchTeam && matchEdition;
     });
-  }, [characters, search, filterTeam, editionPick]);
+  }, [characters, search, filterTeam, editionPick, showOrthodontist]);
 
   // ===== 선택된 캐릭터 그룹/카운트 =====
   const grouped = useMemo(() => {
@@ -428,12 +438,12 @@ function App() {
     return (
       <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
         <ResponsiveStyle />
-        <h1>🕰️ 시계탑에 흐른 피 한국어 스크립트 툴 by 미피미피</h1>
+        <h1 onClick={handleTitletrack}>🕰️ 시계탑에 흐른 피 한국어 스크립트 툴 by 미피미피</h1>
         <h2>⚙️ 캐릭터 선택 ⚙️</h2>
 
         {/* 검색 */}
         <input
-          style={{ width: "100%", padding: "8px", marginBottom: "8px" }}
+          style={{ flex: 1, padding: "8px", marginBottom: "8px" }}
           placeholder="캐릭터 이름 또는 능력 검색"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -445,7 +455,7 @@ function App() {
           onChange={(e) => setQuickJson(e.target.value)}
           placeholder='빠른 구성(JSON 배열을 입력하세요.) Ex) [{"id":"_meta","author":"작가","name":"제목"},"acrobat","barber","assassin"]'
           style={{
-            width: "100%",
+            flex: 1,
             padding: 8,
             fontFamily: "monospace",
             marginBottom: "10px",
@@ -470,7 +480,7 @@ function App() {
           <select
             value={editionPick}
             onChange={(e) => setEditionPick(e.target.value)}
-            style={{ flex: 3, padding: "8px", minWidth: 200 }}
+            style={{ flex: 4, padding: "8px", minWidth: 200 }}
           >
             <option value="">스크립트/캐릭터 모음 목록</option>
 
