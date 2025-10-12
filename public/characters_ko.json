@@ -731,7 +731,7 @@
   {
     "id": "ballad",
     "name": "서정곡",
-    "edition": "custom",
+    "edition": "homebrew",
     "team": "fabled",
     "setup": true,
     "ability": "홈브류: 자리 중 하나가 비어있습니다. 해당 자리에는 게임에 참가하지 않은 캐릭터가 배정됩니다. 해당 캐릭터의 선택은 무작위이며, 게임당 한 번, 이야기꾼이 해당 캐릭터를 대신하여 공개적으로 또는 개인적으로 발언할 수도 있습니다.",
@@ -1775,7 +1775,7 @@
   {
     "id": "shimengmo",
     "name": "맥(食梦貘)",
-    "edition": "custom",
+    "edition": "homebrew",
     "team": "demon",
     "setup": true,
     "ability": "홈브류: 매일 밤*(첫번째 밤 제외), 플레이어 1명을 선택합니다. 해당 플레이어는 죽습니다. 자신의 능력으로 당신을 선택하는 플레이어는 대신 자신을 선택합니다. [-1 외지인]",
@@ -2126,7 +2126,7 @@
   {
     "id": "hebo",
     "name": "하백(河伯)",
-    "edition": "custom",
+    "edition": "homebrew",
     "team": "traveller",
     "setup": false,
     "ability": "홈브류: 당신과 같은 진영의 플레이어를 당신이 지명했다면, 해당 플레이어는 그날 밤에 죽을 수 있습니다.",
@@ -2135,10 +2135,10 @@
   {
     "id": "xingjiaoshang",
     "name": "행상인(行脚商)",
-    "edition": "custom",
+    "edition": "homebrew",
     "team": "townsfolk",
     "setup": false,
-    "ability": "게임당 한 번, 밤에 플레이어 1명을 선택합니다. 해당 플레이어의 캐릭터 토큰 옆에 놓인 모든 리마인더 토큰을 확인합니다.",
+    "ability": "홈브류: 게임당 한 번, 밤에 플레이어 1명을 선택합니다. 해당 플레이어의 캐릭터 토큰 옆에 놓인 모든 리마인더 토큰을 확인합니다.",
     "image": "icons/Icon_xingjiaoshang.png"
   },
   {
