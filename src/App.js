@@ -140,8 +140,10 @@ function App() {
   // ===== 데이터 로드 =====
   useEffect(() => {
     async function loadData() {
+      const charFile = isAprilFools ? "characters_ok.json" : "characters_ko.json" ;
+      if (isAprilFools) { alert("😇 오늘은 만우절입니다! 😈\n🦷 숨겨진 캐릭터인 치과의사도 선택할 수 있어요! 🦷"); }
       const [charsRes, jinxRes, orderRes] = await Promise.all([
-        fetch("characters_ko.json"),
+        fetch(charFile),
         fetch("jinx_ko.json"),
         fetch("night_order.json"),
       ]);
@@ -158,7 +160,7 @@ function App() {
       setNightOrder(order);
     }
     loadData();
-  }, []);
+  }, [isAprilFools]);
 
   // ===== 유틸 =====
   const teamOrder = ["townsfolk", "outsider", "minion", "demon", "traveller", "fabled"];
