@@ -52,7 +52,7 @@ function App() {
   function handleTitleClick() {
     setClickCount((prev) => {
       const next = prev + 1;
-      if (next >= 5) {
+      if (next >= 10) {
       setIsClicked(true);
       }
       return next;
@@ -63,7 +63,7 @@ function App() {
     if (isClicked && !clickAlerted) {
       setClickAlerted(true);
       setShowOrthodontist(true);
-      alert("🦷 비밀 캐릭터가 나타났습니다!");
+      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n-지금부터 치과의사를 선택할 수 있어요!");
     }
   }, [isClicked, clickAlerted]);
   
@@ -71,7 +71,7 @@ function App() {
     if (isAprilFools && !aprilAlerted) {
       setShowOrthodontist(true);
       setAprilAlerted(true);
-      alert("🦷 비밀 캐릭터가 나타났습니다!");
+      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n-지금부터 치과의사를 선택할 수 있어요!");
     }
   }, [isAprilFools, aprilAlerted]);
 
@@ -80,7 +80,7 @@ function App() {
     if (isWordUnlocked && !wordAlerted) {
       setShowOrthodontist(true);
       setWordAlerted(true);
-      alert("🦷 비밀 캐릭터가 나타났습니다!");
+      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n-지금부터 치과의사를 선택할 수 있어요!");
     }
   }, [isWordUnlocked, wordAlerted]);
   
@@ -473,7 +473,7 @@ function App() {
         {/* 검색 */}
         <input
           style={{ width: "100%", padding: "8px", marginBottom: "8px", boxSizing: "border-box" }}
-          placeholder="캐릭터 이름 또는 능력 검색"
+          placeholder="캐릭터 이름 또는 능력 검색 아니면..?"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
