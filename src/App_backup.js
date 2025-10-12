@@ -10,15 +10,70 @@ function App() {
   const [filterTeam, setFilterTeam] = useState("all");
   const [editionPick, setEditionPick] = useState("");
   const [quickJson, setQuickJson] = useState("");
-
   const [characters, setCharacters] = useState([]);
   const [jinxes, setJinxes] = useState({});
   const [nightOrder, setNightOrder] = useState({ firstNight: [], otherNight: [] });
-
-  // A4 크기 및 해상도 상수
+  const [specialRules, setSpecialRules] = useState("");
+  const [showThanks, setShowThanks] = useState(false);
+  const today = new Date();
+  const isAprilFools = today.getMonth() === 3 && today.getDate() === 1;
+  const isWordUnlocked = search.trim().toLowerCase() === "치과의사";
+  const [aprilAlerted, setAprilAlerted] = useState(false);
+  const [wordAlerted, setwordAlerted] = useState(false);
+  const [showOrthodontist, setShowOrthodontist] = useState(false);
+  const [, setClickCount] = useState(0);
   const A4 = { w: 794, h: 1123 };
   const SCALE = 2;
+  const THANKS_TEXT = `
+  혼자서 열심히 만들어 본 한국어 시계탑 스크립트 제작 툴입니다.
+  기존에 알려진 모든 캐릭터(유출 캐릭터는 미포함)를 모두 넣기위해 노력했습니다.
+  캐릭터 및 징크스, 밤 순서의 데이터는 [포켓 그리모어](https://www.pocketgrimoire.co.uk/ko_KR/)의 [Git Hub](https://github.com/Skateside/pocket-grimoire)에서 참조 했습니다.
+  아이콘은 [공식 위키 사이트](https://wiki.bloodontheclocktower.com/) 및 [온라인 시계탑](https://botc.app/)에서 가져왔습니다.
+  몇몇 아이콘은 찾는데 수시간 씩 걸린 것도 있으니 여러분은 편하게 사용하시면 됩니다.
+  p.s. 이스터에그가 숨겨져 있으니 잘 찾아보세요! 🦷👨‍⚕️
+  `;
 
+  // URL 자동 링크 + [텍스트](URL) 지원 (이전 대화에서 설명한 간단 렌더러)
+  function renderRichText(text) {
+    const withAnchors = text
+      // [text](url)
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+        '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+      // 맨날 URL
+      .replace(/(?<!\]|")\bhttps?:\/\/[^\s)]+/g,
+        (m) => `<a href="${m}" target="_blank" rel="noopener noreferrer">${m}</a>`);
+    // 줄바꿈 처리
+    return withAnchors.replace(/\n/g, '<br/>');
+  }
+
+  function handleTitleClick() {
+    setClickCount((prev) => {
+      const next = prev + 1;
+      if (next >= 5) {
+        setShowOrthodontist(true);
+        alert("🦷 비밀 캐릭터가 나타났습니다!");
+      }
+      return next;
+    });
+  }
+
+  useEffect(() => {
+    if (isAprilFools && !aprilAlerted) {
+      setShowOrthodontist(true);
+      setAprilAlerted(true);
+      alert("🦷 비밀 캐릭터가 나타났습니다!");
+    }
+  }, [isAprilFools, aprilAlerted]);
+
+// “이빨요정” 검색 이스터에그 해금 + 알림
+  useEffect(() => {
+    if (isWordUnlocked && !wordAlerted) {
+      setShowOrthodontist(true);
+      setwordAlerted(true);
+      alert("🦷 비밀 캐릭터가 나타났습니다!");
+    }
+  }, [isWordUnlocked, wordAlerted]);
+  
   // ===== 데이터 로드 =====
   useEffect(() => {
     async function loadData() {
@@ -211,10 +266,11 @@ function App() {
       setSelectedIds([]);
       setMeta({ name: "", author: "" });
       setQuickJson("");
+      setSpecialRules("");
     }
   };
 
-  // ===== 기본 스크립트 이름 매핑 & 적용 =====
+  // ===== 기본 스크립트 이름, 작가, 특수룰 매핑 & 적용 =====
   const editionName = (code) => {
     const m = {
       tb: "점철되는 혼란",
@@ -229,6 +285,22 @@ function App() {
     return m[code] || "";
   };
 
+  const editionAuthor = {
+    tb: "기본 스크립트 1번",
+    bmr: "기본 스크립트 2번",
+    snv: "기본 스크립트 3번",
+    tnf: "기본판에 포함된 여행자와 전설 캐릭터 모음집",
+    car: "실험적 캐릭터 모음집",
+    hdcs: "중국판 추가 스크립트 1번",
+    syyl: "미발매(추후 능력이 수정될 수 있음)",
+    mgcz: "미발매(추후 능력이 수정될 수 있음)"
+  };
+
+  //특수룰, 줄바꿈은 \n- 입력하면 됨.
+  const editionSpecialRules = {
+    car: ""
+  };
+
   const applyEdition = (mode) => {
     if (!editionPick) return alert("기본 스크립트를 선택하세요.");
     const ids = characters.filter((c) => getEditions(c).includes(editionPick)).map((c) => c.id);
@@ -236,8 +308,9 @@ function App() {
     else setSelectedIds((prev) => Array.from(new Set([...prev, ...ids])));
     setMeta((prev) => ({
       name: prev.name || editionName(editionPick) || "제목",
-      author: prev.author || "작가",
+      author: prev.author || editionAuthor[editionPick] || "작가",
     }));
+    setSpecialRules(editionSpecialRules[editionPick] || "");
   };
 
   // ===== 생성(빠른 JSON/일반 선택 통합) =====
@@ -285,15 +358,13 @@ function App() {
   const visibleChars = useMemo(() => {
     const q = search.trim().toLowerCase();
     return characters.filter((c) => {
-      const matchQuery =
-        !q ||
-        c.name.toLowerCase().includes(q) ||
-        c.ability.toLowerCase().includes(q);
+      if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
+      const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
       const matchTeam = filterTeam === "all" || c.team === filterTeam;
       const matchEdition = !editionPick || getEditions(c).includes(editionPick);
       return matchQuery && matchTeam && matchEdition;
     });
-  }, [characters, search, filterTeam, editionPick]);
+  }, [characters, search, filterTeam, editionPick, showOrthodontist, isAprilFools, isWordUnlocked]);
 
   // ===== 선택된 캐릭터 그룹/카운트 =====
   const grouped = useMemo(() => {
@@ -375,18 +446,21 @@ function App() {
       }
     `}</style>
   );
+// 선택 모드에서 특수 룰 노출 조건 계산
+  const showSpecialRulesInput =
+    selectedIds.includes("bootlegger") || selectedIds.includes("djinn") || selectedIds.includes("stormcatcher");
 
   // ===== 선택 단계 =====
   if (mode === "select") {
     return (
       <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
         <ResponsiveStyle />
-        <h1>🕰️ 시계탑에 흐른 피 한국어 스크립트 툴 by 미피미피</h1>
+        <h1 onClick={handleTitleClick}>🕰️ 시계탑에 흐른 피 한국어 스크립트 툴 by 미피미피</h1>
         <h2>⚙️ 캐릭터 선택 ⚙️</h2>
 
         {/* 검색 */}
         <input
-          style={{ width: "100%", padding: "8px", marginBottom: "8px" }}
+          style={{ width: "100%", padding: "8px", marginBottom: "8px", boxSizing: "border-box" }}
           placeholder="캐릭터 이름 또는 능력 검색"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -401,8 +475,8 @@ function App() {
             width: "100%",
             padding: 8,
             fontFamily: "monospace",
-            marginBottom: "10px",
-            minHeight: 72,
+            marginBottom: "8px",
+            boxSizing: "border-box"
           }}
         />
 
@@ -411,7 +485,7 @@ function App() {
           <select
             value={filterTeam}
             onChange={(e) => setFilterTeam(e.target.value)}
-            style={{ padding: "8px", minWidth: 160 }}
+            style={{ flex: 1, padding: "8px", minWidth: 160 }}
           >
             <option value="all">캐릭터 분류</option>
             {teamOrder.map((t) => (
@@ -424,9 +498,9 @@ function App() {
           <select
             value={editionPick}
             onChange={(e) => setEditionPick(e.target.value)}
-            style={{ flex: 1, padding: "8px", minWidth: 200 }}
+            style={{ flex: 4, padding: "8px", minWidth: 200 }}
           >
-            <option value="">기본 스크립트 목록</option>
+            <option value="">스크립트/캐릭터 모음 목록</option>
 
             <optgroup label="기본 스크립트">
               <option value="tb">점철되는 혼란</option>
@@ -463,6 +537,23 @@ function App() {
           />
         </div>
 
+        {/* ✅ bootlegger / djinn / stormcatcher 선택 시에 나타나는 특수 규칙 입력창 */}
+        {showSpecialRulesInput && (
+          <textarea
+            value={specialRules}
+            onChange={(e) => setSpecialRules(e.target.value)}
+            placeholder="이 스크립트의 추가/특수 규칙을 적어주세요. (예: 징크스, 홈브류 룰, 진행 유의사항 등)"
+            style={{
+              width: "100%",
+              padding: 8,
+              fontFamily: "monospace",
+              marginBottom: "10px",
+              minHeight: 72,           // 검색창(한 줄 input)보다 넉넉하게 읽기 편한 높이
+              boxSizing: "border-box",
+            }}
+          />
+        )}
+         
         {/* 버튼 + 카운터 */}
         <div
           style={{
@@ -534,6 +625,45 @@ function App() {
               </div>
             )
         )}
+        {/* --- 맨 아래: 감사의 말 (읽기 전용 토글) --- */}
+        <div style={{ marginTop: 28 }}>
+          <div
+            onClick={() => setShowThanks((v) => !v)}
+            style={{
+              cursor: "pointer",
+              userSelect: "none",
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              fontSize: 24, fontWeight: 700, lineHeight: 1.2,
+              padding: "6px 0",
+              borderTop: "1px solid #eee",
+              borderBottom: "1px solid #eee",
+            }}
+            aria-expanded={showThanks}
+            role="button"
+          >
+            <span>감사의 말</span>
+            <span style={{ marginLeft: "auto", fontSize: 18, color: "#666" }}>
+              {showThanks ? "▲" : "▼"}
+            </span>
+          </div>
+
+          {showThanks && (
+            <div
+              style={{
+                padding: "12px 0",
+                color: "#000",                 // 본문 색상은 검정
+                fontSize: 14,                  // “선택된 캐릭터 카운트” 정도의 크기
+                lineHeight: 1.7,
+                whiteSpace: "normal",
+                wordBreak: "break-word",
+              }}
+              // 안전한 범위에서 간단한 앵커만 허용 (위의 renderRichText 출력)
+              dangerouslySetInnerHTML={{ __html: renderRichText(THANKS_TEXT.trim()) }}
+            />
+          )}
+        </div>
       </div>
     );
   }
@@ -561,6 +691,58 @@ function App() {
 
         <h2>{meta.name}</h2>
         <p style={{ color: "gray" }}>by {meta.author}</p>
+
+        {/* ✅ 특수 규칙 표시: 입력이 있을 때만 */}
+        {specialRules?.trim() && (() => {
+          const base = process.env.PUBLIC_URL || "";
+          const iconBootlegger = `${base}/icons/Icon_bootlegger.png`;
+          const iconDjinn = `${base}/icons/Icon_djinn.png`;
+          const iconStormcatcher = `${base}/icons/Icon_stormcatcher.png`;
+            // 보여줄 아이콘 목록
+          const icons = [];
+            if (selectedIds.includes("bootlegger")) icons.push(iconBootlegger);
+            if (selectedIds.includes("djinn")) icons.push(iconDjinn);
+            if (selectedIds.includes("stormcatcher")) icons.push(iconStormcatcher);
+        
+            return (
+              <div
+                style={{
+                  color: "#444",
+                  fontSize: "15px",
+                  background: "#fafafa",
+                  border: "1px solid #eee",
+                  borderRadius: "8px",
+                  padding: "10px 12px",
+                  marginBottom: "12px",
+                  whiteSpace: "pre-wrap",
+                  lineHeight: 1.6,
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "8px",
+                }}
+              >
+                {/* 왼쪽 아이콘 그룹 */}
+                <div style={{ display: "flex", gap: "4px", alignItems: "center" }}>
+                  {icons.length > 0 && icons.map((src, i) => (
+                      <img
+                        key={i}
+                        src={src}
+                        alt="rule icon"
+                        width="25"
+                        height="25"
+                        style={{ objectFit: "contain", borderRadius: "4px" }}
+                        onError={(e) => { e.currentTarget.style.display = "none"; }}
+                      />
+                    ))}
+                </div>
+                {/* 오른쪽 텍스트 영역 */}
+                <div style={{ flex: 1, whiteSpace: "pre-wrap" }}>
+                  <b style={{ display: "block", marginBottom: "4px" }}>특수 규칙</b>
+                  {specialRules}
+                </div>
+              </div>
+            );
+          })()}
 
         {teamOrder.map(
           (team) =>
