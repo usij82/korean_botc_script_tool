@@ -357,6 +357,8 @@ function App() {
   const visibleChars = useMemo(() => {
     const q = search.trim().toLowerCase();
     return characters.filter((c) => {
+      const isCustom = getEditions(c).includes("custom");
+      if (!q && isCustom) return false;
       if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
       const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
       const matchTeam = filterTeam === "all" || c.team === filterTeam;
@@ -642,7 +644,7 @@ function App() {
             aria-expanded={showThanks}
             role="button"
           >
-            <span>감사의 말</span>
+            <span>전하는 말</span>
             <span style={{ marginLeft: "auto", fontSize: 18, color: "#666" }}>
               {showThanks ? "▲" : "▼"}
             </span>
