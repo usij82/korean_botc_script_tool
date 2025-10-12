@@ -729,6 +729,15 @@
     "image": "icons/Icon_shabaloth.png"
   },
   {
+    "id": "ballad",
+    "name": "서정곡",
+    "edition": "custom",
+    "team": "fabled",
+    "setup": true,
+    "ability": "자리 중 하나가 비어있습니다. 해당 자리에는 게임에 참가하지 않은 캐릭터가 배정됩니다. 해당 캐릭터의 선택은 무작위이며, 게임당 한 번, 이야기꾼이 해당 캐릭터를 대신하여 공개적으로 또는 개인적으로 발언할 수도 있습니다.",
+    "image": "icons/Icon_ballad.png"
+  },
+  {
     "id": "sailor",
     "name": "선원",
     "edition": "bmr",
