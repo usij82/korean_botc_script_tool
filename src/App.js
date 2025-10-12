@@ -17,7 +17,7 @@ function App() {
   const [showThanks, setShowThanks] = useState(false);
   const today = new Date();
   const isAprilFools = today.getMonth() === 3 && today.getDate() === 1;
-  const isWordUnlocked = search.trim().toLowerCase() === "치과의사";
+  const isWordUnlocked = search.trim().toLowerCase() === "이빨요정";
   const [isClicked, setIsClicked] = useState(false);
   const [, setClickCount] = useState(0);
   const [aprilAlerted, setAprilAlerted] = useState(false);
