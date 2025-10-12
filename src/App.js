@@ -75,7 +75,7 @@ function App() {
     if (isAprilFools && !aprilAlerted) {
       setShowOrthodontist(true);
       setAprilAlerted(true);
-      alert("🦷 오늘은 숨겨진 캐릭터인 치과의사를 선택할 수 있어요! 🦷");
+      alert("😇 모든 것이 뒤바뀐 광기의 만우절에 찾아오다니... 운이 좋네요! 😈");
     }
   }, [isAprilFools, aprilAlerted]);
 
@@ -141,7 +141,6 @@ function App() {
   useEffect(() => {
     async function loadData() {
       const charFile = isAprilFools ? "characters_ok.json" : "characters_ko.json" ;
-      if (isAprilFools) { alert("😇 왜냐하면 오늘은 만우절이니까요! 😈"); }
       const [charsRes, jinxRes, orderRes] = await Promise.all([
         fetch(charFile),
         fetch("jinx_ko.json"),
