@@ -14,11 +14,35 @@ function App() {
   const [jinxes, setJinxes] = useState({});
   const [nightOrder, setNightOrder] = useState({ firstNight: [], otherNight: [] });
   const [specialRules, setSpecialRules] = useState("");
+  const [showThanks, setShowThanks] = useState(false);
+
 
 
   // A4 크기 및 해상도 상수
   const A4 = { w: 794, h: 1123 };
   const SCALE = 2;
+
+  const THANKS_TEXT = `
+  혼자서 열심히 만들어 본 한국어 시계탑 스크립트 제작 툴입니다.
+  기존에 알려진 모든 캐릭터(유출 캐릭터는 미포함)를 모두 넣기위해 노력했습니다.
+  캐릭터 및 징크스, 밤 순서의 데이터는 [포켓 그리모어](https://www.pocketgrimoire.co.uk/ko_KR/)의 [Git Hub](https://github.com/Skateside/pocket-grimoire)에서 참조 했습니다.
+  아이콘은 [공식 위키 사이트](https://wiki.bloodontheclocktower.com/) 및 [온라인 시계탑](https://botc.app/)에서 가져왔습니다.
+  몇몇 아이콘은 찾는데 수시간 씩 걸린 것도 있으니 여러분은 편하게 사용하시면 됩니다.
+  p.s. 이스터에그가 숨겨져 있으니 잘 찾아보세요!
+  `;
+
+  // URL 자동 링크 + [텍스트](URL) 지원 (이전 대화에서 설명한 간단 렌더러)
+  function renderRichText(text) {
+    const withAnchors = text
+      // [text](url)
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+        '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+      // 맨날 URL
+      .replace(/(?<!\]|")\bhttps?:\/\/[^\s)]+/g,
+        (m) => `<a href="${m}" target="_blank" rel="noopener noreferrer">${m}</a>`);
+    // 줄바꿈 처리
+    return withAnchors.replace(/\n/g, '<br/>');
+  }
 
   // ===== 데이터 로드 =====
   useEffect(() => {
@@ -573,6 +597,45 @@ function App() {
               </div>
             )
         )}
+        {/* --- 맨 아래: 감사의 말 (읽기 전용 토글) --- */}
+        <div style={{ marginTop: 28 }}>
+          <div
+            onClick={() => setShowThanks((v) => !v)}
+            style={{
+              cursor: "pointer",
+              userSelect: "none",
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              fontSize: 24, fontWeight: 700, lineHeight: 1.2,
+              padding: "6px 0",
+              borderTop: "1px solid #eee",
+              borderBottom: "1px solid #eee",
+            }}
+            aria-expanded={showThanks}
+            role="button"
+          >
+            <span>감사의 말</span>
+            <span style={{ marginLeft: "auto", fontSize: 18, color: "#666" }}>
+              {showThanks ? "▲" : "▼"}
+            </span>
+          </div>
+
+          {showThanks && (
+            <div
+              style={{
+                padding: "12px 0",
+                color: "#000",                 // 본문 색상은 검정
+                fontSize: 14,                  // “선택된 캐릭터 카운트” 정도의 크기
+                lineHeight: 1.7,
+                whiteSpace: "normal",
+                wordBreak: "break-word",
+              }}
+              // 안전한 범위에서 간단한 앵커만 허용 (위의 renderRichText 출력)
+              dangerouslySetInnerHTML={{ __html: renderRichText(THANKS_TEXT.trim()) }}
+            />
+          )}
+        </div>
       </div>
     );
   }
