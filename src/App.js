@@ -75,7 +75,7 @@ function App() {
     if (isAprilFools && !aprilAlerted) {
       setShowOrthodontist(true);
       setAprilAlerted(true);
-      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n지금부터 치과의사를 선택할 수 있어요!");
+      alert("🦷 오늘은 만우절입니다! 🦷\n숨겨진 캐릭터인 치과의사를 선택할 수 있어요!");
     }
   }, [isAprilFools, aprilAlerted]);
 
