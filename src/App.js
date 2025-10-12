@@ -20,20 +20,15 @@ function App() {
   const isEasterEggUnlocked = search.trim() === "이빨요정";
   const [showOrthodontist, setShowOrthodontist] = useState(false);
   const [clickCount, setClickCount] = useState(0);
-
-
-
-  // A4 크기 및 해상도 상수
   const A4 = { w: 794, h: 1123 };
   const SCALE = 2;
-
   const THANKS_TEXT = `
   혼자서 열심히 만들어 본 한국어 시계탑 스크립트 제작 툴입니다.
   기존에 알려진 모든 캐릭터(유출 캐릭터는 미포함)를 모두 넣기위해 노력했습니다.
   캐릭터 및 징크스, 밤 순서의 데이터는 [포켓 그리모어](https://www.pocketgrimoire.co.uk/ko_KR/)의 [Git Hub](https://github.com/Skateside/pocket-grimoire)에서 참조 했습니다.
   아이콘은 [공식 위키 사이트](https://wiki.bloodontheclocktower.com/) 및 [온라인 시계탑](https://botc.app/)에서 가져왔습니다.
   몇몇 아이콘은 찾는데 수시간 씩 걸린 것도 있으니 여러분은 편하게 사용하시면 됩니다.
-  p.s. 이스터에그가 숨겨져 있으니 잘 찾아보세요!
+  p.s. 이스터에그가 숨겨져 있으니 잘 찾아보세요! 🦷🧚
   `;
 
   // URL 자동 링크 + [텍스트](URL) 지원 (이전 대화에서 설명한 간단 렌더러)
@@ -49,6 +44,14 @@ function App() {
     return withAnchors.replace(/\n/g, '<br/>');
   }
 
+  function handleTitleClick() {
+    setClickCount((prev) => {
+      const next = prev + 1;
+      if (next >= 5) setShowOrthodontist(true);
+      return next;
+    });
+  }
+  
   // ===== 데이터 로드 =====
   useEffect(() => {
     async function loadData() {
@@ -275,14 +278,6 @@ function App() {
   const editionSpecialRules = {
     car: ""
   };
-
-  function handleTitleClick() {
-    setClickCount((prev) => {
-      const next = prev + 1;
-      if (next >= 5) setShowOrthodontist(true);
-      return next;
-    });
-  }
 
   const applyEdition = (mode) => {
     if (!editionPick) return alert("기본 스크립트를 선택하세요.");
