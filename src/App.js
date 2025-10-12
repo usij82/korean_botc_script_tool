@@ -18,11 +18,12 @@ function App() {
   const today = new Date();
   const isAprilFools = today.getMonth() === 3 && today.getDate() === 1;
   const isWordUnlocked = search.trim().toLowerCase() === "치과의사";
+  const [isClicked, setIsClicked] = useState(false);
+  const [, setClickCount] = useState(0);
   const [aprilAlerted, setAprilAlerted] = useState(false);
   const [wordAlerted, setWordAlerted] = useState(false);
   const [clickAlerted, setClickAlerted] = useState(false);
   const [showOrthodontist, setShowOrthodontist] = useState(false);
-  const [, setClickCount] = useState(0);
   const A4 = { w: 794, h: 1123 };
   const SCALE = 2;
   const THANKS_TEXT = `
@@ -46,22 +47,26 @@ function App() {
     return withAnchors.replace(/\n/g, '<br/>');
   }
 
+
+  
   function handleTitleClick() {
     setClickCount((prev) => {
       const next = prev + 1;
       if (next >= 5) {
-        useEffect(() => {
-          if (!clickAlerted) {
-            setClickAlerted(true);
-            setShowOrthodontist(true);
-            alert("🦷 비밀 캐릭터가 나타났습니다!");
-          }
-        }, [clickAlerted]);
+      setIsClicked(true);
       }
       return next;
     });
   }
 
+  useEffect(() => {
+    if (isCliked && !clickAlerted) {
+      setClickAlerted(true);
+      setShowOrthodontist(true);
+      alert("🦷 비밀 캐릭터가 나타났습니다!");
+    }
+  }, [isClicked, clickAlerted]);
+  
   useEffect(() => {
     if (isAprilFools && !aprilAlerted) {
       setShowOrthodontist(true);
