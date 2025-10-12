@@ -26,11 +26,10 @@ function App() {
   const SCALE = 2;
   const THANKS_TEXT = `
   혼자서 열심히 만들어 본 한국어 시계탑 스크립트 제작 툴입니다.
-  기존에 알려진 모든 캐릭터(유출 캐릭터는 미포함)를 모두 넣기위해 노력했습니다.
+  기존에 알려진 모든 캐릭터(유출 캐릭터는 미포함)를 모두 넣기 위해 노력했습니다.
   캐릭터 및 징크스, 밤 순서의 데이터는 [포켓 그리모어](https://www.pocketgrimoire.co.uk/ko_KR/)의 [Git Hub](https://github.com/Skateside/pocket-grimoire)에서 참조 했습니다.
   아이콘은 [공식 위키 사이트](https://wiki.bloodontheclocktower.com/) 및 [온라인 시계탑](https://botc.app/)에서 가져왔습니다.
-  몇몇 아이콘은 찾는데 수시간 씩 걸린 것도 있으니 여러분은 편하게 사용하시면 됩니다.
-  p.s. 이스터에그가 숨겨져 있으니 잘 찾아보세요! 🦷👨‍⚕️
+  [사용법](https://github.com/usij82/korean_botc_script_tool/blob/main/README.md)은 해당 링크를 참조하시면 됩니다!
   `;
 
   // URL 자동 링크 + [텍스트](URL) 지원 (이전 대화에서 설명한 간단 렌더러)
