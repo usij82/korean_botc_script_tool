@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
@@ -24,6 +24,10 @@ function App() {
   const [wordAlerted, setWordAlerted] = useState(false);
   const [clickAlerted, setClickAlerted] = useState(false);
   const [showOrthodontist, setShowOrthodontist] = useState(false);
+  const [toothPromptVisible, setToothPromptVisible] = useState(false); // 모달 표시 여부
+  const openTimerRef = useRef(null);   // 다음 “:41”에 여는 타이머
+  const closeTimerRef = useRef(null);  // 1분 뒤 자동 닫힘 타이머
+  const [timedAlerted, setTimedAlerted] = useState(false); // 해금 알림 중복 방지
   const A4 = { w: 794, h: 1123 };
   const SCALE = 2;
   const THANKS_TEXT = `
@@ -52,7 +56,7 @@ function App() {
   function handleTitleClick() {
     setClickCount((prev) => {
       const next = prev + 1;
-      if (next >= 10) {
+      if (next >= 41) {
       setIsClicked(true);
       }
       return next;
@@ -63,7 +67,7 @@ function App() {
     if (isClicked && !clickAlerted) {
       setClickAlerted(true);
       setShowOrthodontist(true);
-      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n-지금부터 치과의사를 선택할 수 있어요!");
+      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n지금부터 치과의사를 선택할 수 있어요!");
     }
   }, [isClicked, clickAlerted]);
   
@@ -71,7 +75,7 @@ function App() {
     if (isAprilFools && !aprilAlerted) {
       setShowOrthodontist(true);
       setAprilAlerted(true);
-      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n-지금부터 치과의사를 선택할 수 있어요!");
+      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n지금부터 치과의사를 선택할 수 있어요!");
     }
   }, [isAprilFools, aprilAlerted]);
 
@@ -80,9 +84,58 @@ function App() {
     if (isWordUnlocked && !wordAlerted) {
       setShowOrthodontist(true);
       setWordAlerted(true);
-      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n-지금부터 치과의사를 선택할 수 있어요!");
+      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n지금부터 치과의사를 선택할 수 있어요!");
     }
   }, [isWordUnlocked, wordAlerted]);
+
+  useEffect(() => {
+    if (showOrthodontist) {
+    // 이미 해금된 경우, 더 이상 알림을 띄우지 않음
+      if (openTimerRef.current) clearTimeout(openTimerRef.current);
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+      return;
+    }
+
+    function msUntilNext41() {
+      const now = new Date();
+      const next = new Date(now);
+      next.setSeconds(0, 0);
+      if (now.getMinutes() < 41) {
+        next.setMinutes(41);
+      } else {
+        // 다음 시간의 41분
+        next.setHours(now.getHours() + 1);
+        next.setMinutes(41);
+      }
+      return next.getTime() - now.getTime();
+    }
+
+    function scheduleOpen() {
+      // 안전 장치
+      if (openTimerRef.current) clearTimeout(openTimerRef.current);
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+
+      openTimerRef.current = setTimeout(() => {
+        // 41분에 도달 → 모달 열기
+        setToothPromptVisible(true);
+
+        // 1분 뒤 자동 닫힘
+        closeTimerRef.current = setTimeout(() => {
+          setToothPromptVisible(false);
+          // 닫으면서 곧바로 다음 :41 예약
+          scheduleOpen();
+        }, 60 * 1000);
+      }, msUntilNext41());
+    }
+
+    scheduleOpen();
+
+    return () => {
+      if (openTimerRef.current) clearTimeout(openTimerRef.current);
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    };
+  }, [showOrthodontist]);
+
   
   // ===== 데이터 로드 =====
   useEffect(() => {
@@ -279,6 +332,22 @@ function App() {
       setSpecialRules("");
     }
   };
+// == 모달 버튼 핸들러 ==
+  const onToothYes = () => {
+    setToothPromptVisible(false);
+    if (!showOrthodontist) {
+      setShowOrthodontist(true);
+      if (!timedAlerted) {
+        setTimedAlerted(true);
+        alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n지금부터 치과의사를 선택할 수 있어요!");
+      }
+    }
+  };
+ 
+  const onToothNo = () => {
+    setToothPromptVisible(false);
+  };
+
 
   // ===== 기본 스크립트 이름, 작가, 특수룰 매핑 & 적용 =====
   const editionName = (code) => {
@@ -462,7 +531,7 @@ function App() {
   const showSpecialRulesInput =
     selectedIds.includes("bootlegger") || selectedIds.includes("djinn") || selectedIds.includes("stormcatcher");
 
-  // ===== 선택 단계 =====
+  // =================================== 선택 단계 =======================================
   if (mode === "select") {
     return (
       <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
@@ -676,6 +745,41 @@ function App() {
             />
           )}
         </div>
+        {/* 🦷 41분 팝업: 선택 모드에서만 렌더 */}
+        {toothPromptVisible && (
+          <div
+            style={{
+              position: "fixed",
+              inset: 0,
+              background: "rgba(0,0,0,0.45)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 9999,
+            }}
+          >
+            <div
+              style={{
+                background: "#fff",
+                borderRadius: 12,
+                padding: "20px 16px",
+                maxWidth: 360,
+                width: "90%",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+                textAlign: "center",
+              }}
+            >
+              <div style={{ fontSize: 20, marginBottom: 10 }}>🦷 이빨을 바칠 준비가 되셨나요? 🦷</div>
+              <div style={{ fontSize: 13, color: "#666", marginBottom: 16 }}>
+                (이 창은 1분 후 자동으로 닫힙니다)
+              </div>
+              <div style={{ display: "flex", gap: 8, justifyContent: "center" }}>
+                <button onClick={onToothYes} style={{ padding: "8px 12px" }}>예</button>
+                <button onClick={onToothNo} style={{ padding: "8px 12px" }}>아니오</button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
