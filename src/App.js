@@ -60,7 +60,7 @@ function App() {
   }
 
   useEffect(() => {
-    if (isCliked && !clickAlerted) {
+    if (isClicked && !clickAlerted) {
       setClickAlerted(true);
       setShowOrthodontist(true);
       alert("🦷 비밀 캐릭터가 나타났습니다!");
@@ -368,8 +368,8 @@ function App() {
   const visibleChars = useMemo(() => {
     const q = search.trim().toLowerCase();
     return characters.filter((c) => {
-      const isCustom = getEditions(c).includes("custom");
-      if (!q && isCustom) return false;
+      const isHomebrew = getEditions(c).includes("homebrew");
+      if (!q && isHomebrew) return false;
       if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
       const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
       const matchTeam = filterTeam === "all" || c.team === filterTeam;
