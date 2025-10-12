@@ -19,7 +19,7 @@ function App() {
   const isAprilFools = today.getMonth() === 3 && today.getDate() === 1;
   const isEasterEggUnlocked = search.trim() === "이빨요정";
   const [showOrthodontist, setShowOrthodontist] = useState(false);
-  const [clickCount, setClickCount] = useState(0);
+  const [, setClickCount] = useState(0);
   const A4 = { w: 794, h: 1123 };
   const SCALE = 2;
   const THANKS_TEXT = `
