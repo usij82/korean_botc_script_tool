@@ -47,7 +47,10 @@ function App() {
   function handleTitleClick() {
     setClickCount((prev) => {
       const next = prev + 1;
-      if (next >= 5) setShowOrthodontist(true);
+      if (next >= 5) {
+        setShowOrthodontist(true);
+        alert("🦷 비밀 캐릭터가 나타났습니다!");
+      }
       return next;
     });
   }
