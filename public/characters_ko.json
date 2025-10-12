@@ -1775,10 +1775,10 @@
   {
     "id": "shimengmo",
     "name": "맥(食梦貘)",
-    "edition": "",
+    "edition": "custom",
     "team": "demon",
     "setup": true,
-    "ability": "매일 밤*(첫번째 밤 제외), 플레이어 1명을 선택합니다. 해당 플레이어는 죽습니다. 자신의 능력으로 당신을 선택하는 플레이어는 대신 자신을 선택합니다. [-1 외지인]",
+    "ability": "홈브류: 매일 밤*(첫번째 밤 제외), 플레이어 1명을 선택합니다. 해당 플레이어는 죽습니다. 자신의 능력으로 당신을 선택하는 플레이어는 대신 자신을 선택합니다. [-1 외지인]",
     "image": "icons/Icon_shimengmo.png"
   },
   {
@@ -2126,10 +2126,10 @@
   {
     "id": "hebo",
     "name": "하백(河伯)",
-    "edition": "",
+    "edition": "custom",
     "team": "traveller",
     "setup": false,
-    "ability": "당신과 같은 진영의 플레이어를 당신이 지명했다면, 해당 플레이어는 그날 밤에 죽을 수 있습니다.",
+    "ability": "홈브류: 당신과 같은 진영의 플레이어를 당신이 지명했다면, 해당 플레이어는 그날 밤에 죽을 수 있습니다.",
     "image": "icons/Icon_hebo.png"
   },
   {
