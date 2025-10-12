@@ -17,7 +17,9 @@ function App() {
   const [showThanks, setShowThanks] = useState(false);
   const today = new Date();
   const isAprilFools = today.getMonth() === 3 && today.getDate() === 1;
-  const isEasterEggUnlocked = search.trim() === "이빨요정";
+  const isWordUnlocked = search.trim().toLowerCase() === "이빨요정";
+  const [aprilAlerted, setAprilAlerted] = useState(false);
+  const [wordAlerted, setwordAlerted] = useState(false);
   const [showOrthodontist, setShowOrthodontist] = useState(false);
   const [, setClickCount] = useState(0);
   const A4 = { w: 794, h: 1123 };
@@ -54,6 +56,23 @@ function App() {
       return next;
     });
   }
+
+  useEffect(() => {
+    if (isAprilFools && !aprilAlerted) {
+      setShowOrthodontist(true);
+      setAprilAlerted(true);
+      alert("🦷 비밀 캐릭터가 나타났습니다!");
+    }
+  }, [isAprilFools, aprilAlerted]);
+
+// “이빨요정” 검색 이스터에그 해금 + 알림
+  useEffect(() => {
+    if (isWordUnlocked && !wordAlerted) {
+      setShowOrthodontist(true);
+      setwordAlerted(true);
+      alert("🦷 비밀 캐릭터가 나타났습니다!");
+    }
+  }, [isWordUnlocked, wordAlerted]);
   
   // ===== 데이터 로드 =====
   useEffect(() => {
@@ -339,13 +358,13 @@ function App() {
   const visibleChars = useMemo(() => {
     const q = search.trim().toLowerCase();
     return characters.filter((c) => {
-      if (c.id === "orthodontist" && !(isAprilFools || isEasterEggUnlocked || showOrthodontist)) return false;
+      if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
       const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
       const matchTeam = filterTeam === "all" || c.team === filterTeam;
       const matchEdition = !editionPick || getEditions(c).includes(editionPick);
       return matchQuery && matchTeam && matchEdition;
     });
-  }, [characters, search, filterTeam, editionPick, showOrthodontist, isAprilFools, isEasterEggUnlocked]);
+  }, [characters, search, filterTeam, editionPick, showOrthodontist, isAprilFools, isWordUnlocked]);
 
   // ===== 선택된 캐릭터 그룹/카운트 =====
   const grouped = useMemo(() => {
