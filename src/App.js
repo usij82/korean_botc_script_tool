@@ -24,7 +24,7 @@ function App() {
   const [wordAlerted, setWordAlerted] = useState(false);
   const [clickAlerted, setClickAlerted] = useState(false);
   const [showOrthodontist, setShowOrthodontist] = useState(false);
-  const [foolUnlocked, setFoolUnlocked] = useState(false);
+  const [jfaUnlocked, setjfaUnlocked] = useState(false);
   const [toothPromptVisible, setToothPromptVisible] = useState(false); // 모달 표시 여부
   const openTimerRef = useRef(null);   // 다음 “:41”에 여는 타이머
   const closeTimerRef = useRef(null);  // 1분 뒤 자동 닫힘 타이머
@@ -90,10 +90,10 @@ function App() {
   }, [isWordUnlocked, wordAlerted]);
 
   useEffect(() => {
-    if (showOrthodontist && !foolUnlocked) {
-      setFoolUnlocked (true);
+    if (showOrthodontist && !jfaUnlocked) {
+      setjfaUnlocked (true);
     }
-  }, [showOrthodontist, foolUnlocked]);
+  }, [showOrthodontist, jfaUnlocked]);
 
   useEffect(() => {
     if (showOrthodontist) {
@@ -364,7 +364,7 @@ function App() {
       bmr: "피로 물든 달",
       snv: "화단에 꽃피운 이단",
       hdcs: "등불이 밝을 때(화등초상)",
-      fool: "그냥 좀 장난친 거야",
+      jfa: "그냥 좀 장난친 거야",
       tnf: "여행자와 전설",
       car: "캐러셀",
       syyl: "폭풍우의 조짐(산우욕래)",
@@ -378,7 +378,7 @@ function App() {
     bmr: "기본 스크립트 2번",
     snv: "기본 스크립트 3번",
     hdcs: "중국판 추가 스크립트 1번",
-    fool: "만우절 기념 스크립트",
+    jfa: "만우절 기념 스크립트",
     tnf: "기본판에 포함된 여행자와 전설 캐릭터 모음집",
     car: "실험적 캐릭터 모음집",
     syyl: "미발매(추후 능력이 수정될 수 있음)",
@@ -387,7 +387,7 @@ function App() {
 
   //특수룰, 줄바꿈은 \n- 입력하면 됨.
   const editionSpecialRules = {
-    car: ""
+    jfa: "만우절 기념으로 공개된 스크립트 입니다. 현재는 공식 사이트에서 찾을 수 없습니다."
   };
 
   const applyEdition = (mode) => {
@@ -601,7 +601,7 @@ function App() {
 
             <optgroup label="추가 스크립트">
             <option value="hdcs">등불이 밝을 때(화등초상)</option>
-            {foolUnlocked && <option value="fool">그냥 좀 장난친 거야</option>}
+            {jfaUnlocked && <option value="jfa">그냥 좀 장난친 거야</option>}
             </optgroup>
 
             <optgroup label="틴시빌 스크립트">
