@@ -364,7 +364,7 @@ function App() {
       bmr: "피로 물든 달",
       snv: "화단에 꽃피운 이단",
       hdcs: "등불이 밝을 때(화등초상)",
-      jfa: "그냥 좀 장난친 거야",
+      jfa: "🤡 그냥 좀 장난친 거야 🦷",
       adh: "이름 없는 거짓말",
       ctt: "경멸",
       dvt: "독실한 신앙인들",
@@ -656,17 +656,52 @@ function App() {
             <option value="">스크립트/캐릭터 모음 목록</option>
 
             <optgroup label="기본판 스크립트">
+              {jfaUnlocked && <option value="jfa">🤡 그냥 좀 장난친 거야 🦷</option>}
               <option value="tb">점철되는 혼란</option>
               <option value="bmr">피로 물든 달</option>
               <option value="snv">화단에 꽃피운 이단</option>
             </optgroup>
 
-            <optgroup label="추가 스크립트">
-            <option value="hdcs">등불이 밝을 때(화등초상)</option>
-            {jfaUnlocked && <option value="jfa">그냥 좀 장난친 거야</option>}
+            <optgroup label="캐러셀 스크립트">
+              <option value="toyle">가장 믿었던 사람들</option>
+              <option value="ctt">경멸</option>
+              <option value="ini">광기와 직관</option>
+              <option value="hhr">깊은 바다 밑 실종자의 복수</option>
+              <option value="dvt">독실한 신앙인들</option>
+              <option value="ibh">비이성적인 행동</option>
+              <option value="qm">빠른 계산</option>
+              <option value="mdm">원숭이도 수학을 해요</option>
+              <option value="wciia">이 종교는 도대체 누구거야?</option>
+              <option value="adh">이름 없는 거짓말</option>
+              <option value="pcy">한 방</option>
+              <option value="tmo">한밤 중의 오아시스</option>
+              <option value="rotmv">화성인 흡혈귀의 귀환</option>
             </optgroup>
 
             <optgroup label="틴시빌 스크립트">
+              <option value="ngj">가장 큰 기쁨</option>
+              <option value="otr">강 너머에</option>
+              <option value="lndb">늦은 밤의 드라이브</option>
+              <option value="lod">불신의 거머리</option>
+              <option value="crd">악마 동지여</option>
+              <option value="luf">자유방임주의</option>
+              <option value="rttb">하향 경쟁</option>
+            </optgroup>
+            
+            <optgroup label="추가 스크립트">
+              <option value="agc">그림 형제 합창단</option>
+              <option value="ucd">돌연사</option>
+              <option value="hdcs">등불이 밝을 때(화등초상)</option>
+              <option value="cf">메기 낚시</option>
+              <option value="cd4">셰프 딜럭스 4</option>
+              <option value="bzl">술주정</option>
+              <option value="hns">숨바꼭질</option>
+              <option value="xc">연장 코드</option>
+              <option value="le">월식</option>
+              <option value="socas">정교분리</option>
+              <option value="cos">첩자들의 교회</option>
+              <option value="litc">파충류 II: 도시의 도마뱀</option>
+              <option value="oioo">한 놈 들어오고, 한 놈 나가고</option>
             </optgroup>
             
             <optgroup label="캐릭터 모음집">
