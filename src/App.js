@@ -147,34 +147,19 @@ function App() {
   // ===== 데이터 로드 =====
   useEffect(() => {
     async function loadData() {
-      const charCandidates = isAprilFools
-        ? ["characters_ok.json", "characters_ko.json"]
-        : ["characters_ko.json"];
-
-      let chars = null, lastErr = null;
-      for (const f of charCandidates) {
-        try {
-          const r = await fetch(f);
-          if (!r.ok) throw new Error(`fetch ${f} failed`);
-          chars = await r.json();
-          break;
-        } catch (e) { lastErr = e; }
-      }
-      if (!chars) {
-        console.error(lastErr);
-        alert("캐릭터 데이터를 불러오지 못했습니다.");
-        return;
-      }
-
-      const [jinxRes, orderRes] = await Promise.all([
+      const charFile = isAprilFools ? "characters_ok.json" : "characters_ko.json" ;
+      const [charsRes, jinxRes, orderRes] = await Promise.all([
+        fetch(charFile),
         fetch("jinx_ko.json"),
         fetch("night_order.json"),
       ]);
 
+      const chars = await charsRes.json();
       const jinxArr = await jinxRes.json();
       const order = await orderRes.json();
 
       setCharacters(chars);
+
       const jinxMap = {};
       for (const j of jinxArr) jinxMap[j.id] = j.jinx;
       setJinxes(jinxMap);
@@ -182,7 +167,8 @@ function App() {
     }
     loadData();
   }, [isAprilFools]);
-// ===== 유틸 =====
+
+  // ===== 유틸 =====
   const teamOrder = ["townsfolk", "outsider", "minion", "demon", "traveller", "fabled"];
   const teamName = (id) =>
     ({
@@ -525,15 +511,15 @@ function App() {
     return characters.filter((c) => {
       const editions = getEditions(c);
       const isHomebrew = editions.includes("homebrew");
-      // 홈브류: 기본 숨김, 단 분류나 선택이 homebrew면 예외적으로 표시
-      if (!q && isHomebrew && editionPick !== "homebrew" && editionCategory !== "homebrew") return false;
+      // 홈브류: 기본 숨김, 단 두 번째 선택이 homebrew면 표시
+      if (!q && isHomebrew && editionPick !== "homebrew") return false;
       if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
       const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
       const matchTeam = filterTeam === "all" || c.team === filterTeam;
       const matchEdition = !editionPick || editions.includes(editionPick);
       return matchQuery && matchTeam && matchEdition;
     });
-  }, [characters, search, filterTeam, editionPick, editionCategory, showOrthodontist, isAprilFools, isWordUnlocked]);
+  }, [characters, search, filterTeam, editionPick, showOrthodontist, isAprilFools, isWordUnlocked]);
 
   // ===== 선택된 캐릭터 그룹/카운트 =====
   const grouped = useMemo(() => {
