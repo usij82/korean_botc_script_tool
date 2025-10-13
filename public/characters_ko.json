@@ -47,7 +47,7 @@
   {
     "id": "goblin",
     "name": "고블린",
-    "edition": "car",
+    "edition": ["car","jfa"],
     "team": "minion",
     "setup": false,
     "ability": "당신이 지명될 때 공개적으로 고블린이라고 주장한 뒤 처형되면, 당신의 진영이 승리합니다.",
@@ -65,7 +65,7 @@
   {
     "id": "golem",
     "name": "골렘",
-    "edition": "car",
+    "edition": ["car","jfa"],
     "team": "outsider",
     "setup": false,
     "ability": "게임당 한 번만 지명할 수 있습니다. 당신이 지명한 플레이어가 악마가 아니라면, 해당 플레이어는 죽습니다. (투표는 정상 진행)",
@@ -137,7 +137,7 @@
   {
     "id": "fool",
     "name": "광대",
-    "edition": "bmr",
+    "edition": ["bmr","jfa"],
     "team": "townsfolk",
     "setup": false,
     "ability": "당신이 처음 죽게될 때, 죽지 않습니다.",
@@ -200,7 +200,7 @@
   {
     "id": "noble",
     "name": "귀족",
-    "edition": "car",
+    "edition": ["car","jfa"],
     "team": "townsfolk",
     "setup": false,
     "ability": "플레이어 3명을 알고 시작합니다. 그중 1명은 악한 진영입니다.",
@@ -218,7 +218,7 @@
   {
     "id": "knight",
     "name": "기사",
-    "edition": "car",
+    "edition": ["car","jfa"],
     "team": "townsfolk",
     "setup": false,
     "ability": "악마가 아닌 플레이어 2명을 알고 시작합니다.",
@@ -236,7 +236,7 @@
   {
     "id": "goon",
     "name": "깡패",
-    "edition": "bmr",
+    "edition": ["bmr","jfa"],
     "team": "outsider",
     "setup": false,
     "ability": "매일 밤, 자신의 능력으로 당신을 선택한 첫번째 플레이어는 다음 날 낮이 끝날 때까지 취합니다. 당신은 해당 플레이어의 진영이 됩니다.",
@@ -272,7 +272,7 @@
   {
     "id": "nodashii",
     "name": "노다시",
-    "edition": "snv",
+    "edition": ["snv","jfa"],
     "team": "demon",
     "setup": false,
     "ability": "매일 밤*(첫번째 밤 제외), 플레이어를 1명 선택합니다. 해당 플레이어는 죽습니다. 당신의 이웃 플레이어가 주민이라면 해당 플레이어들은 중독됩니다.",
@@ -416,7 +416,7 @@
   {
     "id": "ravenkeeper",
     "name": "레이븐키퍼",
-    "edition": "tb",
+    "edition": ["tb","jfa"],
     "team": "townsfolk",
     "setup": false,
     "ability": "밤에 죽으면 깨어나 플레이어를 1명 선택합니다. 해당 플레이어의 캐릭터를 알게 됩니다.",
@@ -551,7 +551,7 @@
   {
     "id": "snitch",
     "name": "밀고자",
-    "edition": "car",
+    "edition": ["car","jfa"],
     "team": "outsider",
     "setup": false,
     "ability": "하수인들도 악마처럼 게임에 참가하지 않은 캐릭터 3개를 알게 됩니다. (악마가 아는 것과 같을 수도, 다를 수도 있습니다.)",
@@ -614,7 +614,7 @@
   {
     "id": "snakecharmer",
     "name": "뱀조련사",
-    "edition": "snv",
+    "edition": ["snv","jfa"],
     "team": "townsfolk",
     "setup": false,
     "ability": "매일 밤, 살아있는 플레이어를 1명 선택합니다. 악마라면, 당신과 진영 및 캐릭터를 바꾸고, 그 후 해당 플레이어는 중독됩니다.",
@@ -650,7 +650,7 @@
   {
     "id": "scarletwoman",
     "name": "부정한 여인",
-    "edition": "tb",
+    "edition": ["tb","jfa"],
     "team": "minion",
     "setup": false,
     "ability": "여행자를 제외하고 살아있는 플레이어가 5명 이상일 때, 악마가 죽으면 당신은 악마가 됩니다.",
@@ -668,7 +668,7 @@
   {
     "id": "vigormortis",
     "name": "비고모르티스",
-    "edition": "snv",
+    "edition": ["snv","jfa"],
     "team": "demon",
     "setup": true,
     "ability": "매일 밤*(첫번째 밤 제외), 플레이어를 1명 선택합니다. 해당 플레이어는 죽습니다. 당신이 죽인 하수인은 능력을 유지하고 이웃 플레이어가 주민이라면 그중 1명을 중독시킵니다. [-1 외지인]",
@@ -731,7 +731,7 @@
   {
     "id": "shabaloth",
     "name": "샤발롯",
-    "edition": "bmr",
+    "edition": ["bmr","jfa"],
     "team": "demon",
     "setup": false,
     "ability": "매일 밤*(첫번째 밤 제외), 플레이어 2명을 선택합니다. 해당 플레이어들은 죽습니다. 어젯 밤에 선택한 죽은 플레이어는 토해낼 수도 있습니다.",
@@ -866,7 +866,7 @@
   {
     "id": "oracle",
     "name": "신관",
-    "edition": "snv",
+    "edition": ["snv","jfa"],
     "team": "townsfolk",
     "setup": false,
     "ability": "매일 밤*(첫번째 밤 제외), 당신은 죽은 플레이어 중 악한 진영이 얼마나 있는지 알게 됩니다.",
@@ -893,7 +893,7 @@
   {
     "id": "devilsadvocate",
     "name": "악마의 대변인",
-    "edition": "bmr",
+    "edition": ["bmr","jfa"],
     "team": "minion",
     "setup": false,
     "ability": "매일 밤, 어제와 다른 살아있는 플레이어를 1명 선택합니다. 해당 플레이어는 내일 처형되더라도 죽지 않습니다.",
@@ -920,7 +920,7 @@
   {
     "id": "yaggababble",
     "name": "야가바블",
-    "edition": "car",
+    "edition": ["car","jfa"],
     "team": "demon",
     "setup": false,
     "ability": "비밀 문구를 알고 시작합니다. 오늘 당신이 이 문구를 공개적으로 말할 때마다 플레이어가 죽을 수 있습니다.",
@@ -947,7 +947,7 @@
   {
     "id": "fisherman",
     "name": "어부",
-    "edition": "car",
+    "edition": ["car","jfa"],
     "team": "townsfolk",
     "setup": false,
     "ability": "게임당 한 번, 이야기꾼을 방문해 당신의 진영의 승리에 도움이 되는 조언(사실이 아닐 수 있음)을 들을 수 있습니다.",
@@ -965,7 +965,7 @@
   {
     "id": "innkeeper",
     "name": "여관주인",
-    "edition": "bmr",
+    "edition": ["bmr","jfa"],
     "team": "townsfolk",
     "setup": false,
     "ability": "매일 밤*(첫번째 밤 제외), 플레이어 2명을 선택합니다. 해당 플레이어들은 오늘 밤엔 죽지 않지만, 둘 중 1명은 다음 날 낮이 끝날 때까지 취합니다.",
@@ -974,7 +974,7 @@
   {
     "id": "plaguedoctor",
     "name": "역병의사",
-    "edition": "car",
+    "edition": ["car","jfa"],
     "team": "outsider",
     "setup": false,
     "ability": "당신이 죽으면, 이야기꾼은 하수인 능력을 얻습니다.",
@@ -1190,7 +1190,7 @@
   {
     "id": "investigator",
     "name": "조사관",
-    "edition": "tb",
+    "edition": ["tb","jfa"],
     "team": "townsfolk",
     "setup": false,
     "ability": "플레이어 2명 중 1명이 특정 하수인이라는 걸 알고 시작합니다.",
@@ -1271,7 +1271,7 @@
   {
     "id": "tealady",
     "name": "찻집여인",
-    "edition": "bmr",
+    "edition": ["bmr","jfa"],
     "team": "townsfolk",
     "setup": false,
     "ability": "살아있는 이웃 플레이어가 모두 선한 진영이라면, 해당 플레이어들은 죽을 수 없습니다.",
@@ -1406,7 +1406,7 @@
   {
     "id": "pacifist",
     "name": "평화주의자",
-    "edition": "bmr",
+    "edition": ["bmr","jfa"],
     "team": "townsfolk",
     "setup": false,
     "ability": "당신은 선한 플레이어가 처형되어 죽는 것을 막을 수도 있습니다.",
@@ -1469,7 +1469,7 @@
   {
     "id": "organgrinder",
     "name": "풍각쟁이",
-    "edition": "car",
+    "edition": ["car","jfa"],
     "team": "minion",
     "setup": false,
     "ability": "모든 플레이어는 투표할 때 눈을 감습니다. 투표 집계는 비밀입니다. 매일 밤, 다음 날 낮이 끝날 때까지 취할지 선택합니다.",
@@ -1487,7 +1487,7 @@
   {
     "id": "pixie",
     "name": "픽시",
-    "edition": "car",
+    "edition": ["car","jfa"],
     "team": "townsfolk",
     "setup": false,
     "ability": "게임에 참가 중인 주민 캐릭터 1개를 알고 시작합니다. 만약 당신이 그 캐릭터라고 \"광기\"했다면, 해당 캐릭터의 플레이어가 죽고 나서 그 캐릭터의 능력을 얻을 수도 있습니다.",
