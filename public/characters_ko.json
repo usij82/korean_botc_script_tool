@@ -711,6 +711,15 @@
     "image": "icons/Icon_eviltwin.png"
   },
   {
+    "id": "fleshandbone",
+    "name": "살 그리고 뼈",
+    "edition": "fnb",
+    "team": "fabled",
+    "setup": true,
+    "ability": "처형으로 사망한 캐릭터는 삭제되며, 해당 캐릭터가 등장하는 다른 게임의 스크립트에서 같은 유형의 아직 삭제되지 않은 캐릭터로 대체됩니다.",
+    "image": "icons/Icon_fleshandbone.png"
+  },
+  {
     "id": "spiritofivory",
     "name": "상아의 정령",
     "edition": "tnf",
