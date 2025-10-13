@@ -724,7 +724,7 @@ function App() {
             onChange={(e) => setFilterTeam(e.target.value)}
             style={{ flex: 1, padding: "8px", minWidth: 160 }}
           >
-            <option value="all">캐릭터 분류</option>
+            <option value="all">캐릭터 유형</option>
             {teamOrder.map((t) => (
               <option key={t} value={t}>
                 {teamName(t)}
@@ -748,16 +748,17 @@ function App() {
                 });
               }}
               style={{ flex: 1, padding: "8px", minWidth: 180 }}
-              aria-label="스크립트 분류 선택"
-              title="스크립트 분류 선택"
+              aria-label="버전 선택"
+              title="버전전 선택"
             >
-              <option value="">전체 분류</option>
+              <option value="">버전 선택</option>
               {jfaUnlocked && <option value="april">만우절 스크립트</option>}
-              <option value="base">기본판 스크립트</option>
-              <option value="carousel">캐러셀 스크립트</option>
-              <option value="teensy">틴시빌 스크립트</option>
+              <option value="base">기본판</option>
+              <option value="carousel">캐러셀 확장</option>
+              <option value="teensy">틴시빌</option>
               <option value="extra">추가 스크립트</option>
-              <option value="china">중국판 스크립트</option>
+              <option value="china">중국판</option>
+              <option value="homebrew">홈브류</option>
             </select>
 
             {/* 2-2) 스크립트 선택 셀렉트 */}
@@ -780,10 +781,8 @@ function App() {
                   const g = SCRIPT_GROUPS[k];
                   return !g.visibleIf || g.visibleIf(ctx);
                 });
-            
                 return keys.flatMap((k) => {
                   const g = SCRIPT_GROUPS[k];
-            
                   // 항목 레벨 require 처리(필요 시)
                   const visibleItems = g.items.filter((it) => {
                     if (!it?.value) return false; // homebrew의 빈 항목 제거
@@ -791,13 +790,10 @@ function App() {
                     if (it.require === "jfaUnlocked") return !!jfaUnlocked;
                     return true;
                   });
-
-                  // 스크립트 vs 캐릭터 모음집 분리
+                  // 스크립트 vs 캐릭터 모음집 분리 1
                   const scriptItems = visibleItems.filter((it) => !PACK_VALUES.has(it.value));
                   const packItems   = visibleItems.filter((it) =>  PACK_VALUES.has(it.value));
-
                   const groupsToRender = [];
-
                   if (scriptItems.length) {
                     groupsToRender.push(
                       <optgroup key={`${k}-scripts`} label={`${g.label} - 스크립트`}>
@@ -807,10 +803,10 @@ function App() {
                       </optgroup>
                     );
                   }
-            
+                  // 스크립트 vs 캐릭터 모음집 분리 2
                   if (packItems.length) {
                     groupsToRender.push(
-                      <optgroup key={`${k}-packs`} label={`${g.label} - 캐릭터 모음집`}>
+                      <optgroup key={`${k}-packs`} label={`${g.label} - 캐릭터 모음`}>
                         {packItems.map((it) => (
                           <option key={it.value} value={it.value}>{it.label}</option>
                         ))}
