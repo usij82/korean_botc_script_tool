@@ -24,6 +24,7 @@ function App() {
   const [wordAlerted, setWordAlerted] = useState(false);
   const [clickAlerted, setClickAlerted] = useState(false);
   const [showOrthodontist, setShowOrthodontist] = useState(false);
+  const [foolUnlocked, setFoolUnlocked] = useState(false);
   const [toothPromptVisible, setToothPromptVisible] = useState(false); // 모달 표시 여부
   const openTimerRef = useRef(null);   // 다음 “:41”에 여는 타이머
   const closeTimerRef = useRef(null);  // 1분 뒤 자동 닫힘 타이머
@@ -67,7 +68,7 @@ function App() {
     if (isClicked && !clickAlerted) {
       setClickAlerted(true);
       setShowOrthodontist(true);
-      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n지금부터 치과의사를 선택할 수 있어요!");
+      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n지금부터 치과의사와 특별 스크립트를 선택할 수 있어요!");
     }
   }, [isClicked, clickAlerted]);
   
@@ -84,9 +85,15 @@ function App() {
     if (isWordUnlocked && !wordAlerted) {
       setShowOrthodontist(true);
       setWordAlerted(true);
-      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n지금부터 치과의사를 선택할 수 있어요!");
+      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n지금부터 치과의사와 특별 스크립트를 선택할 수 있어요!");
     }
   }, [isWordUnlocked, wordAlerted]);
+
+  useEffect(() => {
+    if (showOrthodontist && !foolUnlocked) {
+      setFoolUnlocked (true);
+    }
+  }, [showOrthodontist,foolUnlocked);
 
   useEffect(() => {
     if (showOrthodontist) {
@@ -357,6 +364,7 @@ function App() {
       bmr: "피로 물든 달",
       snv: "화단에 꽃피운 이단",
       hdcs: "등불이 밝을 때(화등초상)",
+      fool: "그냥 좀 장난친 거야",
       tnf: "여행자와 전설",
       car: "캐러셀",
       syyl: "폭풍우의 조짐(산우욕래)",
@@ -369,9 +377,10 @@ function App() {
     tb: "기본 스크립트 1번",
     bmr: "기본 스크립트 2번",
     snv: "기본 스크립트 3번",
+    hdcs: "중국판 추가 스크립트 1번",
+    fool: "만우절 기념 스크립트",
     tnf: "기본판에 포함된 여행자와 전설 캐릭터 모음집",
     car: "실험적 캐릭터 모음집",
-    hdcs: "중국판 추가 스크립트 1번",
     syyl: "미발매(추후 능력이 수정될 수 있음)",
     mgcz: "미발매(추후 능력이 수정될 수 있음)"
   };
@@ -584,11 +593,18 @@ function App() {
           >
             <option value="">스크립트/캐릭터 모음 목록</option>
 
-            <optgroup label="기본 스크립트">
+            <optgroup label="기본판 스크립트">
               <option value="tb">점철되는 혼란</option>
               <option value="bmr">피로 물든 달</option>
               <option value="snv">화단에 꽃피운 이단</option>
-              <option value="hdcs">등불이 밝을 때(화등초상)</option>
+            </optgroup>
+
+            <optgroup label="추가 스크립트">
+            <option value="hdcs">등불이 밝을 때(화등초상)</option>
+            {foolUnlocked && <option value="fool">그냥 좀 장난친 거야</option>}
+            </optgroup>
+
+            <optgroup label="틴시빌 스크립트">
             </optgroup>
             
             <optgroup label="캐릭터 모음집">
