@@ -93,7 +93,7 @@ function App() {
     if (showOrthodontist && !foolUnlocked) {
       setFoolUnlocked (true);
     }
-  }, [showOrthodontist,foolUnlocked);
+  }, [showOrthodontist, foolUnlocked);
 
   useEffect(() => {
     if (showOrthodontist) {
@@ -347,7 +347,7 @@ function App() {
       setShowOrthodontist(true);
       if (!timedAlerted) {
         setTimedAlerted(true);
-        alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n지금부터 치과의사를 선택할 수 있어요!");
+        alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n지금부터 치과의사와 특별 스크립트를 선택할 수 있어요!");
       }
     }
   };
