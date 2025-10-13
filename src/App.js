@@ -75,7 +75,7 @@ function App() {
     if (isAprilFools && !aprilAlerted) {
       setShowOrthodontist(true);
       setAprilAlerted(true);
-      alert("😇 모든 것이 뒤바뀐 광기의 만우절에 찾아오다니... 운이 좋네요! 😈");
+      alert("😇 모든 것이 뒤바뀐 광기의 만우절에 찾아오다니... 운이 좋으시네요! 😈");
     }
   }, [isAprilFools, aprilAlerted]);
 
