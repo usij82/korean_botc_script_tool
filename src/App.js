@@ -55,17 +55,17 @@ function App() {
 
 
 // 추가: 스크립트 그룹 테이블
-  const PACK_VALUES = new Set(["tnf", "car"]);
+  const PACK_VALUES = new Set(["tnf", "car", "homebrew"]);
   const SCRIPT_GROUPS = {
     april: {
-      label: "만우절 스크립트",
+      label: "만우절",
       visibleIf: (ctx) => ctx.jfaUnlocked,
       items: [
       { value: "jfa", label: "🤡 그냥 좀 장난친 거야 🦷" },
       ],
     },
     base: {
-      label: "기본판 스크립트",
+      label: "기본판",
       items: [
         { value: "tb", label: "점철되는 혼란" },
         { value: "bmr", label: "피로 물든 달" },
@@ -74,9 +74,9 @@ function App() {
       ],
     },
     carousel: {
-      label: "캐러셀 스크립트",
+      label: "캐러셀 확장",
       items: [
-        { value: "car", label: "캐러셀" },
+        { value: "car", label: "실험적 캐릭터" },
         { value: "toyle", label: "가장 믿었던 사람들" },
         { value: "ctt", label: "경멸" },
         { value: "ini", label: "광기와 직관" },
@@ -132,7 +132,7 @@ function App() {
     homebrew: {
       label: "홈브류",
       items: [
-        { value: "", label: "" },
+        { value: "homebrew", label: "홈브류 캐릭터" },
       ],
     },
   };
@@ -800,7 +800,7 @@ function App() {
 
                   if (scriptItems.length) {
                     groupsToRender.push(
-                      <optgroup key={`${k}-scripts`} label={`${g.label} — 스크립트`}>
+                      <optgroup key={`${k}-scripts`} label={`${g.label} - 스크립트`}>
                         {scriptItems.map((it) => (
                           <option key={it.value} value={it.value}>{it.label}</option>
                         ))}
@@ -810,7 +810,7 @@ function App() {
             
                   if (packItems.length) {
                     groupsToRender.push(
-                      <optgroup key={`${k}-packs`} label={`${g.label} — 캐릭터 모음집`}>
+                      <optgroup key={`${k}-packs`} label={`${g.label} - 캐릭터 모음집`}>
                         {packItems.map((it) => (
                           <option key={it.value} value={it.value}>{it.label}</option>
                         ))}
