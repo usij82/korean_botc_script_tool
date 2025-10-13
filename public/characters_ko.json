@@ -47,7 +47,7 @@
   {
     "id": "goblin",
     "name": "고블린",
-    "edition": ["car","jfa","dvt","hhr","toyle","wciia","luf"],
+    "edition": ["car","jfa","dvt","hhr","luf","toyle","wciia"],
     "team": "minion",
     "setup": false,
     "ability": "당신이 지명될 때 공개적으로 고블린이라고 주장한 뒤 처형되면, 당신의 진영이 승리합니다.",
@@ -1451,7 +1451,7 @@
   {
     "id": "stormcatcher",
     "name": "폭풍 사냥꾼",
-    "edition": ["car","wciia"],
+    "edition": ["car","litc","socas","wciia"],
     "team": "fabled",
     "setup": false,
     "ability": "캐릭터를 1개 선택합니다. 참가 중이라면 처형으로만 죽을 수 있지만, 악한 플레이어는 그 캐릭터가 누구인지 알게 됩니다.",
