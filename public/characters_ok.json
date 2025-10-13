@@ -6,7 +6,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "매일 낮, 최대 3쌍의 플레이어(총 6명)를 선택하여 자리를 서로 바꿀 수 있습니다. 모든 플레이어는 자리를 떠나서 개인적으로 이야기할 수 없습니다.",
-    "image": "jcons/Icon_matron.png"
+    "image": "icons/Icon_matron.png"
   },
   {
     "id": "gangster",
@@ -15,7 +15,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "매일 낮 한 번, 다른 살아있는 이웃 플레이어가 동의할 경우 다른 살아있는 이웃 플레이어를 죽일 수 있습니다.",
-    "image": "jcons/Icon_gangster.png"
+    "image": "icons/Icon_gangster.png"
   },
   {
     "id": "beggar",
@@ -24,7 +24,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "투표 토큰이 있어야만 투표를 할 수 있습니다. 죽은 플레이어가 투표 토큰을 주면, 당신은 그들의 진영을 알게 됩니다. 당신은 항상 건강합니다.",
-    "image": "jcons/Icon_beggar.png"
+    "image": "icons/Icon_beggar.png"
   },
   {
     "id": "apprentice",
@@ -33,7 +33,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "당신은 주민 능력(선한 경우) 또는 하수인 능력(악한 경우)을 가지고 있습니다.",
-    "image": "jcons/Icon_apprentice.png"
+    "image": "icons/Icon_apprentice.png"
   },
   {
     "id": "sentinel",
@@ -42,7 +42,7 @@
     "team": "fabled",
     "setup": true,
     "ability": "플레이에 외지인이 1명 더 있거나 1명 더 적을 수 있습니다.",
-    "image": "jcons/Icon_sentinel.png"
+    "image": "icons/Icon_sentinel.png"
   },
   {
     "id": "goblin",
@@ -78,7 +78,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "매일 밤*(첫번째 밤 제외), 3명의 플레이어가 당신을 방문하기로 선택할 수 있습니다. 밤에 각 방문자는 얼마나 많은 방문자가 악한지 알게 되지만, 1명은 거짓 정보를 얻습니다.",
-    "image": "jcons/Icon_duchess.png"
+    "image": "icons/Icon_duchess.png"
   },
   {
     "id": "princess",
@@ -123,7 +123,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "매일 밤, 본인을 제외하고 플레이어를 1명 선택합니다. 해당 플레이어의 투표는 내일 3표로 집계됩니다.",
-    "image": "jcons/Icon_bureaucrat.png"
+    "image": "icons/Icon_bureaucrat.png"
   },
   {
     "id": "steward",
@@ -159,7 +159,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "매일 밤, 플레이어를 1명 선택합니다. 해당 플레이어가 아닌 플레이어 1명의 캐릭터가 바뀝니다.",
-    "image": "jcons/Icon_cacklejack.png"
+    "image": "icons/Icon_cacklejack.png"
   },
   {
     "id": "professor",
@@ -285,7 +285,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "모든 플레이어는 당신의 친구 플레이어(같은 진영)를 알고 시작합니다. 당신은 친구를 지명한 플레이어를 죽일 수 있습니다.",
-    "image": "jcons/Icon_gnome.png"
+    "image": "icons/Icon_gnome.png"
   },
   {
     "id": "farmer",
@@ -348,7 +348,7 @@
     "team": "fabled",
     "setup": true,
     "ability": "최소 게임당 한 번, 이야기꾼은 '실수'를 하고 이를 수정한 후 공개적으로 인정합니다. (실수는 고의적일 수 있습니다.)",
-    "image": "jcons/Icon_deusexfiasco.png"
+    "image": "icons/Icon_deusexfiasco.png"
   },
   {
     "id": "thief",
@@ -357,7 +357,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "매일 밤, 본인을 제외하고 플레이어를 1명 선택합니다. 해당 플레이어의 투표는 다음 날 마이너스로 집계됩니다.",
-    "image": "jcons/Icon_thief.png"
+    "image": "icons/Icon_thief.png"
   },
   {
     "id": "gambler",
@@ -375,7 +375,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "매일 낮, 첫 번째 처형 후 다시 지명할 수 있습니다.",
-    "image": "jcons/Icon_butcher.png"
+    "image": "icons/Icon_butcher.png"
   },
   {
     "id": "poisoner",
@@ -492,7 +492,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "매일 밤*(첫번째 밤 제외), 살아있는 플레이어를 1명 선택합니다. 해당 플레이어가 동의하면, 당신은 그 캐릭터를 알게 되지만, 둘 다 죽을 수도 있습니다.",
-    "image": "jcons/Icon_harlot.png"
+    "image": "icons/Icon_harlot.png"
   },
   {
     "id": "mezepheles",
@@ -564,7 +564,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "이 스크립트에는 홈브류 캐릭터나 규칙이 있습니다.",
-    "image": "jcons/Icon_bootlegger.png"
+    "image": "icons/Icon_bootlegger.png"
   },
   {
     "id": "barista",
@@ -573,7 +573,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "매일 밤, 다음 날 낮이 끝날 때까지 플레이어 1명이 1) 건강(만취/중독 해제)하게 만들고 진실된 정보 만을 얻도록 하거나, 2) 능력을 두 번 발동하게 합니다. 해당 플레이어는 이 사실을 알게 됩니다.",
-    "image": "jcons/Icon_barista.png"
+    "image": "icons/Icon_barista.png"
   },
   {
     "id": "villageidiot",
@@ -591,7 +591,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "게임당 한 번, 악마는 비밀리에 상대 플레이어를 선택합니다. 모든 플레이어는 이 두 플레이어 중 누가 승리할지 선택합니다.",
-    "image": "jcons/Icon_fiddler.png"
+    "image": "icons/Icon_fiddler.png"
   },
   {
     "id": "mastermind",
@@ -627,7 +627,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "마지막 날, 모든 죽은 플레이어는 투표권을 되찾습니다.",
-    "image": "jcons/Icon_ferryman.png"
+    "image": "icons/Icon_ferryman.png"
   },
   {
     "id": "vortox",
@@ -645,7 +645,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "당신과 죽은 자만 투표할 수 있습니다. 투표 토큰이 필요하지 않습니다. 50%의 과반수는 필요하지 않습니다.",
-    "image": "jcons/Icon_voudon.png"
+    "image": "icons/Icon_voudon.png"
   },
   {
     "id": "scarletwoman",
@@ -663,7 +663,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "매일 처음 2분 동안은 베테랑 선수들은 말을 할 수 없습니다.",
-    "image": "jcons/Icon_buddhist.png"
+    "image": "icons/Icon_buddhist.png"
   },
   {
     "id": "vigormortis",
@@ -681,7 +681,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "게임당 한 번, 밤에 죽은 플레이어를 1명 선택합니다. 해당 플레이어는 다음 날 낮이 끝날 때까지 능력을 회복합니다.",
-    "image": "jcons/Icon_bonecollector.png"
+    "image": "icons/Icon_bonecollector.png"
   },
   {
     "id": "huntsman",
@@ -711,13 +711,22 @@
     "image": "jcons/Icon_eviltwin.png"
   },
   {
+    "id": "fleshandbone",
+    "name": "살 그리고 뼈",
+    "edition": "fnb",
+    "team": "fabled",
+    "setup": true,
+    "ability": "처형으로 사망한 캐릭터는 삭제되며, 해당 캐릭터가 등장하는 다른 게임의 스크립트에서 같은 유형의 아직 삭제되지 않은 캐릭터로 대체됩니다.",
+    "image": "icons/Icon_fleshandbone.png"
+  },
+  {
     "id": "spiritofivory",
     "name": "상아의 정령",
     "edition": "tnf",
     "team": "fabled",
     "setup": false,
     "ability": "악한 플레이어는 1명까지만 추가될 수 있습니다.",
-    "image": "jcons/Icon_spiritofivory.png"
+    "image": "icons/Icon_spiritofivory.png"
   },
   {
     "id": "shabaloth",
@@ -1086,7 +1095,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "오늘 당신이 재밌었다면, 당신은 추방당해 죽을 수 없습니다.",
-    "image": "jcons/Icon_deviant.png"
+    "image": "icons/Icon_deviant.png"
   },
   {
     "id": "imp",
@@ -1113,7 +1122,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "악마는 공격하지 않기로 선택할 수 있으며 게임당 최소 한 번은 이를 해야 합니다. 악한 플레이어는 정상적인 시작 정보를 얻습니다.",
-    "image": "jcons/Icon_toymaker.png"
+    "image": "icons/Icon_toymaker.png"
   },
   {
     "id": "undertaker",
@@ -1158,7 +1167,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "이야기꾼이 1명 이상의 플레이어에게 특정 캐릭터를 지정합니다.",
-    "image": "jcons/Icon_gardener.png"
+    "image": "icons/Icon_gardener.png"
   },
   {
     "id": "politician",
@@ -1194,7 +1203,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "4명 이상의 플레이어가 살아있는 경우, 살아있는 모든 플레이어는 게임당 한 번, 자신의 진영에 속한 플레이어를 선택하여 죽일 수 있습니다.",
-    "image": "jcons/Icon_doomsayer.png"
+    "image": "icons/Icon_doomsayer.png"
   },
   {
     "id": "bishop",
@@ -1203,7 +1212,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "오직 이야기꾼만 지명할 수 있습니다. 매일 낮, 주교와 다른 진영의 플레이어가 최소 1명은 지명되어야 합니다.",
-    "image": "jcons/Icon_bishop.png"
+    "image": "icons/Icon_bishop.png"
   },
   {
     "id": "alsaahir",
@@ -1230,7 +1239,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "이야기꾼이 침묵을 요청했을 때 말하는 사람에게는 나쁜 일이 일어날 수도 있습니다.",
-    "image": "jcons/Icon_hellslibrarian.png"
+    "image": "icons/Icon_hellslibrarian.png"
   },
   {
     "id": "djinn",
@@ -1239,7 +1248,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "이 스크립트에는 특별한 규칙/징크스가 적용됩니다. 모든 플레이어가 그것이 무엇인지 알고 있습니다.",
-    "image": "jcons/Icon_djinn.png"
+    "image": "icons/Icon_djinn.png"
   },
   {
     "id": "butler",
@@ -1284,7 +1293,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "새로운 플레이어의 죽음에 가장 큰 책임이 있는 사람에게는 나쁜 일이 일어날 수도 있습니다. 해당 플레이어는 모두가 알고 있습니다.",
-    "image": "jcons/Icon_angel.png"
+    "image": "icons/Icon_angel.png"
   },
   {
     "id": "philosopher",
@@ -1311,7 +1320,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "매일 1차 투표가 집계된 후, 투표한 플레이어 중 1명을 선택할 수 있습니다. 해당 플레이어는 죽습니다.",
-    "image": "jcons/Icon_gunslinger.png"
+    "image": "icons/Icon_gunslinger.png"
   },
   {
     "id": "orthodontist",
@@ -1365,7 +1374,7 @@
     "team": "traveller",
     "setup": false,
     "ability": "게임당 한 번, 다른 플레이어가 지명된 경우 현재 투표를 통과 또는 실패로 강제할 수 있습니다.",
-    "image": "jcons/Icon_judge.png"
+    "image": "icons/Icon_judge.png"
   },
   {
     "id": "fanggu",
@@ -1437,7 +1446,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "캐릭터를 1개 선택합니다. 참가 중이라면 처형으로만 죽을 수 있지만, 악한 플레이어는 그 캐릭터가 누구인지 알게 됩니다.",
-    "image": "jcons/Icon_stormcatcher.png"
+    "image": "icons/Icon_stormcatcher.png"
   },
   {
     "id": "pukka",
@@ -1464,7 +1473,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "한 게임당 1명의 뛰어난 플레이어가 잘못된 정보를 얻을 수도 있습니다.",
-    "image": "jcons/Icon_fibbin.png"
+    "image": "icons/Icon_fibbin.png"
   },
   {
     "id": "pixie",
@@ -1536,7 +1545,7 @@
     "team": "fabled",
     "setup": false,
     "ability": "이웃 플레이어 2명이 같은 진영으로 알려져 있습니다. 게임당 한 번, 그중 1명이 다른 진영으로 보입니다.",
-    "image": "jcons/Icon_revolutionary.png"
+    "image": "icons/Icon_revolutionary.png"
   },
   {
     "id": "bountyhunter",
@@ -1563,6 +1572,6 @@
     "team": "traveller",
     "setup": false,
     "ability": "당신과 같은 진영의 플레이어가 처형되면, 당신이 대신 처형될 수 있습니다.",
-    "image": "jcons/Icon_scapegoat.png"
+    "image": "icons/Icon_scapegoat.png"
   }
 ]
