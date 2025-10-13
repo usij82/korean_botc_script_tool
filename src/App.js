@@ -93,7 +93,7 @@ function App() {
     if (showOrthodontist && !foolUnlocked) {
       setFoolUnlocked (true);
     }
-  }, [showOrthodontist, foolUnlocked);
+  }, [showOrthodontist, foolUnlocked]);
 
   useEffect(() => {
     if (showOrthodontist) {
