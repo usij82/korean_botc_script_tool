@@ -597,7 +597,7 @@ function App() {
     const q = search.trim().toLowerCase();
     return characters.filter((c) => {
       const isHomebrew = getEditions(c).includes("homebrew");
-      if (!q && isHomebrew) return false;
+      if (!q && isHomebrew && editionPick !== "homebrew") return false;
       if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
       const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
       const matchTeam = filterTeam === "all" || c.team === filterTeam;
