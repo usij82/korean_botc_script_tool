@@ -13,7 +13,6 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [jinxes, setJinxes] = useState({});
   const [nightOrder, setNightOrder] = useState({ firstNight: [], otherNight: [] });
-  const [editionCategory, setEditionCategory] = useState("");
   const [specialRules, setSpecialRules] = useState("");
   const [showThanks, setShowThanks] = useState(false);
   const today = new Date();
@@ -53,89 +52,6 @@ function App() {
     return withAnchors.replace(/\n/g, '<br/>');
   }
 
-
-// 추가: 스크립트 그룹 테이블
-  const PACK_VALUES = new Set(["tnf", "car", "homebrew"]);
-  const SCRIPT_GROUPS = {
-    april: {
-      label: "만우절",
-      visibleIf: (ctx) => ctx.jfaUnlocked,
-      items: [
-      { value: "jfa", label: "🤡 그냥 좀 장난친 거야 🦷" },
-      ],
-    },
-    base: {
-      label: "기본판",
-      items: [
-        { value: "tb", label: "점철되는 혼란" },
-        { value: "bmr", label: "피로 물든 달" },
-        { value: "snv", label: "화단에 꽃피운 이단" },
-        { value: "tnf", label: "여행자와 전설" },
-      ],
-    },
-    carousel: {
-      label: "캐러셀 확장",
-      items: [
-        { value: "car", label: "실험적 캐릭터" },
-        { value: "toyle", label: "가장 믿었던 사람들" },
-        { value: "ctt", label: "경멸" },
-        { value: "ini", label: "광기와 직관" },
-        { value: "hhr", label: "깊은 바다 밑 실종자의 복수" },
-        { value: "dvt", label: "독실한 신앙인들" },
-        { value: "ibh", label: "비이성적인 행동" },
-        { value: "qm", label: "빠른 계산" },
-        { value: "mdm", label: "원숭이도 수학을 해요" },
-        { value: "wciia", label: "이 종교는 도대체 누구거야?" },
-        { value: "adh", label: "이름 없는 거짓말" },
-        { value: "pcy", label: "한 방" },
-        { value: "tmo", label: "한밤 중의 오아시스" },
-        { value: "rotmv", label: "화성인 흡혈귀의 귀환" },
-      ],
-    },
-    teensy: {
-      label: "틴시빌 스크립트",
-      items: [
-        { value: "ngj", label: "가장 큰 기쁨" },
-        { value: "otr", label: "강 너머에" },
-        { value: "lndb", label: "늦은 밤의 드라이브" },
-        { value: "lod", label: "불신의 거머리" },
-        { value: "crd", label: "악마 동지여" },
-        { value: "luf", label: "자유방임주의" },
-        { value: "rttb", label: "하향 경쟁" },
-      ],
-    },
-    extra: {
-      label: "추가 스크립트",
-      items: [
-        { value: "agc", label: "그림 형제 합창단" },
-        { value: "ucd", label: "돌연사" },
-        { value: "cf", label: "메기 낚시" },
-        { value: "cd4", label: "셰프 딜럭스 4" },
-        { value: "bzl", label: "술주정" },
-        { value: "hns", label: "숨바꼭질" },
-        { value: "xc", label: "연장 코드" },
-        { value: "le", label: "월식" },
-        { value: "socas", label: "정교분리" },
-        { value: "cos", label: "첩자들의 교회" },
-        { value: "litc", label: "파충류 II: 도시의 도마뱀" },
-        { value: "oioo", label: "한 놈 들어오고, 한 놈 나가고" },
-      ],
-    },
-    china: {
-      label: "중국판",
-      items: [
-        { value: "hdcs", label: "등불이 밝을 때(화등초상)" },
-        { value: "syyl", label: "폭풍우의 조짐(산우욕래)" },
-        { value: "mgcz", label: "저녁의 북과 새벽의 종(모고신종)" },
-      ],
-    },
-    homebrew: {
-      label: "홈브류",
-      items: [
-        { value: "homebrew", label: "홈브류 캐릭터" },
-      ],
-    },
-  };
 
   
   function handleTitleClick() {
@@ -231,19 +147,34 @@ function App() {
   // ===== 데이터 로드 =====
   useEffect(() => {
     async function loadData() {
-      const charFile = isAprilFools ? "characters_ok.json" : "characters_ko.json" ;
-      const [charsRes, jinxRes, orderRes] = await Promise.all([
-        fetch(charFile),
+      const charCandidates = isAprilFools
+        ? ["characters_ok.json", "characters_ko.json"]
+        : ["characters_ko.json"];
+
+      let chars = null, lastErr = null;
+      for (const f of charCandidates) {
+        try {
+          const r = await fetch(f);
+          if (!r.ok) throw new Error(`fetch ${f} failed`);
+          chars = await r.json();
+          break;
+        } catch (e) { lastErr = e; }
+      }
+      if (!chars) {
+        console.error(lastErr);
+        alert("캐릭터 데이터를 불러오지 못했습니다.");
+        return;
+      }
+
+      const [jinxRes, orderRes] = await Promise.all([
         fetch("jinx_ko.json"),
         fetch("night_order.json"),
       ]);
 
-      const chars = await charsRes.json();
       const jinxArr = await jinxRes.json();
       const order = await orderRes.json();
 
       setCharacters(chars);
-
       const jinxMap = {};
       for (const j of jinxArr) jinxMap[j.id] = j.jinx;
       setJinxes(jinxMap);
@@ -251,8 +182,7 @@ function App() {
     }
     loadData();
   }, [isAprilFools]);
-
-  // ===== 유틸 =====
+// ===== 유틸 =====
   const teamOrder = ["townsfolk", "outsider", "minion", "demon", "traveller", "fabled"];
   const teamName = (id) =>
     ({
@@ -533,10 +463,7 @@ function App() {
 
   //특수룰, 줄바꿈은 \n- 입력하면 됨.
   const editionSpecialRules = {
-    jfa: "만우절 기념으로 공개된 스크립트 입니다. 현재는 공식 사이트에서 찾을 수 없습니다.",
-    wciia: "폭풍 사냥꾼은 \"교주\" 캐릭터를 보호합니다.",
-    litc: "폭풍 사냥꾼은 \"주정뱅이\" 캐릭터를 보호합니다.",
-    socas: "폭풍 사냥꾼은 \"시장\" 캐릭터를 보호합니다."
+    jfa: "만우절 기념으로 공개된 스크립트 입니다. 현재는 공식 사이트에서 찾을 수 없습니다."
   };
 
   const applyEdition = (mode) => {
@@ -596,15 +523,17 @@ function App() {
   const visibleChars = useMemo(() => {
     const q = search.trim().toLowerCase();
     return characters.filter((c) => {
-      const isHomebrew = getEditions(c).includes("homebrew");
-      if (!q && isHomebrew) return false;
+      const editions = getEditions(c);
+      const isHomebrew = editions.includes("homebrew");
+      // 홈브류: 기본 숨김, 단 분류나 선택이 homebrew면 예외적으로 표시
+      if (!q && isHomebrew && editionPick !== "homebrew" && editionCategory !== "homebrew") return false;
       if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
       const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
       const matchTeam = filterTeam === "all" || c.team === filterTeam;
-      const matchEdition = !editionPick || getEditions(c).includes(editionPick);
+      const matchEdition = !editionPick || editions.includes(editionPick);
       return matchQuery && matchTeam && matchEdition;
     });
-  }, [characters, search, filterTeam, editionPick, showOrthodontist, isAprilFools, isWordUnlocked]);
+  }, characters, search, filterTeam, editionPick, showOrthodontist, isAprilFools, isWordUnlocked]);
 
   // ===== 선택된 캐릭터 그룹/카운트 =====
   const grouped = useMemo(() => {
@@ -727,7 +656,7 @@ function App() {
             onChange={(e) => setFilterTeam(e.target.value)}
             style={{ flex: 1, padding: "8px", minWidth: 160 }}
           >
-            <option value="all">캐릭터 유형</option>
+            <option value="all">캐릭터 분류</option>
             {teamOrder.map((t) => (
               <option key={t} value={t}>
                 {teamName(t)}
@@ -736,90 +665,68 @@ function App() {
           </select>
 
           <select
-              value={editionCategory}
-              onChange={(e) => {
-                const v = e.target.value;
-                setEditionCategory(v);
-                // 분류를 바꾸면 현재 선택(editionPick)이 그 분류에 없는 값일 수 있으니 초기화(선택 해제)
-                setEditionPick((prev) => {
-                  if (!prev) return prev;
-                  const groups = v ? [v] : Object.keys(SCRIPT_GROUPS);
-                  const exists = groups.some((g) =>
-                    SCRIPT_GROUPS[g].items.some((it) => it.value === prev && (!it.require || (it.require === "jfaUnlocked" && jfaUnlocked)))
-                  );
-                  return exists ? prev : "";
-                });
-              }}
-              style={{ flex: 1, padding: "8px", minWidth: 180 }}
-              aria-label="버전 선택"
-              title="버전전 선택"
-            >
-              <option value="">버전 선택</option>
-              {jfaUnlocked && <option value="april">만우절 스크립트</option>}
-              <option value="base">기본판</option>
-              <option value="carousel">캐러셀 확장</option>
-              <option value="teensy">틴시빌</option>
-              <option value="extra">추가 스크립트</option>
-              <option value="china">중국판</option>
-              <option value="homebrew">홈브류</option>
-            </select>
+            value={editionPick}
+            onChange={(e) => setEditionPick(e.target.value)}
+            style={{ flex: 4, padding: "8px", minWidth: 200 }}
+          >
+            <option value="">스크립트/캐릭터 모음 목록</option>
 
-            {/* 2-2) 스크립트 선택 셀렉트 */}
-            <select
-              value={editionPick}
-              onChange={(e) => setEditionPick(e.target.value)}
-              style={{ flex: 3, padding: "8px", minWidth: 240 }}
-              aria-label="스크립트 선택"
-              title="스크립트 선택"
-            >
-              <option value="">스크립트/캐릭터 모음 선택</option>
+            <optgroup label="기본판 스크립트">
+              {jfaUnlocked && <option value="jfa">🤡 그냥 좀 장난친 거야 🦷</option>}
+              <option value="tb">점철되는 혼란</option>
+              <option value="bmr">피로 물든 달</option>
+              <option value="snv">화단에 꽃피운 이단</option>
+            </optgroup>
 
-              {(() => {
-                const ctx = { jfaUnlocked };
-                const allKeys = Object.keys(SCRIPT_GROUPS);
-                // 1) 분류 필터
-                let keys = editionCategory ? [editionCategory] : allKeys;
-                // 2) 그룹 가시성 필터(april 같은 visibleIf 처리)
-                keys = keys.filter((k) => {
-                  const g = SCRIPT_GROUPS[k];
-                  return !g.visibleIf || g.visibleIf(ctx);
-                });
-                return keys.flatMap((k) => {
-                  const g = SCRIPT_GROUPS[k];
-                  // 항목 레벨 require 처리(필요 시)
-                  const visibleItems = g.items.filter((it) => {
-                    if (!it?.value) return false; // homebrew의 빈 항목 제거
-                    if (!it.require) return true;
-                    if (it.require === "jfaUnlocked") return !!jfaUnlocked;
-                    return true;
-                  });
-                  // 스크립트 vs 캐릭터 모음집 분리 1
-                  const scriptItems = visibleItems.filter((it) => !PACK_VALUES.has(it.value));
-                  const packItems   = visibleItems.filter((it) =>  PACK_VALUES.has(it.value));
-                  const groupsToRender = [];
-                  if (scriptItems.length) {
-                    groupsToRender.push(
-                      <optgroup key={`${k}-scripts`} label={`${g.label} - 스크립트`}>
-                        {scriptItems.map((it) => (
-                          <option key={it.value} value={it.value}>{it.label}</option>
-                        ))}
-                      </optgroup>
-                    );
-                  }
-                  // 스크립트 vs 캐릭터 모음집 분리 2
-                  if (packItems.length) {
-                    groupsToRender.push(
-                      <optgroup key={`${k}-packs`} label={`${g.label} - 캐릭터 모음`}>
-                        {packItems.map((it) => (
-                          <option key={it.value} value={it.value}>{it.label}</option>
-                        ))}
-                      </optgroup>
-                    );
-                  }
-                  return groupsToRender;
-                });
-              })()}
-            </select>
+            <optgroup label="캐러셀 스크립트">
+              <option value="toyle">가장 믿었던 사람들</option>
+              <option value="ctt">경멸</option>
+              <option value="ini">광기와 직관</option>
+              <option value="hhr">깊은 바다 밑 실종자의 복수</option>
+              <option value="dvt">독실한 신앙인들</option>
+              <option value="ibh">비이성적인 행동</option>
+              <option value="qm">빠른 계산</option>
+              <option value="mdm">원숭이도 수학을 해요</option>
+              <option value="wciia">이 종교는 도대체 누구거야?</option>
+              <option value="adh">이름 없는 거짓말</option>
+              <option value="pcy">한 방</option>
+              <option value="tmo">한밤 중의 오아시스</option>
+              <option value="rotmv">화성인 흡혈귀의 귀환</option>
+            </optgroup>
+
+            <optgroup label="틴시빌 스크립트">
+              <option value="ngj">가장 큰 기쁨</option>
+              <option value="otr">강 너머에</option>
+              <option value="lndb">늦은 밤의 드라이브</option>
+              <option value="lod">불신의 거머리</option>
+              <option value="crd">악마 동지여</option>
+              <option value="luf">자유방임주의</option>
+              <option value="rttb">하향 경쟁</option>
+            </optgroup>
+            
+            <optgroup label="추가 스크립트">
+              <option value="agc">그림 형제 합창단</option>
+              <option value="ucd">돌연사</option>
+              <option value="hdcs">등불이 밝을 때(화등초상)</option>
+              <option value="cf">메기 낚시</option>
+              <option value="cd4">셰프 딜럭스 4</option>
+              <option value="bzl">술주정</option>
+              <option value="hns">숨바꼭질</option>
+              <option value="xc">연장 코드</option>
+              <option value="le">월식</option>
+              <option value="socas">정교분리</option>
+              <option value="cos">첩자들의 교회</option>
+              <option value="litc">파충류 II: 도시의 도마뱀</option>
+              <option value="oioo">한 놈 들어오고, 한 놈 나가고</option>
+            </optgroup>
+            
+            <optgroup label="캐릭터 모음집">
+              <option value="tnf">여행자와 전설</option>
+              <option value="car">캐러셀</option>
+              <option value="syyl">폭풍우의 조짐(산우욕래)</option>
+              <option value="mgcz">저녁의 북과 새벽의 종(모고신종)</option>
+            </optgroup>
+          </select>
 
           <button onClick={() => applyEdition("replace")}>해당 스크립트 덮어쓰기</button>
           <button onClick={() => applyEdition("add")}>해당 스크립트 캐릭터 모두 추가</button>
