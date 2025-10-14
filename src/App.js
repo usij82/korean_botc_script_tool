@@ -55,7 +55,7 @@ function App() {
 
 
 // 추가: 스크립트 그룹 테이블
-  const PACK_VALUES = new Set(["tnf", "car", "homebrew"]);
+  const PACK_VALUES = new Set(["tnf", "car", "rzlmt", "homebrew"]);
   const SCRIPT_GROUPS = {
     april: {
       label: "만우절",
@@ -127,6 +127,7 @@ function App() {
         { value: "hdcs", label: "등불이 밝을 때(화등초상)" },
         { value: "syyl", label: "폭풍우의 조짐(산우욕래)" },
         { value: "mgcz", label: "저녁의 북과 새벽의 종(모고신종)" },
+        { value: "rzlmt", label: "중국판 캐릭터 목록" },
       ],
     },
     homebrew: {
@@ -542,14 +543,26 @@ function App() {
   const applyEdition = (mode) => {
     if (!editionPick) return alert("기본 스크립트를 선택하세요.");
     const ids = characters.filter((c) => getEditions(c).includes(editionPick)).map((c) => c.id);
-    if (mode === "replace") setSelectedIds(ids);
-    else setSelectedIds((prev) => Array.from(new Set([...prev, ...ids])));
-    setMeta((prev) => ({
-      name: prev.name || editionName(editionPick) || "제목",
-      author: prev.author || editionAuthor[editionPick] || "작가",
-    }));
+
+    if (mode === "replace") {
+    // ✅ 완전 덮어쓰기 (제목/작가도 새로 설정)
+      setSelectedIds(ids);
+      setMeta({
+        name: editionName(editionPick) || "제목",
+        author: editionAuthor[editionPick] || "작가",
+      });
+    } else {
+    // ✅ 추가 모드 (기존 값 유지)
+      setSelectedIds((prev) => Array.from(new Set([...prev, ...ids])));
+      setMeta((prev) => ({
+        name: prev.name || editionName(editionPick) || "제목",
+        author: prev.author || editionAuthor[editionPick] || "작가",
+      }));
+    }
+
     setSpecialRules(editionSpecialRules[editionPick] || "");
   };
+
 
   // ===== 생성(빠른 JSON/일반 선택 통합) =====
   const generateFromSelection = () => {
@@ -597,7 +610,7 @@ function App() {
     const q = search.trim().toLowerCase();
     return characters.filter((c) => {
       const isHomebrew = getEditions(c).includes("homebrew");
-      if (!q && isHomebrew && editionPick !== "homebrew") return false;
+      if (!q && isHomebrew && editionCategory !== "homebrew") return false;
       if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
       const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
       const matchTeam = filterTeam === "all" || c.team === filterTeam;
