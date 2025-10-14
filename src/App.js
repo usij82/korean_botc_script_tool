@@ -808,7 +808,8 @@ function App() {
               title="버전전 선택"
             >
               <option value="">버전 선택</option>
-              {jfaUnlocked && <option value="april">만우절 스크립트</option>}
+              {jfaUnlocked && <option value="april">만우절</option>}
+              {hdrUnlocked && <option value="halloween">할로윈</option>}
               <option value="base">기본판</option>
               <option value="carousel">캐러셀 확장</option>
               <option value="teensy">틴시빌</option>
