@@ -199,7 +199,7 @@ function App() {
   useEffect(() => {
     if (isWordUnlocked2 && !wordAlerted2) {
       setShowOrthodontist(true);
-      setWordAlerted(true);
+      setWordAlerted2(true);
       alert("🎃 숨겨진 캐릭터를 찾으셨습니다! 🎃\n지금부터 호박과 특별 스크립트를 선택할 수 있어요!");
     }
   }, [isWordUnlocked2, wordAlerted2]);
