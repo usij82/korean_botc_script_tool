@@ -198,7 +198,7 @@ function App() {
   // “잭오랜턴” 검색 이스터에그 해금 + 알림
   useEffect(() => {
     if (isWordUnlocked2 && !wordAlerted2) {
-      setShowOrthodontist(true);
+      setShowPumpkin(true);
       setWordAlerted2(true);
       alert("🎃 숨겨진 캐릭터를 찾으셨습니다! 🎃\n지금부터 호박과 특별 스크립트를 선택할 수 있어요!");
     }
@@ -796,10 +796,18 @@ function App() {
                 // 분류를 바꾸면 현재 선택(editionPick)이 그 분류에 없는 값일 수 있으니 초기화(선택 해제)
                 setEditionPick((prev) => {
                   if (!prev) return prev;
+                  const ctx = { jfaUnlocked, hdrUnlocked };
                   const groups = v ? [v] : Object.keys(SCRIPT_GROUPS);
-                  const exists = groups.some((g) =>
-                    SCRIPT_GROUPS[g].items.some((it) => it.value === prev && (!it.require || (it.require === "jfaUnlocked" && jfaUnlocked)))
-                  );
+                  const exists = groups.some((g) => {
+                    const group = SCRIPT_GROUPS[g];
+                    if (group.visibleIf && !group.visibleIf(ctx)) return false;
+                    return group.items.some((it) => {
+                      if (!it?.value) return false;
+                      if (it.value !== prev) return false;
+                      if (!it.require) return true;
+                      return !!ctx[it.require];
+                    });
+                  });
                   return exists ? prev : "";
                 });
               }}
@@ -829,7 +837,7 @@ function App() {
               <option value="">스크립트/캐릭터 모음 선택</option>
 
               {(() => {
-                const ctx = { jfaUnlocked };
+                const ctx = { jfaUnlocked,hdrUnlocked };
                 const allKeys = Object.keys(SCRIPT_GROUPS);
                 // 1) 분류 필터
                 let keys = editionCategory ? [editionCategory] : allKeys;
@@ -845,6 +853,7 @@ function App() {
                     if (!it?.value) return false; // homebrew의 빈 항목 제거
                     if (!it.require) return true;
                     if (it.require === "jfaUnlocked") return !!jfaUnlocked;
+                    if (it.require === "hdrUnlocked") return !!hdrUnlocked;
                     return true;
                   });
                   // 스크립트 vs 캐릭터 모음집 분리 1
