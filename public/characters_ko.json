@@ -1289,10 +1289,10 @@
   {
     "id": "slayer",
     "name": "처단자",
-    "edition": ["agc","bzl","ctt","hhr","lndb","lod","otr","pcy","rttb","ucd"],
+    "edition": ["tb","agc","bzl","ctt","hhr","lndb","lod","otr","pcy","rttb","ucd"],
     "team": "townsfolk",
     "setup": false,
-    "ability": "게임당 한 번, 낮에 공개적으로 플레이어를 선택할 수 있습니다. 해당 플레이어가 악마라면, 죽습니다.",
+    "ability": "게임당 한 번, 낮에 공개적으로 플레이어를 1명 선택할 수 있습니다. 해당 플레이어가 악마라면, 죽습니다.",
     "image": "icons/Icon_slayer.png"
   },
   {
