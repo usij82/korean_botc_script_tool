@@ -18,14 +18,20 @@ function App() {
   const [showThanks, setShowThanks] = useState(false);
   const today = new Date();
   const isAprilFools = today.getMonth() === 3 && today.getDate() === 1;
+  const isHalloween = today.getMonth() === 9 && today.getDate() === 31;
   const isWordUnlocked = search.trim().toLowerCase() === "이빨요정";
+  const isWordUnlocked2 = search.trim().toLowerCase() === "잭오랜턴";
   const [isClicked, setIsClicked] = useState(false);
   const [, setClickCount] = useState(0);
   const [aprilAlerted, setAprilAlerted] = useState(false);
+  const [halloweenAlerted, setHalloweenAlerted] = useState(false);
   const [wordAlerted, setWordAlerted] = useState(false);
+  const [wordAlerted2, setWordAlerted2] = useState(false);
   const [clickAlerted, setClickAlerted] = useState(false);
   const [showOrthodontist, setShowOrthodontist] = useState(false);
+  const [showPumpkin, setShowPumpkin] = useState(false);
   const [jfaUnlocked, setjfaUnlocked] = useState(false);
+  const [hdrUnlocked, sethdrUnlocked] = useState(false);
   const [toothPromptVisible, setToothPromptVisible] = useState(false); // 모달 표시 여부
   const openTimerRef = useRef(null);   // 다음 “:41”에 여는 타이머
   const closeTimerRef = useRef(null);  // 1분 뒤 자동 닫힘 타이머
@@ -62,6 +68,13 @@ function App() {
       visibleIf: (ctx) => ctx.jfaUnlocked,
       items: [
       { value: "jfa", label: "🤡 그냥 좀 장난친 거야 🦷" },
+      ],
+    },
+    halloween: {
+      label: "할로윈",
+      visibleIf: (ctx) => ctx.hdrUnlocked,
+      items: [
+      { value: "hdr", label: "🎃 할로윈 드레스로사 🧚" },
       ],
     },
     base: {
@@ -142,7 +155,7 @@ function App() {
   function handleTitleClick() {
     setClickCount((prev) => {
       const next = prev + 1;
-      if (next >= 41) {
+      if (next >= 31) {
       setIsClicked(true);
       }
       return next;
@@ -152,8 +165,8 @@ function App() {
   useEffect(() => {
     if (isClicked && !clickAlerted) {
       setClickAlerted(true);
-      setShowOrthodontist(true);
-      alert("🦷 숨겨진 캐릭터를 찾으셨습니다! 🦷\n지금부터 치과의사와 특별 스크립트를 선택할 수 있어요!");
+      setShowPumpkin(true);
+      alert("🎃 숨겨진 캐릭터를 찾으셨습니다! 🎃\n지금부터 호박과 특별 스크립트를 선택할 수 있어요!");
     }
   }, [isClicked, clickAlerted]);
   
@@ -165,6 +178,14 @@ function App() {
     }
   }, [isAprilFools, aprilAlerted]);
 
+  useEffect(() => {
+    if (isHalloween && !halloweenAlerted) {
+      setShowPumpkin(true);
+      setHalloweenAlerted(true);
+      alert("👻 무시무시한 유령들이 날뛰는 공포의 할로윈에 찾아오다니... 운이 좋네요! 🧌");
+    }
+  }, [isHalloween, halloweenAlerted]);
+
 // “이빨요정” 검색 이스터에그 해금 + 알림
   useEffect(() => {
     if (isWordUnlocked && !wordAlerted) {
@@ -174,11 +195,26 @@ function App() {
     }
   }, [isWordUnlocked, wordAlerted]);
 
+  // “잭오랜턴” 검색 이스터에그 해금 + 알림
+  useEffect(() => {
+    if (isWordUnlocked2 && !wordAlerted2) {
+      setShowOrthodontist(true);
+      setWordAlerted(true);
+      alert("🎃 숨겨진 캐릭터를 찾으셨습니다! 🎃\n지금부터 호박과 특별 스크립트를 선택할 수 있어요!");
+    }
+  }, [isWordUnlocked2, wordAlerted2]);
+
   useEffect(() => {
     if (showOrthodontist && !jfaUnlocked) {
       setjfaUnlocked (true);
     }
   }, [showOrthodontist, jfaUnlocked]);
+
+  useEffect(() => {
+    if (showPumpkin && !hdrUnlocked) {
+      sethdrUnlocked (true);
+    }
+  }, [showPumpkin, hdrUnlocked]);
 
   useEffect(() => {
     if (showOrthodontist) {
@@ -232,7 +268,7 @@ function App() {
   // ===== 데이터 로드 =====
   useEffect(() => {
     async function loadData() {
-      const charFile = isAprilFools ? "characters_ok.json" : "characters_ko.json" ;
+      const charFile = (isAprilFools || isHalloween) ? "characters_ok.json" : "characters_ko.json" ;
       const [charsRes, jinxRes, orderRes] = await Promise.all([
         fetch(charFile),
         fetch("jinx_ko.json"),
@@ -251,7 +287,7 @@ function App() {
       setNightOrder(order);
     }
     loadData();
-  }, [isAprilFools]);
+  }, [isAprilFools,isHalloween]);
 
   // ===== 유틸 =====
   const teamOrder = ["townsfolk", "outsider", "minion", "demon", "traveller", "fabled"];
@@ -450,6 +486,7 @@ function App() {
       snv: "화단에 꽃피운 이단",
       hdcs: "등불이 밝을 때(화등초상)",
       jfa: "🤡 그냥 좀 장난친 거야 🦷",
+      hdr: "🎃 할로윈 드레스로사 🧚",
       adh: "이름 없는 거짓말",
       ctt: "경멸",
       dvt: "독실한 신앙인들",
@@ -494,7 +531,8 @@ function App() {
     bmr: "기본 스크립트 2번",
     snv: "기본 스크립트 3번",
     hdcs: "중국판 추가 스크립트 1번",
-    jfa: "만우절 기념 스크립트",
+    jfa: "The Mad Couch",
+    hdr: "Zets",
     adh: "Emerald, Fran, Kohav, & Theo",
     ctt: "Milk",
     dvt: "Emerald",
@@ -535,6 +573,7 @@ function App() {
   //특수룰, 줄바꿈은 \n- 입력하면 됨.
   const editionSpecialRules = {
     jfa: "만우절 기념으로 공개된 스크립트 입니다. 현재는 공식 사이트에서 찾을 수 없습니다.",
+    hdr: "할로윈 기념으로 공개된 스크립트 입니다. 현재는 공식 사이트에서 찾을 수 없습니다.",
     wciia: "폭풍 사냥꾼은 \"교주\" 캐릭터를 보호합니다.",
     litc: "폭풍 사냥꾼은 \"주정뱅이\" 캐릭터를 보호합니다.",
     socas: "폭풍 사냥꾼은 \"시장\" 캐릭터를 보호합니다."
@@ -612,12 +651,13 @@ function App() {
       const isHomebrew = getEditions(c).includes("homebrew");
       if (!q && isHomebrew && editionCategory !== "homebrew") return false;
       if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
+      if (c.id === "pumpkin" && !(isHalloween || isWordUnlocked2 || showPumpkin)) return false;
       const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
       const matchTeam = filterTeam === "all" || c.team === filterTeam;
       const matchEdition = !editionPick || getEditions(c).includes(editionPick);
       return matchQuery && matchTeam && matchEdition;
     });
-  }, [characters, search, filterTeam, editionPick, editionCategory, showOrthodontist, isAprilFools, isWordUnlocked]);
+  }, [characters, search, filterTeam, editionPick, editionCategory, showOrthodontist, isAprilFools, isWordUnlocked, showPumpkin, isHalloween, isWordUnlocked2]);
 
   // ===== 선택된 캐릭터 그룹/카운트 =====
   const grouped = useMemo(() => {
