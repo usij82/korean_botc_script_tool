@@ -617,7 +617,7 @@ function App() {
       const matchEdition = !editionPick || getEditions(c).includes(editionPick);
       return matchQuery && matchTeam && matchEdition;
     });
-  }, [characters, search, filterTeam, editionCategory, showOrthodontist, isAprilFools, isWordUnlocked]);
+  }, [characters, search, filterTeam, editionPick, editionCategory, showOrthodontist, isAprilFools, isWordUnlocked]);
 
   // ===== 선택된 캐릭터 그룹/카운트 =====
   const grouped = useMemo(() => {
