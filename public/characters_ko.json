@@ -47,7 +47,7 @@
   {
     "id": "goblin",
     "name": "고블린",
-    "edition": ["car","jfa","dvt","hhr","luf","toyle","wciia"],
+    "edition": ["car","jfa","hdr","dvt","hhr","luf","toyle","wciia"],
     "team": "minion",
     "setup": false,
     "ability": "당신이 지명될 때 공개적으로 고블린이라고 주장한 뒤 처형되면, 당신의 진영이 승리합니다.",
@@ -65,7 +65,7 @@
   {
     "id": "golem",
     "name": "골렘",
-    "edition": ["car","jfa","agc","bzl","dvt","lndb","tmo"],
+    "edition": ["car","jfa","hdr","agc","bzl","dvt","lndb","tmo"],
     "team": "outsider",
     "setup": false,
     "ability": "게임당 한 번만 지명할 수 있습니다. 당신이 지명한 플레이어가 악마가 아니라면, 해당 플레이어는 죽습니다. (투표는 정상 진행)",
@@ -92,7 +92,7 @@
   {
     "id": "fearmonger",
     "name": "공포조장자",
-    "edition": ["car","wciia"],
+    "edition": ["car","hdr","wciia"],
     "team": "minion",
     "setup": false,
     "ability": "매일 밤, 플레이어를 1명 선택합니다. 새로운 플레이어가 선택됐다면 모든 플레이어가 이 사실을 알게 됩니다, (누군지는 알려주지 않습니다.) 공포조장자가 해당 플레이어를 지명하고 처형시킬 경우 그 플레이어의 진영은 패배합니다.",
@@ -110,7 +110,7 @@
   {
     "id": "boffin",
     "name": "과학자",
-    "edition": ["car","qm"],
+    "edition": ["car","hdr","qm"],
     "team": "minion",
     "setup": false,
     "ability": "악마는 (취했거나 중독되었어도) 참가하지 않은 선한 캐릭터 능력을 얻습니다. 악마와 당신은 그 캐릭터가 무엇인지 알게 됩니다.",
@@ -254,7 +254,7 @@
   {
     "id": "flowergirl",
     "name": "꽃집소녀",
-    "edition": ["snv","adh","dvt","litc","ucd"],
+    "edition": ["snv","hdr","adh","dvt","litc","ucd"],
     "team": "townsfolk",
     "setup": false,
     "ability": "매일 밤*(첫번째 밤 제외), 오늘 낮에 악마가 투표했는지 알 수 있습니다.",
@@ -272,7 +272,7 @@
   {
     "id": "nodashii",
     "name": "노다시",
-    "edition": ["snv","jfa","bzl","cos","ctt","ini","le","toyle","ucd","wciia","xc"],
+    "edition": ["snv","jfa","hdr","bzl","cos","ctt","ini","le","toyle","ucd","wciia","xc"],
     "team": "demon",
     "setup": false,
     "ability": "매일 밤*(첫번째 밤 제외), 플레이어를 1명 선택합니다. 해당 플레이어는 죽습니다. 당신의 이웃 플레이어가 주민이라면 해당 플레이어들은 중독됩니다.",
@@ -281,7 +281,7 @@
   {
     "id": "gnome",
     "name": "노움",
-    "edition": "car",
+    "edition": ["car","hdr"],
     "team": "traveller",
     "setup": false,
     "ability": "모든 플레이어는 당신의 친구 플레이어(같은 진영)를 알고 시작합니다. 당신은 친구를 지명한 플레이어를 죽일 수 있습니다.",
@@ -326,7 +326,7 @@
   {
     "id": "highpriestess",
     "name": "대사제",
-    "edition": ["car","adh","cos","ctt","dvt","ibh","ini","oioo","qm","socas"],
+    "edition": ["car","hdr","adh","cos","ctt","dvt","ibh","ini","oioo","qm","socas"],
     "team": "townsfolk",
     "setup": false,
     "ability": "매일 밤, 이야기꾼이 당신이 가장 대화를 나눠야 한다고 생각하는 플레이어가 누구인지 알게 됩니다.",
@@ -389,7 +389,7 @@
   {
     "id": "mutant",
     "name": "돌연변이",
-    "edition": ["snv","bzl","cd4","cf","cos","hhr","hns","ibh","ini","luf","pcy","rotmv","ucd","wciia","xc"],
+    "edition": ["snv","hdr","bzl","cd4","cf","cos","hhr","hns","ibh","ini","luf","pcy","rotmv","ucd","wciia","xc"],
     "team": "outsider",
     "setup": false,
     "ability": "자신이 외지인이라고 \"광기\"한다면, 처형될 수 있습니다.",
@@ -551,7 +551,7 @@
   {
     "id": "snitch",
     "name": "밀고자",
-    "edition": ["car","jfa","dvt","qm"],
+    "edition": ["car","jfa","hdr","dvt","qm"],
     "team": "outsider",
     "setup": false,
     "ability": "하수인들도 악마처럼 게임에 참가하지 않은 캐릭터 3개를 알게 됩니다. (악마가 아는 것과 같을 수도, 다를 수도 있습니다.)",
@@ -650,7 +650,7 @@
   {
     "id": "scarletwoman",
     "name": "부정한 여인",
-    "edition": ["tb","jfa","adh","agc","bzl","cos","ctt","lndb","ngj","rotmv","rttb","socas","ucd","xc"],
+    "edition": ["tb","jfa","hdr","adh","agc","bzl","cos","ctt","lndb","ngj","rotmv","rttb","socas","ucd","xc"],
     "team": "minion",
     "setup": false,
     "ability": "여행자를 제외하고 살아있는 플레이어가 5명 이상일 때, 악마가 죽으면 당신은 악마가 됩니다.",
@@ -794,7 +794,7 @@
   {
     "id": "monk",
     "name": "수도승",
-    "edition": ["tb","cos","ibh","oioo","pcy","toyle","ucd","xc"],
+    "edition": ["tb","hdr","cos","ibh","oioo","pcy","toyle","ucd","xc"],
     "team": "townsfolk",
     "setup": false,
     "ability": "매일 밤*(첫번째 밤 제외), 본인을 제외하고 플레이어를 1명 선택합니다. 해당 플레이어는 오늘 밤 악마로부터 안전합니다.",
@@ -821,7 +821,7 @@
   {
     "id": "shugenja",
     "name": "순례자",
-    "edition": ["car","adh","hhr","ibh","ini","qm","toyle"],
+    "edition": ["car","hdr","adh","hhr","ibh","ini","qm","toyle"],
     "team": "townsfolk",
     "setup": false,
     "ability": "가장 가까운 악한 플레이어가 시계 방향인지 반시계 방향인지 알고 시작합니다. 거리가 같다면 이 정보는 임의적입니다.",
@@ -947,7 +947,7 @@
   {
     "id": "fisherman",
     "name": "어부",
-    "edition": ["car","jfa","agc","bzl","cd4","crd","ctt","dvt","lod","luf","oioo","qm","rotmv","tmo","xc"],
+    "edition": ["car","jfa","hdr","agc","bzl","cd4","crd","ctt","dvt","lod","luf","oioo","qm","rotmv","tmo","xc"],
     "team": "townsfolk",
     "setup": false,
     "ability": "게임당 한 번, 이야기꾼을 방문해 당신의 진영의 승리에 도움이 되는 조언(사실이 아닐 수 있음)을 들을 수 있습니다.",
@@ -1010,7 +1010,7 @@
   {
     "id": "artist",
     "name": "예술가",
-    "edition": ["snv","cos","hns","le","luf","ngj","toyle","ucd","xc"],
+    "edition": ["snv","hdr","cos","hns","le","luf","ngj","toyle","ucd","xc"],
     "team": "townsfolk",
     "setup": false,
     "ability": "게임당 한 번, 낮에 이야기꾼에게 개인적으로 찾아가 예/아니오로 대답할 수 있는 질문을 물어볼 수 있습니다.",
@@ -1118,7 +1118,7 @@
   {
     "id": "general",
     "name": "장군",
-    "edition": ["car","adh","agc","ini","litc","pcy","qm","rotmv"],
+    "edition": ["car","hdr","adh","agc","ini","litc","pcy","qm","rotmv"],
     "team": "townsfolk",
     "setup": false,
     "ability": "매일 밤, 당신은 이야기꾼이 판단하기에 현재 유리한 진영이 어디인지 알게 됩니다.",
@@ -1154,7 +1154,7 @@
   {
     "id": "juggler",
     "name": "저글러",
-    "edition": ["snv","cd4","cos","ctt","dvt","lod","qm","socas"],
+    "edition": ["snv","hdr","cd4","cos","ctt","dvt","lod","qm","socas"],
     "team": "townsfolk",
     "setup": false,
     "ability": "첫 날에 최대 5명의 플레이어와 그 캐릭터를 공개적으로 추측할 수 있습니다. 그날 밤, 당신은 몇 개를 맞혔는지 알게 됩니다.",
@@ -1280,7 +1280,7 @@
   {
     "id": "virgin",
     "name": "처녀",
-    "edition": ["tb","hns","litc"],
+    "edition": ["tb","hdr","hns","litc"],
     "team": "townsfolk",
     "setup": false,
     "ability": "처음으로 지명될 때, 지명자가 주민인 경우, 지명자는 즉시 처형됩니다.",
@@ -1361,7 +1361,7 @@
   {
     "id": "lordoftyphon",
     "name": "태풍의 군주",
-    "edition": ["car","ibh","wciia"],
+    "edition": ["car","hdr","ibh","wciia"],
     "team": "demon",
     "setup": true,
     "ability": "매일 밤*(첫번째 밤 제외), 플레이어를 1명 선택합니다. 해당 플레이어는 죽습니다. 모든 악한 진영은 붙어있고 가능하면 중간에 악마가 있습니다. [+1 하수인, -? ~ +? 외지인]",
@@ -1388,7 +1388,7 @@
   {
     "id": "fanggu",
     "name": "팡구",
-    "edition": ["snv","bzl","cd4","cf","dvt","ibh","ini","oioo","rotmv","wciia"],
+    "edition": ["snv","hdr","bzl","cd4","cf","dvt","ibh","ini","oioo","rotmv","wciia"],
     "team": "demon",
     "setup": true,
     "ability": "매일 밤*(첫번째 밤 제외), 플레이어를 1명 선택합니다. 해당 플레이어는 죽습니다. 첫 번째로 팡구가 죽이는 외지인은 악한 팡구가 되고 대신 당신이 죽습니다. [+1 외지인]",
@@ -1397,7 +1397,7 @@
   {
     "id": "puzzlemaster",
     "name": "퍼즐박사",
-    "edition": ["car","cd4","dvt","ibh","ini","le","qm","wciia","xc"],
+    "edition": ["car","hdr","cd4","dvt","ibh","ini","le","qm","wciia","xc"],
     "team": "outsider",
     "setup": false,
     "ability": "1명의 플레이어는 취해 있습니다. 이는 당신이 죽어도 유지됩니다. 게임당 한 번, 해당 플레이어가 누구인지 추측할 수 있습니다. 맞다면, 악마가 누구인지 알게 되지만, 틀리면 거짓 정보를 얻습니다.",
@@ -1406,7 +1406,7 @@
   {
     "id": "pacifist",
     "name": "평화주의자",
-    "edition": ["bmr","jfa","socas"],
+    "edition": ["bmr","jfa","hdr","socas"],
     "team": "townsfolk",
     "setup": false,
     "ability": "당신은 선한 플레이어가 처형되어 죽는 것을 막을 수도 있습니다.",
@@ -1424,7 +1424,7 @@
   {
     "id": "towncrier",
     "name": "포고자",
-    "edition": ["snv","agc","cd4","hhr","hns","ini","socas","toyle"],
+    "edition": ["snv","hdr","agc","cd4","hhr","hns","ini","socas","toyle"],
     "team": "townsfolk",
     "setup": false,
     "ability": "매일 밤*(첫번째 밤 제외), 오늘 하수인이 지명했는지 알게 됩니다.",
@@ -1460,7 +1460,7 @@
   {
     "id": "pukka",
     "name": "푸카",
-    "edition": ["bmr","agc","cos","crd","hns","lndb","mdm","pcy","rotmv","ucd"],
+    "edition": ["bmr","hdr","agc","cos","crd","hns","lndb","mdm","pcy","rotmv","ucd"],
     "team": "demon",
     "setup": false,
     "ability": "매일 밤, 플레이어를 1명 선택합니다. 해당 플레이어는 중독됩니다. 이전에 중독당한 플레이어는 죽고 건강해집니다.",
@@ -1514,7 +1514,7 @@
   {
     "id": "savant",
     "name": "학자",
-    "edition": ["snv","adh","bzl","cd4","cf","dvt","hhr","le","luf","pcy","qm","rotmv","tmo","wciia"],
+    "edition": ["snv","hdr","adh","bzl","cd4","cf","dvt","hhr","le","luf","pcy","qm","rotmv","tmo","wciia"],
     "team": "townsfolk",
     "setup": false,
     "ability": "매일 이야기꾼을 개인적으로 방문하여 2가지 명제를 들을 수 있습니다. 그중 하나는 사실이고 하나는 거짓입니다.",
