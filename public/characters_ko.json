@@ -2646,6 +2646,15 @@
     "image": "icons/Icon_chiren.png"
   },
   {
+    "id": "yanshi",
+    "name": "명장(偃师)",
+    "edition": ["rzlmt","syyl"],
+    "team": "townsfolk",
+    "setup": false,
+    "ability": "당신이 밤에 죽으면, 살아있는 하수인 1명과 캐릭터를 교환합니다. 진영은 바뀌지 않습니다.",
+    "image": "icons/Icon_yanshi.png"
+  },
+  {
     "id": "shimengmo",
     "name": "맥(食梦貘)",
     "edition": ["rzlmt","homebrew"],
@@ -2878,15 +2887,6 @@
     "setup": false,
     "ability": "주민이 외지인으로, 외지인이 주민으로 보일 수 있습니다. 악마가 하수인으로, 당신이 악마로 보일 수 있습니다.",
     "image": "icons/Icon_chimei.png"
-  },
-  {
-    "id": "yanshi",
-    "name": "명장(偃师)",
-    "edition": ["rzlmt","syyl"],
-    "team": "townsfolk",
-    "setup": false,
-    "ability": "당신이 밤에 죽으면, 살아있는 하수인 1명과 캐릭터를 교환합니다. 진영은 바뀌지 않습니다.",
-    "image": "icons/Icon_yanshi.png"
   },
   {
     "id": "yishi",
