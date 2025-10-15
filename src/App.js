@@ -661,8 +661,8 @@ function App() {
     return characters.filter((c) => {
       const isHomebrew = getEditions(c).includes("homebrew");
       const isLeaked = getEditions(c).includes("leaked");
-      if (!q && isHomebrew && editionCategory !== "homebrew") return false;
-      if (!q && isLeaked && editionCategory !== "unreleased") return false;
+      if (!q && isHomebrew && editionPick !== "homebrew") return false;
+      if (!q && isLeaked && editionPick !== "leaked" !== "unreleased") return false;
       if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
       if (c.id === "pumpkin" && !(isHalloween || isWordUnlocked2 || showPumpkin)) return false;
       const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
@@ -670,7 +670,7 @@ function App() {
       const matchEdition = !editionPick || getEditions(c).includes(editionPick);
       return matchQuery && matchTeam && matchEdition;
     });
-  }, [characters, search, filterTeam, editionPick, editionCategory, showOrthodontist, isAprilFools, isWordUnlocked, showPumpkin, isHalloween, isWordUnlocked2]);
+  }, [characters, search, filterTeam, editionPick, showOrthodontist, isAprilFools, isWordUnlocked, showPumpkin, isHalloween, isWordUnlocked2]);
 
   // ===== 선택된 캐릭터 그룹/카운트 =====
   const grouped = useMemo(() => {
@@ -826,7 +826,7 @@ function App() {
               }}
               style={{ flex: 1, padding: "8px", minWidth: 180 }}
               aria-label="버전 선택"
-              title="버전전 선택"
+              title="버전 선택"
             >
               <option value="">버전 선택</option>
               {jfaUnlocked && <option value="april">만우절</option>}
