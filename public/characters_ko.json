@@ -2881,7 +2881,7 @@
   },
   {
     "id": "yanshi",
-    "name": "인형장인(偃师)",
+    "name": "명장(偃师)",
     "edition": ["rzlmt","syyl"],
     "team": "townsfolk",
     "setup": false,
@@ -2890,7 +2890,7 @@
   },
   {
     "id": "yishi",
-    "name": "전령(驿使)",
+    "name": "역졸(驿使)",
     "edition": ["rzlmt","syyl"],
     "team": "townsfolk",
     "setup": false,
