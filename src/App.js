@@ -14,6 +14,7 @@ function App() {
   const [jinxes, setJinxes] = useState({});
   const [nightOrder, setNightOrder] = useState({ firstNight: [], otherNight: [] });
   const [editionCategory, setEditionCategory] = useState("");
+  const [leakedUnlocked, setLeakedUnlocked] = useState(false);
   const [specialRules, setSpecialRules] = useState("");
   const [showThanks, setShowThanks] = useState(false);
   const today = new Date();
@@ -151,6 +152,7 @@ function App() {
     },
     unreleased: {
       label: "미출시",
+      visibleIf: (ctx) => ctx.leakedUnlocked,
       items: [
         { value: "leaked", label: "미출시 캐릭터 목록" },
       ],
@@ -527,7 +529,8 @@ function App() {
       tnf: "여행자와 전설",
       car: "캐러셀",
       syyl: "폭풍우의 조짐(산우욕래)",
-      mgcz: "저녁의 북과 새벽의 종(모고신종)"
+      mgcz: "저녁의 북과 새벽의 종(모고신종)",
+      leaked: "미출시 캐릭터 목록"
     };
     return m[code] || "";
   };
@@ -572,8 +575,9 @@ function App() {
     socas: "Aero",
     tnf: "기본판에 포함된 여행자와 전설 캐릭터 모음집",
     car: "실험적 캐릭터 모음집",
-    syyl: "미발매(추후 능력이 수정될 수 있음)",
-    mgcz: "미발매(추후 능력이 수정될 수 있음)"
+    syyl: "미발매",
+    mgcz: "미발매",
+    leaked: "비공개(추후 능력이 수정될 수 있음)"
   };
 
   //특수룰, 줄바꿈은 \n- 입력하면 됨.
@@ -582,7 +586,10 @@ function App() {
     hdr: "할로윈 기념으로 공개된 스크립트 입니다. 현재는 공식 사이트에서 찾을 수 없습니다.",
     wciia: "폭풍 사냥꾼은 \"교주\" 캐릭터를 보호합니다.",
     litc: "폭풍 사냥꾼은 \"주정뱅이\" 캐릭터를 보호합니다.",
-    socas: "폭풍 사냥꾼은 \"시장\" 캐릭터를 보호합니다."
+    socas: "폭풍 사냥꾼은 \"시장\" 캐릭터를 보호합니다.",
+    syyl: "아직 오픈 베타테스트 중인 캐릭터 모음입니다. 추후 능력이 수정될 수 있습니다.",
+    mgcz: "기존에 화등초상과 산우욕림에 포함되어 있다가 지금은 사라진 캐릭터 모음입니다.",
+    leaked: "10월 9일 징크스 업데이트 게시물에서 실수로 유출된 캐릭터 목록입니다. 이 사이트에서만 보시고 타사이트(보드라이프) 등에 공유는 자제 부탁드립니다."
   };
 
   const applyEdition = (mode) => {
@@ -662,6 +669,7 @@ function App() {
       const eds = getEditions(c);
       const isHomebrew = eds.includes("homebrew");
       const isLeaked   = eds.includes("leaked");
+      if (isLeaked && !leakedUnlocked) return false;
       if (!q && isHomebrew && editionPick !== "homebrew") return false;
       if (isLeaked && editionPick !== "leaked") return false;
       if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
@@ -671,7 +679,7 @@ function App() {
       const matchEdition = !editionPick || getEditions(c).includes(editionPick);
       return matchQuery && matchTeam && matchEdition;
     });
-  }, [characters, search, filterTeam, editionPick, showOrthodontist, isAprilFools, isWordUnlocked, showPumpkin, isHalloween, isWordUnlocked2]);
+  }, [characters, search, filterTeam, editionPick, leakedUnlocked, showOrthodontist, isAprilFools, isWordUnlocked, showPumpkin, isHalloween, isWordUnlocked2]);
 
   // ===== 선택된 캐릭터 그룹/카운트 =====
   const grouped = useMemo(() => {
@@ -806,11 +814,20 @@ function App() {
               value={editionCategory}
               onChange={(e) => {
                 const v = e.target.value;
+                if (v === "unreleased" && !leakedUnlocked) {
+                  const input = window.prompt("미출시 캐릭터 모음을 보면 비밀번호를 입력하세요.");
+                  if (input !== "qwer1234!") {
+                    alert("비밀번호가 올바르지 않습니다.");
+                    e.target.value = editionCategory;
+                    return;
+                  }
+                  setLeakedUnlocked(true);
+                }
                 setEditionCategory(v);
                 // 분류를 바꾸면 현재 선택(editionPick)이 그 분류에 없는 값일 수 있으니 초기화(선택 해제)
                 setEditionPick((prev) => {
                   if (!prev) return prev;
-                  const ctx = { jfaUnlocked, hdrUnlocked };
+                  const ctx = { jfaUnlocked, hdrUnlocked, leakedUnlocked };
                   const groups = v ? [v] : Object.keys(SCRIPT_GROUPS);
                   const exists = groups.some((g) => {
                     const group = SCRIPT_GROUPS[g];
@@ -844,7 +861,19 @@ function App() {
             {/* 2-2) 스크립트 선택 셀렉트 */}
             <select
               value={editionPick}
-              onChange={(e) => setEditionPick(e.target.value)}
+              onChange={(e) => {
+                const next = e.target.value;
+                if (next === "leaked" && !leakedUnlocked) {
+                  const input = window.prompt("미출시 캐릭터 모음을 보려면 비밀번호를 입력하세요.");
+                  if (input !== "qwer1234!") {
+                    alert("비밀번호가 올바르지 않습니다.");
+                    e.target.value = editionPick;
+                    return;
+                  }
+                  setLeakedUnlocked(true);
+                }
+                setEditionPick(next);
+              }}
               style={{ flex: 3, padding: "8px", minWidth: 240 }}
               aria-label="스크립트 선택"
               title="스크립트 선택"
