@@ -61,7 +61,7 @@ function App() {
 
 
 // 추가: 스크립트 그룹 테이블
-  const PACK_VALUES = new Set(["tnf", "car", "rzlmt", "homebrew"]);
+  const PACK_VALUES = new Set(["tnf", "car", "rzlmt", "homebrew", "leaked"]);
   const SCRIPT_GROUPS = {
     april: {
       label: "만우절",
@@ -149,6 +149,10 @@ function App() {
         { value: "homebrew", label: "홈브류 캐릭터" },
       ],
     },
+    unreleased: {
+      label: "미출시",
+      items: [
+        { value: "leaked", label: "미출시 캐릭터 목록" },
   };
 
   
@@ -649,7 +653,9 @@ function App() {
     const q = search.trim().toLowerCase();
     return characters.filter((c) => {
       const isHomebrew = getEditions(c).includes("homebrew");
+      const isLeaked = getEditions(c).includes("leaked");
       if (!q && isHomebrew && editionCategory !== "homebrew") return false;
+      if (!q && isLeaked && editionCategory !== "unreleased") return false;
       if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
       if (c.id === "pumpkin" && !(isHalloween || isWordUnlocked2 || showPumpkin)) return false;
       const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
@@ -824,6 +830,7 @@ function App() {
               <option value="extra">추가 스크립트</option>
               <option value="china">중국판</option>
               <option value="homebrew">홈브류</option>
+              <option value="leaked">미출시</option>
             </select>
 
             {/* 2-2) 스크립트 선택 셀렉트 */}
