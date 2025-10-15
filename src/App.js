@@ -153,6 +153,8 @@ function App() {
       label: "미출시",
       items: [
         { value: "leaked", label: "미출시 캐릭터 목록" },
+      ],
+    }
   };
 
   
