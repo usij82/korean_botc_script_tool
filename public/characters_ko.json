@@ -1800,6 +1800,15 @@
     "image": "icons/Icon_juggler.png"
   },
   {
+    "id": "damned",
+    "name": "저주받은 자",
+    "edition": "leaked",
+    "team": "minion",
+    "setup": false,
+    "ability": "모든 선한 플레이어가 죽으면, 선한 진영이 승리합니다. 악마는 마지막으로 남은 살아있는 저주받은 자를 죽일 수 없습니다.",
+    "image": "icons/Icon_generic_minion.png"
+  },
+  {
     "id": "messenger",
     "name": "전령",
     "edition": "leaked",
