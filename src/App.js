@@ -663,10 +663,7 @@ function App() {
       const isHomebrew = eds.includes("homebrew");
       const isLeaked   = eds.includes("leaked");
       if (!q && isHomebrew && editionPick !== "homebrew") return false;
-      if (isLeaked) {
-        if (editionPick !== "leaked") return false;
-        if (editionPick === "leaked") return true;
-      }
+      if (isLeaked && editionPick !== "leaked") return false;
       if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
       if (c.id === "pumpkin" && !(isHalloween || isWordUnlocked2 || showPumpkin)) return false;
       const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
