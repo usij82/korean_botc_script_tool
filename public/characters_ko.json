@@ -1661,7 +1661,7 @@
     "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
-    "ability": "밤에 손으로 눈을 가린 플레이어들은 죽지 않습니다.(본인 제외) 만약 당신이 죽으면, 해당 플레이어들도 죽을 수 있습니다.",
+    "ability": "밤에 본인을 제외하고 양손으로 눈을 가린 플레이어들은 죽지 않습니다. 만약 당신이 죽으면, 해당 플레이어들도 죽습니다.",
     "image": "icons/Icon_generic_townsfolk.png"
   },
   {
