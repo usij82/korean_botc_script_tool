@@ -325,7 +325,7 @@
   },
   {
     "id": "leper",
-    "name": "나병환자",
+    "name": "나병 환자",
     "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
@@ -352,7 +352,7 @@
   },
   {
     "id": "nodashii",
-    "name": "노다시",
+    "name": "노다시이",
     "edition": ["snv","jfa","hdr","bzl","cos","ctt","ini","le","toyle","ucd","wciia","xc"],
     "team": "demon",
     "setup": false,
@@ -721,7 +721,7 @@
   },
   {
     "id": "falconer",
-    "name": "매사냥꾼",
+    "name": "응사",
     "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
@@ -892,7 +892,7 @@
   },
   {
     "id": "mole",
-    "name": "배신자/이중스파이",
+    "name": "배신자",
     "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
@@ -919,7 +919,7 @@
   },
   {
     "id": "snakecharmer",
-    "name": "뱀 조련사",
+    "name": "뱀조련사",
     "edition": ["snv","jfa","cd4","cf","hhr","litc","lndb","oioo","otr","rotmv","tmo"],
     "team": "townsfolk",
     "setup": false,
@@ -964,7 +964,7 @@
   },
   {
     "id": "insomniac",
-    "name": "불면증환자",
+    "name": "불면증 환자",
     "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
@@ -1063,7 +1063,7 @@
   },
   {
     "id": "liontamer",
-    "name": "사자 조련사",
+    "name": "사자조련사",
     "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
@@ -1477,7 +1477,7 @@
   },
   {
     "id": "innkeeper",
-    "name": "여관 주인",
+    "name": "여관주인",
     "edition": ["bmr","jfa","agc","le","litc","mdm","otr","rotmv"],
     "team": "townsfolk",
     "setup": false,
@@ -1495,7 +1495,7 @@
   },
   {
     "id": "alewife",
-    "name": "여사장",
+    "name": "주모",
     "edition": "leaked",
     "team": "outsider",
     "setup": false,
@@ -2076,7 +2076,7 @@
     "team": "demon",
     "setup": false,
     "ability": "당신은 다른 악마로 보이고 그 능력을 가지고 있습니다. (대부분의 플레이어가 \"광기\"하고 있는 악마가 참가 중입니다.)",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_xaan.png"
   },
   {
     "id": "lordoftyphon",
@@ -2908,7 +2908,7 @@
   },
   {
     "id": "jiubao",
-    "name": "주모(酒保)",
+    "name": "주보(酒保)",
     "edition": ["rzlmt","syyl"],
     "team": "outsider",
     "setup": false,
