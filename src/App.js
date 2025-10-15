@@ -719,10 +719,10 @@ function App() {
 
   // ===== Night order 행 =====
   const NightRow = ({ id }) => {
-    if (id === "DUSK") return <div style={{ fontWeight: "bold" }}>🌙 Dusk</div>;
-    if (id === "DAWN") return <div style={{ fontWeight: "bold" }}>🌅 Dawn</div>;
-    if (id === "MINION") return <div style={{ fontStyle: "italic" }}>하수인 확인🩸</div>;
-    if (id === "DEMON") return <div style={{ fontStyle: "italic" }}>악마 확인🧛</div>;
+    if (id === "DUSK") return <div style={{ fontWeight: "bold" }}>🌙 저녁</div>;
+    if (id === "DAWN") return <div style={{ fontWeight: "bold" }}>🌅 새벽</div>;
+    if (id === "MINION") return <div style={{ fontStyle: "italic" }}>하수인 정보🩸</div>;
+    if (id === "DEMON") return <div style={{ fontStyle: "italic" }}>악마 정보🧛</div>;
     const c = charById(id);
     if (!c) return null;
     return (
