@@ -881,7 +881,7 @@ function App() {
               <option value="">스크립트/캐릭터 모음 선택</option>
 
               {(() => {
-                const ctx = { jfaUnlocked,hdrUnlocked };
+                const ctx = { jfaUnlocked,hdrUnlocked, leakedUnlocked };
                 const allKeys = Object.keys(SCRIPT_GROUPS);
                 // 1) 분류 필터
                 let keys = editionCategory ? [editionCategory] : allKeys;
