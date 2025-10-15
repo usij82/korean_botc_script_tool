@@ -815,7 +815,7 @@ function App() {
               onChange={(e) => {
                 const v = e.target.value;
                 if (v === "unreleased" && !leakedUnlocked) {
-                  const input = window.prompt("미출시 캐릭터 모음을 보면 비밀번호를 입력하세요.");
+                  const input = window.prompt("해당 분류를 보면 비밀번호를 입력하세요.");
                   if (input !== "qwer1234!") {
                     alert("비밀번호가 올바르지 않습니다.");
                     e.target.value = editionCategory;
@@ -864,7 +864,7 @@ function App() {
               onChange={(e) => {
                 const next = e.target.value;
                 if (next === "leaked" && !leakedUnlocked) {
-                  const input = window.prompt("미출시 캐릭터 모음을 보려면 비밀번호를 입력하세요.");
+                  const input = window.prompt("해당 목록을 보려면 비밀번호를 입력하세요.");
                   if (input !== "qwer1234!") {
                     alert("비밀번호가 올바르지 않습니다.");
                     e.target.value = editionPick;
