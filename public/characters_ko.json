@@ -2170,7 +2170,7 @@
   },
   {
     "id": "puzzlemaster",
-    "name": "퍼즐 박사",
+    "name": "퍼즐마스터",
     "edition": ["car","hdr","cd4","dvt","ibh","ini","le","qm","wciia","xc"],
     "team": "outsider",
     "setup": false,
