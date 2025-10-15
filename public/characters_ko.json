@@ -919,7 +919,7 @@
   },
   {
     "id": "snakecharmer",
-    "name": "뱀조련사",
+    "name": "뱀 조련사",
     "edition": ["snv","jfa","cd4","cf","hhr","litc","lndb","oioo","otr","rotmv","tmo"],
     "team": "townsfolk",
     "setup": false,
@@ -1477,7 +1477,7 @@
   },
   {
     "id": "innkeeper",
-    "name": "여관주인",
+    "name": "여관 주인",
     "edition": ["bmr","jfa","agc","le","litc","mdm","otr","rotmv"],
     "team": "townsfolk",
     "setup": false,
@@ -1540,7 +1540,7 @@
   },
   {
     "id": "balloonist",
-    "name": "열기구조종사",
+    "name": "열기구 조종사",
     "edition": ["car","bzl","cf","ctt","hhr","ibh","luf","pcy","rotmv","tmo","wciia"],
     "team": "townsfolk",
     "setup": true,
@@ -2170,7 +2170,7 @@
   },
   {
     "id": "puzzlemaster",
-    "name": "퍼즐박사",
+    "name": "퍼즐 박사",
     "edition": ["car","hdr","cd4","dvt","ibh","ini","le","qm","wciia","xc"],
     "team": "outsider",
     "setup": false,
