@@ -743,7 +743,7 @@
     "edition": "homebrew",
     "team": "fabled",
     "setup": true,
-    "ability": "홈브류: 자리 중 하나가 비어있습니다. 해당 자리에는 게임에 참가하지 않은 캐릭터가 배정됩니다. 해당 캐릭터의 선택은 무작위이며, 게임당 한 번, 이야기꾼이 해당 캐릭터를 대신하여 공개적으로 또는 개인적으로 발언할 수도 있습니다.",
+    "ability": "홈브류: 자리 중 하나가 비어있습니다. 해당 자리에는 게임에 참가하지 않은 캐릭터가 배정됩니다. 해당 캐릭터의 선택은 무작위이며, 게임당 한 번, 이야기꾼이 해당 캐릭터를 대신하여 공개적으로 또는 비밀리에 발언할 수도 있습니다.",
     "image": "icons/Icon_ballad.png"
   },
   {
@@ -1013,7 +1013,7 @@
     "edition": ["snv","hdr","cos","hns","le","luf","ngj","toyle","ucd","xc"],
     "team": "townsfolk",
     "setup": false,
-    "ability": "게임당 한 번, 낮에 이야기꾼에게 개인적으로 찾아가 예/아니오로 대답할 수 있는 질문을 물어볼 수 있습니다.",
+    "ability": "게임당 한 번, 낮에 비밀리에 이야기꾼에게 예/아니오로 대답할 수 있는 질문을 물어볼 수 있습니다.",
     "image": "icons/Icon_artist.png"
   },
   {
@@ -1517,7 +1517,7 @@
     "edition": ["snv","hdr","adh","bzl","cd4","cf","dvt","hhr","le","luf","pcy","qm","rotmv","tmo","wciia"],
     "team": "townsfolk",
     "setup": false,
-    "ability": "매일 이야기꾼을 개인적으로 방문하여 2가지 명제를 들을 수 있습니다. 그중 하나는 사실이고 하나는 거짓입니다.",
+    "ability": "매일 이야기꾼을 방문하여 비밀리에 2가지 명제를 들을 수 있습니다. 그중 하나는 사실이고 하나는 거짓입니다.",
     "image": "icons/Icon_savant.png"
   },
   {
