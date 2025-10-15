@@ -725,7 +725,7 @@
     "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
-    "ability": "매일 낮*(첫번째 낮 제외)이 끝날 때, 이야기꾼을 방문하여 얼마나 많은 주민이 살아있는지 알 수 있습니다.",
+    "ability": "매일 저녁*(첫날 제외), 이야기꾼을 방문하여 얼마나 많은 주민이 살아있는지 알 수 있습니다.",
     "image": "icons/Icon_generic_townsfolk.png"
   },
   {
@@ -2579,7 +2579,7 @@
     "edition": ["rzlmt","syyl"],
     "team": "townsfolk",
     "setup": false,
-    "ability": "매일 밤*(첫날 제외), 플레이어 1명을 선택합니다. 해당 플레이어가 악마라면, 당신은 죽고 오늘 밤이 끝날 때까지 악마는 술에 취합니다.",
+    "ability": "매일 밤*(첫날 제외), 플레이어 1명을 선택합니다. 해당 플레이어가 악마라면, 당신은 죽고 오늘 새벽까지 악마는 술에 취합니다.",
     "image": "icons/Icon_daoshi.png"
   },
   {
@@ -2957,7 +2957,7 @@
     "edition": ["rzlmt","hdcs"],
     "team": "townsfolk",
     "setup": false,
-    "ability": "매일 밤*(첫날 제외), 플레이어 1명을 선택합니다. 해당 플레이어가 다음 날 낮이 끝나기 전에 죽으면, 대신 당신이 죽습니다.",
+    "ability": "매일 밤*(첫날 제외), 플레이어 1명을 선택합니다. 해당 플레이어가 다음 날 저녁 전에 죽으면, 대신 당신이 죽습니다.",
     "image": "icons/Icon_jinyiwei.png"
   },
   {
