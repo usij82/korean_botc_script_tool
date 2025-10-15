@@ -316,7 +316,7 @@
   },
   {
     "id": "flowergirl",
-    "name": "꽃집소녀",
+    "name": "꽃집 소녀",
     "edition": ["snv","hdr","adh","dvt","litc","ucd"],
     "team": "townsfolk",
     "setup": false,
@@ -563,7 +563,7 @@
     "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
-    "ability": "매일 낮에 공개적으로 플레이어 1명을 선택합니다. 둘 중 1명이 밤에 죽을 때, 가능하다면 살아있는 하수인 1명이 대신 죽습니다.",
+    "ability": "매일 낮, 공개적으로 플레이어 1명을 선택합니다. 당신과 해당 플레이어 2명 중 1명이 밤에 죽을 때, 가능하다면 살아있는 하수인 1명이 대신 죽습니다.",
     "image": "icons/Icon_generic_townsfolk.png"
   },
   {
@@ -1130,7 +1130,7 @@
     "edition": "leaked",
     "team": "demon",
     "setup": false,
-    "ability": "매일 밤*(첫날 제외), 플레이어들을 아무렇게나 선택합니다. 해당 플레이어들은 함께 일어납니다. 다음 낮에, 그 중 1명이 죽으면, 나머지도 죽습니다. 매일 낮에 플레이어 1명이 무조건 죽어야 합니다..",
+    "ability": "매일 밤*(첫날 제외), 플레이어들을 아무렇게나 선택합니다. 해당 플레이어들은 함께 일어납니다. 다음 낮에, 그중 1명이 죽으면, 나머지도 죽습니다. 매일 낮에 플레이어 1명이 무조건 죽어야 합니다..",
     "image": "icons/Icon_generic_demon.png"
   },
   {
@@ -1562,7 +1562,7 @@
     "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
-    "ability": "첫날 밤, 숫자를 하나 선택합니다. 해당하는 숫자 날, 그 밤이 끝날 때까지 죽은 플레이어들이 전부 선하다면 모두 여행자로 부활합니다.",
+    "ability": "첫날 밤, 숫자를 하나 선택합니다. 해당하는 숫자 날의 새벽까지 죽은 플레이어들이 전부 선하다면 모두 여행자로 부활합니다.",
     "image": "icons/Icon_generic_townsfolk.png"
   },
   {
@@ -1922,7 +1922,7 @@
     "edition": "leaked",
     "team": "demon",
     "setup": false,
-    "ability": "매일 밤*(첫날 제외), 플레이어 1명을 선택합니다. 해당 플레이어는 죽습니다. 선한 플레이어 1명은 당신이 둘 중 1명임을 알고 있습니다. 당신이 처형당할 때 하수인이 살아있다면 악한 진영이 승리합니다.",
+    "ability": "매일 밤*(첫날 제외), 플레이어 1명을 선택합니다. 해당 플레이어는 죽습니다. 선한 플레이어 1명은 당신이 2명 중 1명임을 알고 있습니다. 당신이 처형당할 때 하수인이 살아있다면 악한 진영이 승리합니다.",
     "image": "icons/Icon_generic_demon.png"
   },
   {
@@ -1963,7 +1963,7 @@
   },
   {
     "id": "tealady",
-    "name": "찻집여인",
+    "name": "찻집 여인",
     "edition": ["bmr","jfa","le","litc","mdm"],
     "team": "townsfolk",
     "setup": false,
@@ -2462,7 +2462,7 @@
     "edition": ["rzlmt","hdcs"],
     "team": "traveller",
     "setup": false,
-    "ability": "매일 낮 한 번, 다른 플레이어 1명을 공개적으로 선택하고 악마가 아닌 캐릭터를 1개 고르게 합니다. 당신은 오늘 밤이 끝날 때까지 그 캐릭터의 능력을 얻을 수도 있습니다.",
+    "ability": "매일 낮 한 번, 다른 플레이어 1명을 공개적으로 선택하고 악마가 아닌 캐릭터를 1개 고르게 합니다. 당신은 다음 새벽까지 그 캐릭터의 능력을 얻을 수도 있습니다.",
     "image": "icons/Icon_jiaohuazi.png"
   },
   {
@@ -2543,7 +2543,7 @@
     "edition": ["rzlmt","mgcz"],
     "team": "townsfolk",
     "setup": false,
-    "ability": "당신은 자신의 진영을 모릅니다. (악한 진영일 수 있습니다.) 첫날 밤에, 플레이어 3명을 알고 시작합니다. 그중 2명이 당신과 같은 진영입니다.",
+    "ability": "당신은 자신의 진영을 모릅니다. (악한 진영일 수도 있습니다.) 당신은 플레이어 3명을 알고 시작합니다. 그중 2명이 당신과 같은 진영입니다.",
     "image": "icons/Icon_lankeren.png"
   },
   {
