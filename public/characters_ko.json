@@ -77,7 +77,7 @@
     "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
-    "ability": "게임당 한번, 밤에 본인을 제외하고 캐릭터를 1개 선택합니다. 해당 캐릭터를 대상으로 특정하는 악한 능력은 무효입니다.",
+    "ability": "게임당 한 번, 밤에 본인을 제외하고 캐릭터를 1개 선택합니다. 해당 캐릭터를 대상으로 특정하는 악한 능력은 무효입니다.",
     "image": "icons/Icon_generic_townsfolk.png"
   },
   {
@@ -896,7 +896,7 @@
     "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
-    "ability": "당신은 하수인입니다. 게임당 한번, 악마가 공개적으로 당신을 추측하면, 당신의 진영은 패배합니다. 이 능력은 당신이 죽어도, 취하거나 중독되어도 유지됩니다.",
+    "ability": "당신은 하수인입니다. 게임당 한 번, 악마가 공개적으로 당신을 추측하면, 당신의 진영은 패배합니다. 이 능력은 당신이 죽어도, 취하거나 중독되어도 유지됩니다.",
     "image": "icons/Icon_generic_townsfolk.png"
   },
   {
@@ -1409,7 +1409,7 @@
     "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
-    "ability": "게임당 한번, 이야기꾼에게 새로운 게임 규칙을 제안합니다. 이야기꾼이 동의한다면, 당신은 죽습니다. 해당 규칙은 당신이 죽어도 유지됩니다.",
+    "ability": "게임당 한 번, 이야기꾼에게 새로운 게임 규칙을 제안합니다. 이야기꾼이 동의한다면, 당신은 죽습니다. 해당 규칙은 당신이 죽어도 유지됩니다.",
     "image": "icons/Icon_generic_townsfolk.png"
   },
   {
