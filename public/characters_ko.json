@@ -311,7 +311,7 @@
     "edition": ["car","adh","bzl","cd4","cos","crd","ctt","dvt","hhr","le","lod","qm","ucd","xc"],
     "team": "minion",
     "setup": true,
-    "ability": "당신은 자신이 꼭두각시인 것을 모릅니다. 자신이 선한 캐릭터라고 생각하지만 그렇지 않습니다. 당신은 하수인임을 확인할 수 있는 능력 때문에 일어나지 않습니다. 악마는 당신이 누구인지 알고 있으며 당신의 이웃입니다.",
+    "ability": "당신은 자신이 선한 캐릭터라고 생각하지만, 그렇지 않습니다. 당신은 하수인임을 확인할 수 있는 능력 때문에 일어나지 않습니다. 악마는 당신이 누구인지 알고 있으며 당신의 이웃입니다.",
     "image": "icons/Icon_marionette.png"
   },
   {
@@ -806,7 +806,7 @@
     "edition": ["bmr","cf","crd","hhr","ini","le","lod","luf","otr","rttb","ucd"],
     "team": "outsider",
     "setup": false,
-    "ability": "당신은 자신이 미치광이인 것을 모릅니다. 자신이 악마 캐릭터라고 생각하지만 그렇지 않습니다. 악마는 당신이 누구인지, 그리고 당신이 밤에 누구를 선택하는지 알고 있습니다.",
+    "ability": "당신은 자신이 악마 캐릭터라고 생각하지만, 그렇지 않습니다. 악마는 당신이 누구인지, 그리고 당신이 밤에 누구를 선택하는지 알고 있습니다.",
     "image": "icons/Icon_lunatic.png"
   },
   {
@@ -1742,7 +1742,7 @@
     "edition": "leaked",
     "team": "townsfolk",
     "setup": true,
-    "ability": "당신은 자신이 자물쇠공인 것을 모릅니다. 자신이 외지인 캐릭터라고 생각하지만 그렇지 않습니다. 당신이 처음 처형될 때, 당신은 오늘 낮이나 다음 밤에 죽지 않습니다.",
+    "ability": "당신은 자신이 외지인 캐릭터라고 생각하지만, 그렇지 않습니다. 당신이 처음 처형될 때, 당신은 오늘 낮이나 다음 밤에 죽지 않습니다.",
     "image": "icons/Icon_generic_townsfolk.png"
   },
   {
@@ -1913,7 +1913,7 @@
     "edition": ["tb","adh","agc","bzl","cd4","cf","cos","hns","litc","lod","ngj","oioo","pcy","rotmv","tmo","toyle"],
     "team": "outsider",
     "setup": true,
-    "ability": "당신은 자신이 주정뱅이인 것을 모릅니다. 자신이 주민 캐릭터라고 생각하지만 그렇지 않습니다.",
+    "ability": "당신은 자신이 주정뱅이인 것을 모릅니다. 자신이 주민 캐릭터라고 생각하지만, 그렇지 않습니다.",
     "image": "icons/Icon_drunk.png"
   },
   {
@@ -2570,7 +2570,7 @@
     "edition": ["rzlmt","syyl"],
     "team": "townsfolk",
     "setup": false,
-    "ability": "매일 밤, 플레이어를 최대 3명까지 선택합니다. 해당 플레이어들이 오늘 밤 악한 캐릭터의 능력에 의해 선택되거나 영향 받았는지를 알게 됩니다.",
+    "ability": "매일 밤, 플레이어를 최대 3명까지 선택합니다. 해당 플레이어들이 오늘 밤 악한 능력에 의해 선택되거나 영향 받았는지를 알게 됩니다.",
     "image": "icons/Icon_yinluren.png"
   },
   {
@@ -2606,7 +2606,7 @@
     "edition": ["rzlmt","hdcs"],
     "team": "townsfolk",
     "setup": true,
-    "ability": "당신은 자신이 득도자인 것을 모릅니다. 자신이 외지인 캐릭터라고 생각하지만 그렇지 않습니다. 악한 캐릭터의 능력이 당신을 선택하거나 영향을 주려할 때 그 효과가 적용되기 전에 참가하지 않은 주민 캐릭터로 바뀝니다.",
+    "ability": "당신은 자신이 외지인 캐릭터라고 생각하지만, 그렇지 않습니다. 악한 능력이 당신을 선택하거나 영향을 주려할 때 그 효과가 적용되기 전에 참가하지 않은 주민 캐릭터로 바뀝니다.",
     "image": "icons/Icon_wudaozhe.png"
   },
   {
