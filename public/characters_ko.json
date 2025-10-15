@@ -1634,7 +1634,7 @@
     "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
-    "ability": "당신은 어떤 플레이어들이 하수인인지 알고 시작합니다. 당신이 아는 하수인이 처형된다면, 당신의 진영은 패배합니다. 이 능력은 당신이 죽어도 유지됩니다.",
+    "ability": "어떤 플레이어들이 하수인인지 알고 시작합니다. 당신이 아는 하수인이 처형된다면, 당신의 진영은 패배합니다. 이 능력은 당신이 죽어도 유지됩니다.",
     "image": "icons/Icon_generic_townsfolk.png"
   },
   {
@@ -1850,7 +1850,7 @@
     "edition": "leaked",
     "team": "demon",
     "setup": false,
-    "ability": "밤*(첫날 제외)에 스크립트의 가장 위에서부터 순서대로 캐릭터가 1개씩 죽습니다. 당신은 게임에 없는 선한 캐릭터를 모두 알고 시작합니다.",
+    "ability": "밤*(첫날 제외)에 스크립트의 가장 위에서부터 순서대로 캐릭터가 1개씩 죽습니다. 악한 진영은 게임에 없는 선한 캐릭터를 모두 알고 시작합니다.",
     "image": "icons/Icon_generic_demon.png"
   },
   {
@@ -2318,7 +2318,7 @@
     "edition": ["bmr","adh","cf","le","otr","socas","ucd"],
     "team": "townsfolk",
     "setup": false,
-    "ability": "당신은 선한 플레이어와 그 캐릭터를 알고 시작합니다. 악마가 해당 플레이어를 죽이면 당신도 죽습니다.",
+    "ability": "선한 플레이어 1명과 그 캐릭터를 알고 시작합니다. 악마가 해당 플레이어를 죽이면 당신도 죽습니다.",
     "image": "icons/Icon_grandmother.png"
   },
   {
@@ -2336,7 +2336,7 @@
     "edition": "leaked",
     "team": "townsfolk",
     "setup": true,
-    "ability": "당신은 얼마나 많은 해적이 참가 중인지 알고 시작합니다. 살아남은 선한 캐릭터가 해적뿐이라면 선한 진영이 승리합니다. [+0? ~ +2? 해적]",
+    "ability": "얼마나 많은 해적이 참가 중인지 알고 시작합니다. 살아있는 선한 캐릭터가 해적뿐이라면 선한 진영이 승리합니다. [+0? ~ +2? 해적]",
     "image": "icons/Icon_generic_townsfolk.png"
   },
   {
@@ -2372,7 +2372,7 @@
     "edition": ["car","ctt"],
     "team": "townsfolk",
     "setup": true,
-    "ability": "당신은 악한 플레이어 1명을 알고 시작합니다. 알고 있는 플레이어가 죽으면, 밤에 또 다른 악한 플레이어를 알게 됩니다. [주민 중 1명은 악한 진영입니다.]",
+    "ability": "악한 플레이어 1명을 알고 시작합니다. 알고 있는 플레이어가 죽으면, 밤에 또 다른 악한 플레이어를 알게 됩니다. [주민 중 1명은 악한 진영입니다.]",
     "image": "icons/Icon_bountyhunter.png"
   },
   {
@@ -2543,7 +2543,7 @@
     "edition": ["rzlmt","mgcz"],
     "team": "townsfolk",
     "setup": false,
-    "ability": "당신은 자신의 진영을 모릅니다. (악한 진영일 수도 있습니다.) 당신은 플레이어 3명을 알고 시작합니다. 그중 2명이 당신과 같은 진영입니다.",
+    "ability": "플레이어 3명을 알고 시작합니다. 그중 2명이 당신과 같은 진영입니다. 당신은 자신의 진영을 모릅니다. [당신은 악한 진영일 수도 있습니다.]",
     "image": "icons/Icon_lankeren.png"
   },
   {
@@ -2858,7 +2858,7 @@
     "edition": ["rzlmt","hdcs"],
     "team": "townsfolk",
     "setup": false,
-    "ability": "첫날 밤, 선한 캐릭터 2개와 악한 캐릭터 2개, 총 4개의 캐릭터를 알고 시작합니다. 이 중 2개만 게임에 참가 중입니다.",
+    "ability": "선한 캐릭터 2개와 악한 캐릭터 2개, 총 4개의 캐릭터를 알고 시작합니다. 그중 2개만 게임에 참가 중입니다.",
     "image": "icons/Icon_yinyangshi.png"
   },
   {
@@ -2948,7 +2948,7 @@
     "edition": ["rzlmt","hdcs"],
     "team": "townsfolk",
     "setup": false,
-    "ability": "첫날 밤, 당신과 가장 가까운 악한 플레이어가 시계/반시계/동일 거리 방향에 있는지 알고 시작합니다. 당신의 이웃에 악한 플레이어가 있다면, 당신은 잘못된 정보를 받습니다.",
+    "ability": "당신과 가장 가까운 악한 플레이어가 시계/반시계/동일 거리 방향에 있는지 알고 시작합니다. 당신의 이웃에 악한 플레이어가 있다면, 당신은 잘못된 정보를 받습니다.",
     "image": "icons/Icon_qintianjian.png"
   },
   {
