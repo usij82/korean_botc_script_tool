@@ -208,7 +208,7 @@
   },
   {
     "id": "engineer",
-    "name": "기계공",
+    "name": "공학자",
     "edition": ["car","tmo","socas"],
     "team": "townsfolk",
     "setup": false,
