@@ -589,6 +589,11 @@ function App() {
     if (!editionPick) return alert("기본 스크립트를 선택하세요.");
     const ids = characters.filter((c) => getEditions(c).includes(editionPick)).map((c) => c.id);
 
+    if (ids.length === 0) {
+      alert("선택한 분류에 해당하는 캐릭터가 없습니다.");
+      return;
+    }
+      
     if (mode === "replace") {
     // ✅ 완전 덮어쓰기 (제목/작가도 새로 설정)
       setSelectedIds(ids);
@@ -859,7 +864,7 @@ function App() {
                   const g = SCRIPT_GROUPS[k];
                   // 항목 레벨 require 처리(필요 시)
                   const visibleItems = g.items.filter((it) => {
-                    if (!it?.value) return false; // homebrew의 빈 항목 제거
+                    if (!it?.value) return false;
                     if (!it.require) return true;
                     if (it.require === "jfaUnlocked") return !!jfaUnlocked;
                     if (it.require === "hdrUnlocked") return !!hdrUnlocked;
