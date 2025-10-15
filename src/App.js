@@ -837,7 +837,7 @@ function App() {
               <option value="extra">추가 스크립트</option>
               <option value="china">중국판</option>
               <option value="homebrew">홈브류</option>
-              <option value="leaked">미출시</option>
+              <option value="unreleased">미출시</option>
             </select>
 
             {/* 2-2) 스크립트 선택 셀렉트 */}
