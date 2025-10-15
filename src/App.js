@@ -664,8 +664,8 @@ function App() {
       const isLeaked   = eds.includes("leaked");
       if (!q && isHomebrew && editionPick !== "homebrew") return false;
       if (isLeaked) {
-        if (q) return false;
-         if (!q && editionPick !== "leaked") return false;
+        if (editionPick !== "leaked") return false;
+        if (editionPick === "leaked") return true;
       }
       if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
       if (c.id === "pumpkin" && !(isHalloween || isWordUnlocked2 || showPumpkin)) return false;
