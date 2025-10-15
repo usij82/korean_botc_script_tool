@@ -659,10 +659,14 @@ function App() {
   const visibleChars = useMemo(() => {
     const q = search.trim().toLowerCase();
     return characters.filter((c) => {
-      const isHomebrew = getEditions(c).includes("homebrew");
-      const isLeaked = getEditions(c).includes("leaked");
+      const eds = getEditions(c);
+      const isHomebrew = eds.includes("homebrew");
+      const isLeaked   = eds.includes("leaked");
       if (!q && isHomebrew && editionPick !== "homebrew") return false;
-      if (!q && isLeaked && editionPick !== "leaked" !== "unreleased") return false;
+      if (isLeaked) {
+        if (q) return false;
+         if (!q && editionPick !== "leaked") return false;
+      }
       if (c.id === "orthodontist" && !(isAprilFools || isWordUnlocked || showOrthodontist)) return false;
       if (c.id === "pumpkin" && !(isHalloween || isWordUnlocked2 || showPumpkin)) return false;
       const matchQuery = !q || c.name.toLowerCase().includes(q) || c.ability.toLowerCase().includes(q);
