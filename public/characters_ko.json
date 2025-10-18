@@ -37,7 +37,7 @@
     "setup": false,
     "sao": "5",
     "ability": "매일 밤*(첫날 제외), 플레이어를 3명 선택합니다. 모든 플레이어가 이 사실을 알게 됩니다. 해당 플레이어들은 각자 다른 살아있는 플레이어를 1명 선택합니다. 그중 2명이 죽습니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_queenoflies.png"
   },
   {
     "id": "hustler",
@@ -315,7 +315,7 @@
     "setup": false,
     "sao": "5",
     "ability": "매일 밤*(첫날 제외), 둘 중 하나를 선택합니다. 1) 플레이어를 최대 3명까지 선택합니다. 해당 플레이어들은 표식이 생기고 이 사실을 알게됩니다. 2) 표식이 있는 모든 플레이어를 죽입니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_creepingterror.png"
   },
   {
     "id": "amnesiac",
@@ -594,7 +594,7 @@
     "setup": true,
     "sao": "5",
     "ability": "매일 밤*(첫날 제외), 플레이어를 1명 선택합니다. 해당 플레이어는 능력을 잃고 악해지며, 당신이 누구인지 알게됩니다. 게임당 한 번, 당신은 이 능력을 잃습니다. [하수인 없음]",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_dolomite.png"
   },
   {
     "id": "mutant",
@@ -684,7 +684,7 @@
     "setup": false,
     "sao": "5",
     "ability": "매일 밤*(첫날 제외), 플레이어를 1명 선택합니다. 해당 플레이어는 죽습니다. 첫번째로 당신을 지명한 주민은 악한 르 카두가 되고 당신은 오늘 밤 죽습니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_lecadeau.png"
   },
   {
     "id": "lleech",
@@ -952,7 +952,7 @@
     "setup": false,
     "sao": "4",
     "ability": "매일 밤, 감염시킬 플레이어를 1명 선택합니다. 감염된 플레이어는 지명하면 죽고 해당 플레이어가 지명한 플레이어가 감염됩니다. 4일이 지나면 악한 진영이 승리합니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_virilus.png"
   },
   {
     "id": "fiddler",
@@ -1247,7 +1247,7 @@
     "setup": false,
     "sao": "5",
     "ability": "매일 밤*(첫날 제외), 플레이어들을 아무렇게나 선택합니다. 해당 플레이어들은 함께 일어납니다. 다음 낮에, 그중 1명이 죽으면, 나머지도 죽습니다. 매일 낮에 플레이어 1명이 무조건 죽어야 합니다..",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_shacklewight.png"
   },
   {
     "id": "ballad",
@@ -1426,7 +1426,7 @@
     "setup": false,
     "sao": "31",
     "ability": "만약 밤에 선한 플레이어와 악한 플레이어가 1명씩 죽었다면, 악마 캐릭터를 선택합니다. 당신은 선택한 악마가 되고 매일 밤 두 번씩 행동합니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_sissaphyth.png"
   },
   {
     "id": "poet",
@@ -1734,7 +1734,7 @@
     "setup": false,
     "sao": "32",
     "ability": "모든 플레이어는 죽은 채로 시작합니다. 죽은 플레이어도 지명을 하거나 당할 수 있고, 처형되면 부활합니다. 모든 플레이어가 살아있는 진영이 승리합니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_therising.png"
   },
   {
     "id": "ogre",
@@ -1953,7 +1953,7 @@
   {
     "id": "tycoon",
     "name": "재벌",
-    "edition": "leaked",
+    
     "team": "townsfolk",
     "setup": false,
     "sao": "5",
@@ -1983,7 +1983,7 @@
   {
     "id": "damned",
     "name": "저주받은 자",
-    "edition": "leaked",
+    
     "team": "minion",
     "setup": true,
     "sao": "31",
@@ -1993,7 +1993,7 @@
   {
     "id": "messenger",
     "name": "전령",
-    "edition": "leaked",
+    
     "team": "townsfolk",
     "setup": false,
     "sao": "10",
@@ -2003,7 +2003,7 @@
   {
     "id": "astrologer",
     "name": "점성술사",
-    "edition": "leaked",
+    
     "team": "townsfolk",
     "setup": false,
     "ability": "매일 낮, 이야기꾼을 찾아가 잘못된 정보를 1개 들을 수 있습니다.",
@@ -2046,7 +2046,7 @@
     "setup": false,
     "sao": "1",
     "ability": "밤*(첫날 제외)에 스크립트의 가장 위에서부터 순서대로 캐릭터가 1개씩 죽습니다. 악한 진영은 게임에 없는 선한 캐릭터를 모두 알고 시작합니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_zodion.png"
   },
   {
     "id": "investigator",
@@ -2124,7 +2124,7 @@
     "setup": false,
     "sao": "5",
     "ability": "매일 밤*(첫날 제외), 플레이어 1명을 선택합니다. 해당 플레이어는 죽습니다. 선한 플레이어 1명은 당신이 2명 중 1명임을 알고 있습니다. 당신이 처형당할 때 하수인이 살아있다면 악한 진영이 승리합니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_jnak.png"
   },
   {
     "id": "scholar",
@@ -2339,7 +2339,7 @@
     "setup": false,
     "sao": "5",
     "ability": "매일 밤*(첫날 제외), 플레이어 1명이 죽습니다. 마지막 밤에 플레이어를 2명 선택합니다. 첫번째 플레이어는 두번째 플레이어가 악마가 아니라고 \"광기\"해야 합니다. 그렇지 않으면, 첫번째 플레이어의 진영이 패배합니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_tipitipi.png"
   },
   {
     "id": "soulhammer",
@@ -2349,7 +2349,7 @@
     "setup": false,
     "sao": "5",
     "ability": "매일 밤*(첫날 제외), 플레이어를 1명 선택합니다. 해당 플레이어는 죽습니다. 마지막 날, 죽은 플레이어는 살아있는 플레이어에게 말을 할 수 없습니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_soulhammer.png"
   },
   {
     "id": "judge",
@@ -2369,7 +2369,7 @@
     "setup": false,
     "sao": "3",
     "ability": "매일 저녁*(첫날 제외), 손을 든 선한 플레이어 중 1명을 선택합니다. 해당 플레이어는 죽습니다. 살아있는 플레이어가 손을 들지 않으면, 악한 진영이 승리합니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_palabradedios.png"
   },
   {
     "id": "fanggu",
@@ -2389,7 +2389,7 @@
     "setup": false,
     "sao": "5",
     "ability": "매일 밤*(첫날 제외), 플레이어를 1명 선택합니다. 해당 플레이어는 죽고 당신은 그 진영이 됩니다. 만약 당신이 죽으면, 패배합니다. 2명만 남는다면, 승리합니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_fanzazz.png"
   },
   {
     "id": "puzzlemaster",
@@ -2663,7 +2663,7 @@
     "setup": false,
     "sao": "5",
     "ability": "매일 밤*(첫날 제외), 플레이어를 1명 선택합니다. 해당 플레이어는 죽습니다. 만약 주민이 당신을 지명한다면, 당신은 죽습니다. 만약 주민 2명이 낮에 지명한다면, 악한 진영이 승리합니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_hwisp.png"
   },
   {
     "id": "scapegoat",
@@ -2675,14 +2675,14 @@
     "image": "icons/Icon_scapegoat.png"
   },
   {
-    "id": "hydre",
+    "id": "hydra",
     "name": "히드라",
     "edition": "leaked",
     "team": "demon",
     "setup": false,
     "sao": "5",
     "ability": "매일 밤*(첫날 제외), 플레이어를 1명 선택합니다. 해당 플레이어는 죽습니다. 직전에 처형된 플레이어의 대각선 플레이어는 \"스폰\"입니다. 당신이 처형되면, \"스폰\"이 히드라가 됩니다.",
-    "image": "icons/Icon_generic_demon.png"
+    "image": "icons/Icon_hydra.png"
   },
   {
     "id": "hindu",
