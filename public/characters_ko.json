@@ -1953,7 +1953,7 @@
   {
     "id": "tycoon",
     "name": "재벌",
-    
+    "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
     "sao": "5",
@@ -1983,7 +1983,7 @@
   {
     "id": "damned",
     "name": "저주받은 자",
-    
+    "edition": "leaked",
     "team": "minion",
     "setup": true,
     "sao": "31",
