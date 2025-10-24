@@ -1993,7 +1993,7 @@
   {
     "id": "messenger",
     "name": "전령",
-    
+    "edition": "leaked",
     "team": "townsfolk",
     "setup": false,
     "sao": "10",
