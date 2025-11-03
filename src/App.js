@@ -764,7 +764,7 @@ function App() {
   );
 // 선택 모드에서 특수 룰 노출 조건 계산
   const showSpecialRulesInput =
-    selectedIds.includes("bootlegger") || selectedIds.includes("djinn") || selectedIds.includes("stormcatcher");
+    selectedIds.includes("bootlegger") || selectedIds.includes("stormcatcher");
 
   // =================================== 선택 단계 =======================================
   if (mode === "select") {
@@ -949,7 +949,7 @@ function App() {
           />
         </div>
 
-        {/* ✅ bootlegger / djinn / stormcatcher 선택 시에 나타나는 특수 규칙 입력창 */}
+        {/* ✅ bootlegger / stormcatcher 선택 시에 나타나는 특수 규칙 입력창 */}
         {showSpecialRulesInput && (
           <textarea
             value={specialRules}
