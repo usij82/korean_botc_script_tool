@@ -954,7 +954,7 @@ function App() {
           <textarea
             value={specialRules}
             onChange={(e) => setSpecialRules(e.target.value)}
-            placeholder="이 스크립트의 추가/특수 규칙을 적어주세요. (예: 징크스, 홈브류 룰, 진행 유의사항 등)"
+            placeholder="이 스크립트의 추가/특수 규칙을 적어주세요. (예: 홈브류 규픽, 진행 유의사항 등)"
             style={{
               width: "100%",
               padding: 8,
