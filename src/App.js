@@ -298,7 +298,7 @@ function App() {
   }, [isAprilFools,isHalloween]);
 
   // ===== 유틸 =====
-  const teamOrder = ["townsfolk", "outsider", "minion", "demon", "traveller", "fabled"];
+  const teamOrder = ["townsfolk", "outsider", "minion", "demon", "traveller", "fabled", "loric"];
   const teamName = (id) =>
     ({
       townsfolk: "주민",
@@ -307,6 +307,7 @@ function App() {
       demon: "악마",
       traveller: "여행자",
       fabled: "전설",
+      loric: "설화"
     }[id] || id);
 
   // edition을 문자열/배열 모두 지원
@@ -695,7 +696,7 @@ function App() {
   }, [selectedIds, charMap]);
 
   const teamCounts = useMemo(() => {
-    const counts = { townsfolk: 0, outsider: 0, minion: 0, demon: 0, traveller: 0, fabled: 0 };
+    const counts = { townsfolk: 0, outsider: 0, minion: 0, demon: 0, traveller: 0, fabled: 0, loric: 0 };
     for (const id of selectedIds) {
       const c = charMap.get(id);
       if (c && counts.hasOwnProperty(c.team)) counts[c.team]++;
@@ -978,7 +979,7 @@ function App() {
           <button onClick={resetSelection}>초기화</button>
           <button onClick={generateFromSelection}>스크립트 생성</button>
           <span style={{ marginLeft: "auto", fontSize: "14px", color: "#444" }}>
-            선택된 캐릭터: 주민 {teamCounts.townsfolk}개 / 외지인 {teamCounts.outsider}개 / 하수인 {teamCounts.minion}개 / 악마 {teamCounts.demon}개 / 여행자 {teamCounts.traveller}개 / 전설 {teamCounts.fabled}개
+            선택된 캐릭터: 주민 {teamCounts.townsfolk}개 / 외지인 {teamCounts.outsider}개 / 하수인 {teamCounts.minion}개 / 악마 {teamCounts.demon}개 / 여행자 {teamCounts.traveller}개 / 전설 {teamCounts.fabled}개 / 설화 {teamCounts.loric}개
           </span>
         </div>
 
