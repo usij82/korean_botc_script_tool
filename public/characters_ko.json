@@ -2160,7 +2160,7 @@
     "edition": ["tnf","litc"],
     "team": "fabled",
     "setup": false,
-    "ability": "이 스크립트에는 특별한 규칙/징크스가 적용됩니다. 모든 플레이어가 그것이 무엇인지 알고 있습니다.",
+    "ability": "이 스크립트에는 징크스가 존재합니다. 모든 플레이어가 그것이 무엇인지 알고 있습니다.",
     "image": "icons/Icon_djinn.png"
   },
   {
