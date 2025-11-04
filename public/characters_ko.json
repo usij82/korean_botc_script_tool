@@ -791,7 +791,7 @@
     "edition": "",
     "team": "loric",
     "setup": false,
-    "ability": "플레이어들은 자신의 캐릭터 및 진영을 모릅니다. 죽을 때 이를 알게 됩니다.",
+    "ability": "플레이어들은 자신의 캐릭터 및 진영을 모릅니다. 자신이 죽을 때 이를 알게 됩니다.",
     "image": "icons/Icon_tor.png"
   },
   {
